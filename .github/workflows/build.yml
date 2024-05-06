@@ -1,6 +1,15 @@
 name: Build
 
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    paths:
+      - 'config/**' # Only trigger if changes happen in the 'config' folder
+      - '!.github/workflows/**' # Exclude changes in the '.github/workflows' folder
+  pull_request:
+    paths:
+      - 'config/**'
+      - '!.github/workflows/**'
+  workflow_dispatch: # Allow for manual workflow dispatch
 
 jobs:
   build:
@@ -26,7 +35,8 @@ jobs:
       - name: Copy result out of nix store
         run: cp combined/glove80.uf2 glove80.uf2
       - name: Upload result
+        id: upload-artifact
         uses: actions/upload-artifact@v4
         with:
-          name: glove80.uf2
+          name: glove80-$GITHUB_SHA.uf2 # Include commit hash in the artifact name
           path: glove80.uf2

@@ -99,6 +99,33 @@
             bindings = <&kp DOWN &kp UP &kp RIGHT &kp LEFT>;
         };
 
+        select_word_right: select_word_right {
+            compatible = "zmk,behavior-macro";
+            label = "SELECT_WORD_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>;
+        };
+
+        select_word_left: select_word_left {
+            compatible = "zmk,behavior-macro";
+            label = "SELECT_WORD_LEFT";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT_ARROW) &kp LC(RIGHT) &kp LC(LS(LEFT_ARROW))>;
+        };
+
+        extend_word_right: extend_word_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(RIGHT))>;
+            label = "EXTEND_WORD_RIGHT";
+        };
+
+        extend_word_left: extend_word_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(LEFT_ARROW))>;
+            label = "EXTEND_WORD_LEFT";
+        };
     };
 
     keymap {
@@ -109,7 +136,7 @@
             // |  F1   |  F2 |  F3 |  F4  |  F5  |                                                               |  F6   |  F7   |  F8  |   F9  |  F10 |
             // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
             // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                                                 |  Y   |   U   |   I   |  O   |   P   |   \  |
-           // |  ESC  |  A  |  S  |  D   |  F   |  G   |                                                 |  H   |   J   |   K   |  L   |   ;   |   '  |
+            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                                                 |  H   |   J   |   K   |  L   |   ;   |   '  |
             // |   `   |  Z  |  X  |  C   |  V   |  B   | LSHFT | LCTRL | LOWER | | LGUI  | RCTRL | RSHFT |  N   |   M   |   ,   |  .   |   /   | PGUP |
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 

@@ -126,6 +126,13 @@
             bindings = <&kp LS(LC(LEFT_ARROW))>;
             label = "EXTEND_WORD_LEFT";
         };
+
+        extend_word: extend_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&extend_word_right>, <&extend_word_left>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {

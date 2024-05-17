@@ -169,5 +169,16 @@
 &kp TILDE        &kp AMPERSAND   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PLUS                                &kp PERCENT  &kp COLON   &kp SEMICOLON  &tog 5  &none  &none                 &kp LEFT_PARENTHESIS  &kp LBKT     &kp RBKT  &kp RIGHT_PARENTHESIS  &none
             >;
         };
+
+        number {
+            bindings = <
+&none           &none           &none         &none          &none                                                                                                  &none                 &none      &none        &none                  &none
+&kp ESC         &kp RET         &kp SPACE     &kp TAB        &kp DEL         &kp F                                                                    &kp CARET     &kp DOLLAR            &kp POUND  &kp AT_SIGN  &kp EXCLAMATION        &kp PIPE
+&none           &sk LEFT_SHIFT  &kp LC(Y)     &kp LC(Z)      &kp BSPC        &kp A                                                                    &kp PERCENT   &kp N7                &kp N8     &kp N9       &kp COLON              &kp K
+&kp KP_NUMLOCK  &kp LEFT_WIN    &kp LEFT_ALT  &kp LCTRL      &kp LSHFT       &kp B                                                                    &kp PLUS      &kp N4                &kp N5     &kp N6       &kp MINUS              &kp J
+&none           &kp LC(A)       &kp HOME      &kp LC(RIGHT)  &kp UNDERSCORE  &kp C  &kp D  &kp E  &kp F   &kp LESS_THAN  &kp GREATER_THAN  &kp EQUAL  &kp ASTERISK  &kp N1                &kp N2     &kp N3       &kp FSLH               &kp G
+&none           &none           &none         &none          &kp X                  &none  &none  &tog 6  &kp COMMA      &kp DOT           &kp N0                   &kp LEFT_PARENTHESIS  &kp LBKT   &kp RBKT     &kp RIGHT_PARENTHESIS  &kp TILDE
+            >;
+        };
     };
 };

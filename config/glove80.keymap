@@ -29,7 +29,7 @@
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 1>, <&to 1>;
+            bindings = <&mo 2>, <&to 2>;
         };
 
         magic: magic_hold_tap {
@@ -158,6 +158,16 @@
             >;
         };
 
+        no-repeat-homerows {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                              &trans  &trans  &trans  &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                              &trans  &trans  &trans  &trans  &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                              &trans  &trans  &trans  &trans  &trans         &trans
+&trans  &kp A   &kp S   &kp D   &kp F   &trans                                                              &trans  &kp J   &kp K   &kp L   &kp SEMICOLON  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp ESCAPE     &trans   &trans  &trans  &trans   &kp ENTER  &trans  &trans  &trans  &trans  &trans         &trans
+&trans  &trans  &trans  &trans  &trans          &kp BACKSPACE  &kp DEL  &trans  &trans  &kp TAB  &kp SPACE          &trans  &trans  &trans  &trans         &trans
+            >;
+        };
 
         lower_layer {
             bindings = <
@@ -170,16 +180,7 @@
             >;
         };
 
-        no-repeat-homerows {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                              &trans  &trans  &trans  &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                              &trans  &trans  &trans  &trans  &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                              &trans  &trans  &trans  &trans  &trans         &trans
-&trans  &kp A   &kp S   &kp D   &kp F   &trans                                                              &trans  &kp J   &kp K   &kp L   &kp SEMICOLON  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp ESCAPE     &trans   &trans  &trans  &trans   &kp ENTER  &trans  &trans  &trans  &trans  &trans         &trans
-&trans  &trans  &trans  &trans  &trans          &kp BACKSPACE  &kp DEL  &trans  &trans  &kp TAB  &kp SPACE          &trans  &trans  &trans  &trans         &trans
-            >;
-        };
+
 
         symbols {
             bindings = <

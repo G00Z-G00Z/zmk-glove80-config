@@ -96,7 +96,7 @@
             label = "SN";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DOWN &kp UP &kp RIGHT &kp LEFT>;;
+            bindings = <&kp DOWN &kp UP &kp RIGHT &kp LEFT>;
         };
 
     };

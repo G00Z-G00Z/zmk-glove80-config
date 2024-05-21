@@ -282,11 +282,11 @@
         cursor_layer {
             bindings = <
 &trans     &trans         &trans     &trans     &trans                                                                                  &trans     &trans     &trans     &trans     &trans
-&kp ESC    &kp RET        &kp SPACE  &kp TAB    &kp DEL    &trans                                                            &trans     &kp DEL    &kp TAB    &kp SPACE  &kp RET    &kp ESC
-&kp LC(L)  &kp LSHFT      &redo  &undo  &kp BSPC   &cut                                                         &kp LSHFT  &kp BSPC   &undo  &redo  &cut  &kp LC(L)
+&kp ESC    &kp RET        &kp SPACE  &kp TAB    &kp DEL    &kp INSERT                                                            &kp INSERT     &kp DEL    &kp TAB    &kp SPACE  &kp RET    &kp ESC
+&kp LC(L)  &sk LSHFT      &redo  &undo  &kp BSPC   &cut                                                         &sk LSHFT  &kp BSPC   &undo  &redo  &cut  &kp LC(L)
 &kp LC(L)  &kp LGUI       &kp LALT   &kp LCTRL  &kp LSHFT  &copy                                                         &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &copy  &kp LC(L)
-&kp LC(J)  &kp LC(A)      &trans     &trans     &kp LC(F)  &paste  &trans  &trans        &kp TAB  &trans  &trans  &trans  &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &paste  &kp LC(J)
-&trans     &kp LS(LC(G))  &trans     &trans     &trans                &trans  &kp LC(LALT)  &trans   &trans  &trans  &trans             &kp LC(F)  &trans     &trans     &trans     &trans
+&kp LC(J)  &kp LC(A)      &select_line     &select_word     &kp LC(F)  &paste  &trans  &trans        &kp TAB  &trans  &trans  &trans  &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &paste  &kp LC(J)
+&kp LC(H)  &kp LS(LC(G))  &extend_line     &extend_word     &kp LC(G)                &none  &kp LC(LALT)  &trans   &trans  &trans  &trans             &kp LC(F)  &kp LC(LS(G))     &kp LC(G)     &kp LC(H)     &kp LG(DOT)
             >;
         };
 

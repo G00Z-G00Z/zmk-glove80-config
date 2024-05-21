@@ -50,9 +50,52 @@
             #binding-cells = <0>;
             bindings = <&caps_word>, <&kp CAPSLOCK>;
         };
+
+        /* Selection behaviours morphs
+         *
+         * This behaviours select text in a particular way.
+         * They default to selecting to the right, but when shifted, they go to the left
+         *
+         * They depend on the 'selection' macros
+         */
+
+        select_word: select_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            label = "SELECT_WORD";
+            bindings = <&select_word_right>, <&select_word_left>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        extend_word: extend_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&extend_word_right>, <&extend_word_left>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        extend_line: extend_line {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&extend_line_right>, <&extend_line_left>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+
+        select_line: select_line {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&select_line_right>, <&select_line_left>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+
+
     };
 
     macros {
+
+      // Bluethoot profile macros, DO NOT TOUCH
         rgb_ug_status_macro: rgb_ug_status_macro_0 {
             label = "RGB_UG_STATUS";
             compatible = "zmk,behavior-macro";
@@ -87,6 +130,8 @@
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
+
+        // Selection Macros
 
         select_none: select_none {
             label = "SN";
@@ -123,6 +168,37 @@
             label = "EXTEND_WORD_LEFT";
         };
 
+        select_line_right: select_line_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END)>;
+            label = "SELECT_LINE_RIGHT";
+        };
+
+        select_line_left: select_line_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &kp LS(HOME)>;
+            label = "SELECT_LINE_LEFT";
+        };
+
+
+        extend_line_left: extend_line_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(UP) &kp LS(HOME)>;
+            label = "EXTEND_LINE_LEFT";
+        };
+
+        extend_line_right: extend_line_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(DOWN) &kp LS(END)>;
+            label = "EXTEND_LINE_RIGHT";
+        };
+
+        // Text manipulation
+
         undo: undo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -156,14 +232,6 @@
             #binding-cells = <0>;
             bindings = <&kp LC(C)>;
             label = "COPY";
-        };
-
-        extend_word: extend_word {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&extend_word_right>, <&extend_word_left>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 

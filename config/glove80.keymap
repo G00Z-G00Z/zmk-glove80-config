@@ -385,12 +385,12 @@
 
         number {
             bindings = <
-&none    &none      &none      &none      &none                                                                                          &none         &none          &none       &none          &none
-&kp RET  &kp SPACE  &kp TAB    &kp DEL    &none          &none                                                            &kp CARET  &kp DLLR  &kp POUND  &kp AT  &kp EXCL   &kp PIPE
-&none    &kp LSHFT  &kp LC(Y)  &kp LC(U)  &kp BSPC       &kp A                                                            &kp PRCNT  &kp N7        &kp N8         &kp N9      &kp COLON  &kp K
-&none    &none      &none      &none      &none          &kp B                                                            &kp PLUS   &kp N4        &kp N5         &kp N6      &kp MINUS      &kp J
-&none    &none      &none      &none      &kp UNDER  &kp C  &kp D  &kp E  &kp F    &kp LT  &kp GT  &kp EQUAL  &kp STAR   &kp N1        &kp N2         &kp N3      &kp RPAR   &kp G
-&none    &none      &none      &none      &kp X                 &none  &none  &tog 11  &kp COMMA   &kp DOT     &kp N0                    &kp LPAR  &kp LBKT       &kp RBKT    &kp RPAR   &kp TILDE
+&none           &none         &none         &none             &none                                                                                        &none     &none      &none     &none      &none
+&kp ESC         &kp RET       &kp SPACE     &kp TAB           &kp DEL         &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
+&none           &kp LSHFT     &kp LC(Y)     &kp LC(U)         &kp BSPC        &kp A                                                             &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp K
+&kp KP_NUMLOCK  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp B                                                             &kp PLUS   &kp N4    &kp N5     &kp N6    &kp MINUS  &kp J
+&none           &kp LC(A)     &select_line  &select_word      &kp UNDER       &kp C       &kp D  &kp E  &kp F    &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp RPAR   &kp G
+&none           &none         &extend_line  &extend_word      &kp X                       &none  &none  &tog 11  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
             >;
         };
     };

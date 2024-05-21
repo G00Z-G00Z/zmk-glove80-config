@@ -386,11 +386,11 @@
         number {
             bindings = <
 &none    &none      &none      &none      &none                                                                                          &none         &none          &none       &none          &none
-&kp RET  &kp SPACE  &kp TAB    &kp DEL    &none          &none                                                            &kp LS(CARET)  &kp LS(DLLR)  &kp LS(POUND)  &kp LS(AT)  &kp LS(EXCL)   &kp LS(PIPE)
-&none    &kp LSHFT  &kp LC(Y)  &kp LC(U)  &kp BSPC       &kp A                                                            &kp LS(PRCNT)  &kp N7        &kp N8         &kp N9      &kp LS(COLON)  &kp K
-&none    &none      &none      &none      &none          &kp B                                                            &kp LS(PLUS)   &kp N4        &kp N5         &kp N6      &kp MINUS      &kp J
-&none    &none      &none      &none      &kp LS(UNDER)  &kp C  &kp D  &kp E  &kp F    &kp LS(LT)  &kp LS(GT)  &kp EQUAL  &kp LS(STAR)   &kp N1        &kp N2         &kp N3      &kp LS(RPAR)   &kp G
-&none    &none      &none      &none      &kp X                 &none  &none  &tog 11  &kp COMMA   &kp DOT     &kp N0                    &kp LS(LPAR)  &kp LBKT       &kp RBKT    &kp LS(RPAR)   &kp TILDE
+&kp RET  &kp SPACE  &kp TAB    &kp DEL    &none          &none                                                            &kp CARET  &kp DLLR  &kp POUND  &kp AT  &kp EXCL   &kp PIPE
+&none    &kp LSHFT  &kp LC(Y)  &kp LC(U)  &kp BSPC       &kp A                                                            &kp PRCNT  &kp N7        &kp N8         &kp N9      &kp COLON  &kp K
+&none    &none      &none      &none      &none          &kp B                                                            &kp PLUS   &kp N4        &kp N5         &kp N6      &kp MINUS      &kp J
+&none    &none      &none      &none      &kp UNDER  &kp C  &kp D  &kp E  &kp F    &kp LT  &kp GT  &kp EQUAL  &kp STAR   &kp N1        &kp N2         &kp N3      &kp RPAR   &kp G
+&none    &none      &none      &none      &kp X                 &none  &none  &tog 11  &kp COMMA   &kp DOT     &kp N0                    &kp LPAR  &kp LBKT       &kp RBKT    &kp RPAR   &kp TILDE
             >;
         };
     };

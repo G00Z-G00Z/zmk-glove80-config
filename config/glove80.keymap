@@ -36,11 +36,12 @@
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
 
-        play_prev_next_td: play_prev_next_td {
+        // Play / Next / Prev button
+        play_next_prev_td: play_next_prev_td {
             compatible = "zmk,behavior-tap-dance";
-            label = "PLAY_PREV_NEXT_TD";
+            label = "PLAY_NEXT_PREV_TD";
             #binding-cells = <0>;
-            bindings = <&kp C_PP>, <&kp C_PREV>, <&kp C_NEXT>;
+            bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
         };
 
         caps_word_tp: caps_word_tp {

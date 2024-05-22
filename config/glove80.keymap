@@ -238,7 +238,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        base_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  F1   |  F2 |  F3 |  F4  |  F5  |                                                               |  F6   |  F7   |  F8  |   F9  |  F10 |
             // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
@@ -268,7 +268,7 @@
             >;
         };
 
-        no-repeat-homerows {
+        no_repeat_homerows_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                                                              &trans  &trans  &trans  &trans         &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                                              &trans  &trans  &trans  &trans  &trans         &trans
@@ -290,7 +290,7 @@
             >;
         };
 
-        symbols {
+        symbols_layer {
             bindings = <
 &none            &none           &none                 &none                  &none                                                                                                                 &none                 &none        &none     &none                  &none
 &none            &kp GRAVE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON     &kp COMMA                                                                            &none          &none                 &none        &none     &none                  &none
@@ -301,13 +301,13 @@
             >;
         };
 
-        system {
+        system_layer {
             bindings = <
-&none            &none            &none            &none            &none                                                                                                                         &none               &none  &none  &none            &none
-&none            &none            &none            &none            &none            &none                                                                                       &none            &none               &none  &none  &none            &none
-&none            &none            &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &none            &none                                                                                       &rgb_ug RGB_SAI  &kp LSHFT             &kp LCTRL    &kp LALT  &kp RIGHT_GUI            &rgb_ug RGB_SAD
-&rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &kp K_CONTEXT_MENU                                                                          &rgb_ug RGB_HUI  &kp K_CONTEXT_MENU  &kp LG(ESCAPE)  &kp LG(L)  &kp LC(LA(DEL))            &rgb_ug RGB_HUD
-&none            &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &none               &kp LG(ESCAPE)   &kp LG(L)       &kp LC(LA(DEL))  &none   &none  &none  &rgb_ug RGB_SPI  &rgb_ug RGB_TOG     &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK            &rgb_ug RGB_SPD
+&none            &none            &none            &none            &none                                                                                                                         &none               &none            &none            &none            &none
+&none            &none            &none            &none            &none            &none                                                                                       &none            &none               &none            &none            &none            &none
+&none            &none            &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &none            &none                                                                                       &rgb_ug RGB_SAI  &kp LSHFT           &kp LCTRL        &kp LALT         &kp RIGHT_GUI    &rgb_ug RGB_SAD
+&rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &kp K_CONTEXT_MENU                                                                          &rgb_ug RGB_HUI  &kp K_CONTEXT_MENU  &kp LG(ESCAPE)   &kp LG(L)        &kp LC(LA(DEL))  &rgb_ug RGB_HUD
+&none            &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &none               &kp LG(ESCAPE)   &kp LG(L)       &kp LC(LA(DEL))  &none   &none  &none  &rgb_ug RGB_SPI  &rgb_ug RGB_TOG     &kp PRINTSCREEN  &kp SCROLLLOCK   &kp PAUSE_BREAK  &rgb_ug RGB_SPD
 &none            &none            &none            &none            &none                                &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &tog 5  &none  &none                   &rgb_ug RGB_EFF     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &none
             >;
         };
@@ -342,7 +342,7 @@
             >;
         };
 
-        typing {
+        typing_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  F1   |  F2 |  F3 |  F4  |  F5  |                                                               |  F6   |  F7   |  F8  |   F9  |  F10 |
             // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
@@ -383,7 +383,7 @@
             >;
         };
 
-        number {
+        number_layer {
             bindings = <
 &none           &none         &none         &none             &none                                                                                        &none     &none      &none     &none      &none
 &kp ESC         &kp RET       &kp SPACE     &kp TAB           &kp DEL         &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE

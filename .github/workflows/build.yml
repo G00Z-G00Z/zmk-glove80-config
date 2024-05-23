@@ -38,5 +38,5 @@ jobs:
         id: upload-artifact
         uses: actions/upload-artifact@v4
         with:
-          name: glove80-$GITHUB_SHA.uf2 # Include commit hash in the artifact name
+          name: "glove80-${{ github.sha }}.uf2" # Include commit hash in the artifact name
           path: glove80.uf2

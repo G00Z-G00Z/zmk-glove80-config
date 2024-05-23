@@ -14,7 +14,10 @@
 
 // layers
 
-&mt { flavor = "tap-preferred"; };
+&mt {
+    flavor = "tap-preferred";
+    quick-tap-ms = <50>;
+};
 
 / {
     behaviors {

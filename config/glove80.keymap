@@ -368,7 +368,7 @@
 &trans        &none         &none       &kp UP      &none      &kp END                                                      &kp RPAR   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp SLCK
 &trans        &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                    &kp PRCNT  &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &none
 &trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &tog 6  &trans   &to 0   &trans  &trans  &tog 5   &kp COMMA  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &trans
-&trans        &kp CAPS      &kp INS     &kp F11     &kp F12               &tog 3  &tog 11  &trans  &trans  &trans  &tog 10             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &trans
+&magic 1 0    &kp CAPS      &kp INS     &kp F11     &kp F12               &tog 3  &tog 11  &trans  &trans  &trans  &tog 10             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &magic 1 0
             >;
         };
 

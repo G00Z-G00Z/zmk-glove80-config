@@ -251,7 +251,7 @@
         job_startup: job_startup {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(RG(RIGHT)) &kp LG(NUMBER_2)>;
+            bindings = <&kp LG(RG(RIGHT)) &kp LG(NUMBER_2) &kp W &kp A &kp T &kp C &kp H &kp SPACE &kp S &kp Y &kp S &kp T &kp E &kp M &kp C &kp T &kp L &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S &kp SPACE &kp W &kp S &kp L &kp MINUS &kp V &kp P &kp N &kp K &kp I &kp T>;
             label = "JOB_STARTUP";
         };
     };

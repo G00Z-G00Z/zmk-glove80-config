@@ -251,7 +251,7 @@
         job_startup: job_startup {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(RG(RIGHT)) &kp LG(NUMBER_2) &kp W &kp A &kp T &kp C &kp H &kp SPACE &kp S &kp Y &kp S &kp T &kp E &kp M &kp C &kp T &kp L &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S &kp SPACE &kp W &kp S &kp L &kp MINUS &kp V &kp P &kp N &kp K &kp I &kp T>;
+            bindings = <&kp LG(RG(RIGHT)) &kp LG(RG(RIGHT)) &kp LG(RG(RIGHT)) &kp LG(NUMBER_9) &kp LG(NUMBER_2) &kp LEFT_GUI &kp P &kp U &kp L &kp S &kp E &kp SPACE &kp S &kp E &kp C &kp U &kp R &kp E &kp ENTER &kp SPACE &kp LG(LG(LEFT)) &kp LG(NUMBER_1) &kp LG(NUMBER_2) &kp LG(NUMBER_3) &kp LG(NUMBER_4) &kp LG(NUMBER_8) &kp LG(NUMBER_9) &kp LG(NUMBER_4) &kp W &kp S &kp L &kp ENTER &kp T &kp W &kp A &kp T &kp C &kp H &kp SPACE &kp S &kp Y &kp S &kp T &kp E &kp M &kp C &kp T &kp L &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S &kp SPACE &kp W &kp S &kp L &kp MINUS &kp V &kp P &kp N &kp K &kp I &kp T &kp ENTER &kp ENTER &kp LG(NUMBER_1) &kp A &kp V &kp A &kp I &kp L &kp A &kp B &kp L &kp E>;
             label = "JOB_STARTUP";
         };
     };

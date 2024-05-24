@@ -19,6 +19,8 @@
     quick-tap-ms = <50>;
 };
 
+&key_repeat { usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>; };
+
 / {
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
@@ -258,10 +260,16 @@
                 <&macro_wait_time 10000>,
                 <&kp T &kp ENTER>,
                 <&macro_wait_time 10000>,
-                <&kp LG(NUMBER_1) &kp LC(SLASH) &kp A &kp V &kp A &kp I &kp L &kp A &kp B &kp L &kp E &kp ENTER>,
-                <&kp LG(NUMBER_4) &kp W &kp A &kp T &kp C &kp H &kp SPACE &kp S &kp Y &kp S &kp T &kp E &kp M &kp C &kp T &kp L &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S &kp SPACE &kp W &kp S &kp L &kp MINUS &kp V &kp P &kp N &kp K &kp I &kp T &kp ENTER>;
+                <&kp LG(NUMBER_1) &kp LC(SLASH) &kp A &kp V &kp A &kp I &kp L &kp A &kp B &kp L &kp E &kp ENTER &kp LG(NUMBER_4) &kp W &kp A &kp T &kp C &kp H &kp SPACE &kp S &kp Y &kp S &kp T &kp E &kp M &kp C &kp T &kp L &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S &kp SPACE &kp W &kp S &kp L &kp MINUS &kp V &kp P &kp N &kp K &kp I &kp T &kp ENTER>;
 
             label = "JOB_STARTUP";
+        };
+
+        teams_reply_current_msg: teams_reply_current_msg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER &kp TAB &kp ENTER>;
+            label = "TEAMS_REPLY_CURRENT_MSG";
         };
     };
 

@@ -262,6 +262,13 @@
 
             label = "JOB_STARTUP";
         };
+
+        teams_reply_current_msg: teams_reply_current_msg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER &kp TAB &kp ENTER>;
+            label = "TEAMS_REPLY_CURRENT_MSG";
+        };
     };
 
     keymap {

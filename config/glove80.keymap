@@ -271,6 +271,13 @@
             bindings = <&kp ENTER &kp TAB &kp ENTER>;
             label = "TEAMS_REPLY_CURRENT_MSG";
         };
+
+        my_email: my_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp D &kp Y &kp G &kp O &kp M &kp E &kp Z &kp G &kp G &kp N4 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "MY_EMAIL";
+        };
     };
 
     keymap {

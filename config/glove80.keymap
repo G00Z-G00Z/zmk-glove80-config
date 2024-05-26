@@ -252,21 +252,6 @@
             label = "COPY";
         };
 
-        job_startup: job_startup {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&kp LG(LC(RIGHT)) &kp LG(LC(RIGHT)) &kp LG(LC(RIGHT)) &kp LG(NUMBER_2) &kp LG(NUMBER_9) &kp LEFT_GUI &kp P &kp U &kp L &kp S &kp E &kp SPACE &kp S &kp E &kp C &kp U &kp R &kp E &kp ENTER>,
-                <&macro_wait_time 5000>,
-                <&kp TAB &kp SPACE &kp LG(LC(LEFT)) &kp LG(NUMBER_1) &kp LG(NUMBER_2) &kp LG(NUMBER_3) &kp LG(NUMBER_4) &kp LG(NUMBER_8) &kp LG(NUMBER_9) &kp LG(NUMBER_4) &kp W &kp S &kp L &kp ENTER>,
-                <&macro_wait_time 10000>,
-                <&kp T &kp ENTER>,
-                <&macro_wait_time 10000>,
-                <&kp LG(NUMBER_1) &kp LC(SLASH) &kp A &kp V &kp A &kp I &kp L &kp A &kp B &kp L &kp E &kp ENTER &kp LG(NUMBER_4) &kp W &kp A &kp T &kp C &kp H &kp SPACE &kp S &kp Y &kp S &kp T &kp E &kp M &kp C &kp T &kp L &kp SPACE &kp S &kp T &kp A &kp T &kp U &kp S &kp SPACE &kp W &kp S &kp L &kp MINUS &kp V &kp P &kp N &kp K &kp I &kp T &kp ENTER>;
-
-            label = "JOB_STARTUP";
-        };
-
         teams_reply_current_msg: teams_reply_current_msg {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -411,7 +396,7 @@
         lower_layer {
             bindings = <
 &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_NEXT  &kp C_PP                                                                                                                          &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none            &kp PAUSE_BREAK
-&none         &none         &job_startup  &my_email   &none      &kp HOME                                                                                                    &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
+&none         &none         &none         &my_email   &none      &kp HOME                                                                                                    &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
 &none         &none         &none         &kp UP      &none      &kp END                                                                                                     &kp RPAR   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp SLCK
 &none         &none         &kp LEFT      &kp DOWN    &kp RIGHT  &kp PG_UP                                                                                                   &kp PRCNT  &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &none
 &none         &kp K_CMENU   &none         &kp F11     &kp F12    &kp PG_DN  &tog 6  &none    &none                        &none                              &none  &tog 5   &kp COMMA  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &none

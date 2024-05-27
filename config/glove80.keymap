@@ -305,20 +305,20 @@
     combos {
         compatible = "zmk,combos";
 
-        // In cursor layer: w + l (vim like)
+        // w + l (vim like) to switch to workspace in the right
 
         combo_win_desktop_right {
             bindings = <&win_desktop_right>;
             key-positions = <43 24>;
-            layers = <3>;
+            require-prior-idle-ms = <100>;
         };
 
-        // In cursor layer: w + h (vim like)
+        // w + h (vim like) to switch to workspace in the left
 
         combo_win_desktop_left {
             bindings = <&win_desktop_left>;
             key-positions = <40 24>;
-            layers = <3>;
+            require-prior-idle-ms = <100>;
         };
 
         // WIN + Q becomes ALT + F4 (closes any app)

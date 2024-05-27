@@ -266,6 +266,20 @@
             label = "MY_EMAIL";
         };
 
+        win_desktop_right: win_right_desktop {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LG(RIGHT))>;
+            label = "WIN_RIGHT_DESKTOP";
+        };
+
+        win_desktop_left: win_desktop_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LG(LEFT))>;
+            label = "WIN_DESKTOP_LEFT";
+        };
+
         close_app: close_app {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;

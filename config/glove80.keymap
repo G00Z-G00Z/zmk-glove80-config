@@ -265,6 +265,15 @@
             bindings = <&kp E &kp D &kp Y &kp G &kp O &kp M &kp E &kp Z &kp G &kp G &kp N4 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "MY_EMAIL";
         };
+
+        close_app: close_app {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(F4)>;
+            label = "CLOSE_APP";
+        };
+    };
+
     };
 
     keymap {

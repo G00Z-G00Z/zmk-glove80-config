@@ -288,6 +288,25 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        // In cursor layer: w + l (vim like)
+
+        combo_win_desktop_right {
+            bindings = <&win_desktop_right>;
+            key-positions = <43 24>;
+            layers = <3>;
+        };
+
+        // In cursor layer: w + h (vim like)
+
+        combo_win_desktop_left {
+            bindings = <&win_desktop_left>;
+            key-positions = <40 24>;
+            layers = <3>;
+        };
+
     };
 
     keymap {

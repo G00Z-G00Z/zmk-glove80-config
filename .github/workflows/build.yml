@@ -2,6 +2,8 @@ name: Build
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'config/**' # Only trigger if changes happen in the 'config' folder
       - '!.github/workflows/**' # Exclude changes in the '.github/workflows' folder
@@ -9,6 +11,8 @@ on:
     paths:
       - 'config/**'
       - '!.github/workflows/**'
+    branches:
+      - main
   workflow_dispatch: # Allow for manual workflow dispatch
 
 jobs:

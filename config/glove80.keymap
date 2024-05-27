@@ -307,6 +307,13 @@
             layers = <3>;
         };
 
+        // WIN + Q becomes ALT + F4 (closes any app)
+
+        combo_alt_close_app {
+            bindings = <&close_app>;
+            key-positions = <44 23>;
+            require-prior-idle-ms = <100>;
+        };
     };
 
     keymap {

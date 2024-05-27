@@ -299,6 +299,7 @@
             #binding-cells = <0>;
             bindings = <&kp LC(A) &copy &kp RIGHT>;
             label = "SELECT_AND_COPY_ALL";
+            wait-ms = <75>;
         };
     };
 

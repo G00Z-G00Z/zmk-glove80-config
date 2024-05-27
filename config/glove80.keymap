@@ -376,12 +376,12 @@
 
         cursor_layer {
             bindings = <
-&trans     &trans         &trans        &trans        &trans                                                                                                                  &trans     &trans         &trans     &trans     &trans
-&kp ESC    &kp RET        &kp SPACE     &kp TAB       &kp DEL    &kp INSERT                                                                                       &kp INSERT  &kp DEL    &kp TAB        &kp SPACE  &kp RET    &kp ESC
-&kp LC(K)  &sk LSHFT      &redo         &undo         &kp BSPC   &cut                                                                                             &sk LSHFT   &kp BSPC   &undo          &redo      &cut       &kp LC(K)
-&kp LC(L)  &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT  &copy                                                                                            &kp LEFT    &kp DOWN   &kp UP         &kp RIGHT  &copy      &kp LC(L)
-&kp LC(J)  &kp LC(A)      &select_line  &select_word  &kp LC(F)  &paste      &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none          &extend_line  &extend_word  &kp HOME    &kp PG_DN  &kp PG_UP      &kp END    &paste     &kp LC(J)
-&kp LC(H)  &kp LS(LC(G))  &extend_line  &extend_word  &kp LC(G)              &none        &kp LC(TAB)  &tog 3   &select_and_copy_all  &select_line  &select_word              &kp LC(F)  &kp LC(LS(G))  &kp LC(G)  &kp LC(H)  &kp LG(DOT)
+&trans     &trans         &trans        &trans        &trans                                                                                                                    &trans     &trans         &trans     &trans     &trans
+&kp ESC    &kp RET        &kp SPACE     &kp TAB       &kp DEL    &kp INSERT                                                                                         &kp INSERT  &kp DEL    &kp TAB        &kp SPACE  &kp RET    &kp ESC
+&kp LC(K)  &sk LSHFT      &redo         &undo         &kp BSPC   &cut                                                                                               &sk LSHFT   &kp BSPC   &undo          &redo      &cut       &kp LC(K)
+&kp LC(L)  &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT  &copy                                                                                              &kp LEFT    &kp DOWN   &kp UP         &kp RIGHT  &copy      &kp LC(L)
+&kp LC(J)  &kp LC(A)      &select_line  &select_word  &kp LC(F)  &paste      &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none            &extend_line  &extend_word  &kp HOME    &kp PG_DN  &kp PG_UP      &kp END    &paste     &kp LC(J)
+&kp LC(H)  &kp LS(LC(G))  &extend_line  &extend_word  &kp LC(G)              &none        &kp LC(TAB)  &tog 3   &selec_all_copy_all_tp  &select_line  &select_word              &kp LC(F)  &kp LC(LS(G))  &kp LC(G)  &kp LC(H)  &kp LG(DOT)
             >;
         };
 

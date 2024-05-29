@@ -134,6 +134,20 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        mst_show_screen_vid_td: mst_show_screen_vid_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Show screen and toggle video";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(E))>, <&kp LS(LC(O))>;
+        };
+
+        mst_call_cmds_td: mst_call_cmds_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Call, respond call, start call";
+            #binding-cells = <0>;
+            bindings = <&mst_go_call>, <&kp LS(LC(J))>, <&kp LA(LS(A))>;
+        };
     };
 
     macros {
@@ -560,12 +574,12 @@
 
         teams_layer {
             bindings = <
-&none  &none  &none             &none             &none                                                                                                                &none              &none              &none           &none          &none
-&none  &none  &kp LC(N1)        &kp LC(N2)        &kp LC(N3)         &kp LC(N4)                                                                         &kp LG(N1)     &kp LA(LS(EQUAL))  &kp LA(LS(MINUS))  &kp LA(LS(N0))  &none          &none
-&none  &none  &none             &kp LS(LA(UP))    &none              &none                                                                              &kp LC(LA(U))  &none              &kp LC(R)          &none           &kp LA(LS(N))  &none
-&none  &none  &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                              &kp LC(L)      &kp DOWN           &kp UP             &kp LC(M)       &none          &none
-&none  &none  &kp LC(N1)        &kp LC(N2)        &kp LC(N3)         &kp LC(N4)  &none  &none  &none    &kp LG(N1)  &none          &kp LC(LS(K))        &none          &none              &none              &none           &kp LC(SLASH)  &none
-&none  &none  &none             &none             &none                          &none  &none  &tog 11  &none       &kp LC(LS(H))  &mt SPACE LS(LC(M))                 &kp LC(F)          &none              &kp LG(N1)      &none          &none
+&none  &none  &none             &none             &none                                                                                                                            &none              &none              &none           &none          &none
+&none  &none  &kp LC(N1)        &kp LC(N2)        &kp LC(N3)         &kp LC(N4)                                                                                     &kp LG(N1)     &kp LA(LS(EQUAL))  &kp LA(LS(MINUS))  &kp LA(LS(N0))  &none          &none
+&none  &none  &none             &kp LS(LA(UP))    &none              &none                                                                                          &kp LC(LA(U))  &none              &kp LC(R)          &none           &kp LA(LS(N))  &none
+&none  &none  &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                                          &kp LC(L)      &kp DOWN           &kp UP             &kp LC(M)       &kp LC(J)      &none
+&none  &none  &kp LC(N1)        &kp LC(N2)        &kp LC(N3)         &kp LC(N4)  &none  &none  &none    &kp LG(N1)    &mst_show_screen_vid_td  &kp LC(LS(K))        &mst_offline   &mst_available     &mst_brb           &mst_away       &kp LC(SLASH)  &none
+&none  &none  &none             &none             &none                          &none  &none  &tog 11  &mst_go_call  &kp LC(LS(H))            &mt SPACE LS(LC(M))                 &kp LC(F)          &mst_busy          &kp LG(N1)      &none          &none
             >;
         };
 

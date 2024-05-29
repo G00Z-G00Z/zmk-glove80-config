@@ -324,6 +324,50 @@
             bindings = <&kp LC(A) &kp LC(X) &kp RIGHT>;
             label = "SELECT_ALL_CUT";
         };
+
+      // Microsoft Teams (mst) layer macros
+        mst_available: mst_available {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp A &kp V &kp A &kp I &kp L &kp A &kp B &kp L &kp E &kp ENTER>;
+            label = "mst_AVAILABLE";
+        };
+
+        mst_busy: mst_busy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp B &kp U &kp S &kp Y &kp ENTER>;
+            label = "mst_BUSY";
+        };
+
+        mst_brb: mst_brb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp B &kp R &kp B&kp ENTER>;
+            label = "mst_BRB";
+        };
+
+        mst_offline: mst_offline {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp O &kp F &kp F &kp L &kp I &kp N &kp E &kp ENTER>;
+            label = "mst_OFFLINE";
+        };
+
+        mst_away: mst_away {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp A &kp W &kp A &kp Y &kp ENTER>;
+            label = "mst_AWAY";
+        };
+
+        mst_go_call: mst_go_call {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(N1)>;
+            label = "MST_GO_CALL";
+        };
+
     };
 
     combos {

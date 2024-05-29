@@ -325,7 +325,8 @@
             label = "SELECT_ALL_CUT";
         };
 
-      // Microsoft Teams (mst) layer macros
+        // Microsoft Teams (mst) layer macros
+
         mst_available: mst_available {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -343,7 +344,7 @@
         mst_brb: mst_brb {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(SLASH) &kp B &kp R &kp B&kp ENTER>;
+            bindings = <&kp LC(SLASH) &kp B &kp R &kp B &kp ENTER>;
             label = "mst_BRB";
         };
 
@@ -364,10 +365,9 @@
         mst_go_call: mst_go_call {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(N1)>;
+            bindings = <&kt LEFT_WIN &kp N1 &kp NUMBER_1 &kt LEFT_WIN>;
             label = "MST_GO_CALL";
         };
-
     };
 
     combos {
@@ -548,12 +548,12 @@
 
         teams_layer {
             bindings = <
-&none  &none  &none  &none  &none                                                                           &none  &none  &none  &none  &none
-&none  &none  &kp LC(N1)  &kp LC(N2) &kp LC(N3)  &kp LC(N4)                                              &kp LG(N1)  &kp LA(LS(EQUAL))  &kp LA(LS(MINUS))  &kp LA(LS(N0))  &none  &none
-&none  &none  &none  &kp LS(LA(UP)) &none  &none                                                     &kp LC(LA(U))  &none  &kp LC(R)  &none  &kp LA(LS(N))  &none
-&none  &none  &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                           &kp LC(L)  &kp DOWN  &kp UP  &kp LC(M)  &none  &none
-&none  &none  &kp LC(N1)  &kp LC(N2) &kp LC(N3)  &kp LC(N4)  &none  &none  &none    &kp LG(N1)  &none  &kp LC(LS(K))  &none  &none  &none  &none  &kp LC(SLASH)  &none
-&none  &none  &none  &none  &none                        &none  &none  &tog 11  &none  &kp LC(LS(H))  &mt SPACE LS(LC(M))         &kp LC(F)  &none  &kp LG(N1)  &none  &none
+&none  &none  &none             &none             &none                                                                                                                &none              &none              &none           &none          &none
+&none  &none  &kp LC(N1)        &kp LC(N2)        &kp LC(N3)         &kp LC(N4)                                                                         &kp LG(N1)     &kp LA(LS(EQUAL))  &kp LA(LS(MINUS))  &kp LA(LS(N0))  &none          &none
+&none  &none  &none             &kp LS(LA(UP))    &none              &none                                                                              &kp LC(LA(U))  &none              &kp LC(R)          &none           &kp LA(LS(N))  &none
+&none  &none  &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                              &kp LC(L)      &kp DOWN           &kp UP             &kp LC(M)       &none          &none
+&none  &none  &kp LC(N1)        &kp LC(N2)        &kp LC(N3)         &kp LC(N4)  &none  &none  &none    &kp LG(N1)  &none          &kp LC(LS(K))        &none          &none              &none              &none           &kp LC(SLASH)  &none
+&none  &none  &none             &none             &none                          &none  &none  &tog 11  &none       &kp LC(LS(H))  &mt SPACE LS(LC(M))                 &kp LC(F)          &none              &kp LG(N1)      &none          &none
             >;
         };
 

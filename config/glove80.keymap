@@ -2,6 +2,8 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+ *  
+ * Important notes, labels cannot be long
  */
 
 #include <behaviors.dtsi>
@@ -143,7 +145,7 @@
 
         layer_mo_tog: layer_mo_tog {
             compatible = "zmk,behavior-hold-tap";
-            label = "Hold for momentary layer and tap for toggling layer";
+            label = "Hold for mo and tap tog";
             bindings = <&mo>, <&tog>;
 
             #binding-cells = <2>;

@@ -141,8 +141,6 @@
             label = "Call, respond call, start call";
             #binding-cells = <0>;
             bindings = <&mst_go_call>, <&kp LS(LC(J))>, <&kp LA(LS(A))>;
-
-            tapping-term-ms = <200>;
         };
 
         layer_mo_tog: layer_mo_tog {
@@ -387,6 +385,13 @@
             bindings = <&kt LEFT_WIN &kp N1 &kp NUMBER_1 &kt LEFT_WIN>;
             label = "MST_GO_CALL";
         };
+
+        mst_reply_current_msg: mst_reply_current_msg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER &kp TAB &kp TAB &kp ENTER>;
+            label = "MST_REPLY_CURRENT_MSG";
+        };
     };
 
     combos {
@@ -419,11 +424,13 @@
         combo_mst_available {
             bindings = <&mst_available>;
             key-positions = <41 42>;
+            layers = <6>;
         };
 
         combo_mst_brb {
             bindings = <&mst_brb>;
             key-positions = <42 43>;
+            layers = <6>;
         };
     };
 

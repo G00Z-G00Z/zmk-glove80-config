@@ -2,10 +2,13 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+ *  
+ * Important notes, labels cannot be long
  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
@@ -27,14 +30,6 @@
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
         // Configure it as a tap dance, so the first tap (or hold) is a &mo and the second tap is a &to
-
-        layer_td: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo 0>, <&to 0>;
-        };
 
         magic: magic_hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -115,7 +110,60 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SELEC_ALL_COPY_ALL_TP";
             #binding-cells = <0>;
-            bindings = <&kp LC(A)>, <&select_and_copy_all>;
+            bindings = <&kp LC(A)>, <&select_and_copy_all>, <&select_all_cut>;
+        };
+
+        screenshot_td: screenshot_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCREENSHOT_TD";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp PRINTSCREEN>;
+        };
+
+        key_tog_hold: key_tog_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "KEY_TOG_HOLD";
+            bindings = <&kp>, <&kt>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        mst_show_screen_vid_td: mst_show_screen_vid_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Show screen and toggle video";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(E))>, <&kp LS(LC(O))>;
+        };
+
+        mst_call_cmds_td: mst_call_cmds_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MST_CALL_CMDS_TD";
+            #binding-cells = <0>;
+            bindings = <&mst_go_call>, <&kp LS(LC(J))>, <&kp LA(LS(A))>;
+        };
+
+        layer_mo_tog: layer_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Hold for mo and tap tog";
+            bindings = <&mo>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        mst_reply_td: mst_reply_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MST_REPLY_TD";
+            #binding-cells = <0>;
+            bindings = <&mst_reply_current_msg>, <&kp LA(LS(R))>;
+        };
+
+        mst_react_td: mst_react_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MST_REACT_TD";
+            #binding-cells = <0>;
+            bindings = <&mst_react_happy>, <&kp LC(LA(R))>;
         };
     };
 
@@ -297,28 +345,93 @@
         select_and_copy_all: select_and_copy_all {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(A) &copy>;
+            bindings = <&kp LC(A) &kp LC(C) &kp RIGHT>;
             label = "SELECT_AND_COPY_ALL";
+        };
+
+        select_all_cut: select_all_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A) &kp LC(X) &kp RIGHT>;
+            label = "SELECT_ALL_CUT";
+        };
+
+        // Microsoft Teams (mst) layer macros
+
+        mst_available: mst_available {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp A &kp V &kp A &kp I &kp L &kp A &kp B &kp L &kp E &kp ENTER>;
+            label = "mst_AVAILABLE";
+        };
+
+        mst_busy: mst_busy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp B &kp U &kp S &kp Y &kp ENTER>;
+            label = "mst_BUSY";
+        };
+
+        mst_brb: mst_brb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp B &kp R &kp B &kp ENTER>;
+            label = "mst_BRB";
+        };
+
+        mst_offline: mst_offline {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp O &kp F &kp F &kp L &kp I &kp N &kp E &kp ENTER>;
+            label = "mst_OFFLINE";
+        };
+
+        mst_away: mst_away {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SLASH) &kp A &kp W &kp A &kp Y &kp ENTER>;
+            label = "mst_AWAY";
+        };
+
+        mst_go_call: mst_go_call {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_WIN &kp N1 &kp NUMBER_1 &kt LEFT_WIN>;
+            label = "MST_GO_CALL";
+        };
+
+        mst_reply_current_msg: mst_reply_current_msg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER &kp TAB &kp ENTER>;
+            label = "MST_REPLY_CURRENT_MSG";
+        };
+
+        mst_react_happy: mst_react_happy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER &kp ENTER &kp ESCAPE>;
+            label = "MST_REACT_HAPPY";
         };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        // In cursor layer: w + l (vim like)
+        // w + l (vim like) to switch to workspace in the right
 
         combo_win_desktop_right {
             bindings = <&win_desktop_right>;
             key-positions = <43 24>;
-            layers = <3>;
+            require-prior-idle-ms = <100>;
         };
 
-        // In cursor layer: w + h (vim like)
+        // w + h (vim like) to switch to workspace in the left
 
         combo_win_desktop_left {
             bindings = <&win_desktop_left>;
             key-positions = <40 24>;
-            layers = <3>;
+            require-prior-idle-ms = <100>;
         };
 
         // WIN + Q becomes ALT + F4 (closes any app)
@@ -327,6 +440,18 @@
             bindings = <&close_app>;
             key-positions = <44 23>;
             require-prior-idle-ms = <100>;
+        };
+
+        combo_mst_available {
+            bindings = <&mst_available>;
+            key-positions = <41 42>;
+            layers = <6>;
+        };
+
+        combo_mst_brb {
+            bindings = <&mst_brb>;
+            key-positions = <42 43>;
+            layers = <6>;
         };
     };
 
@@ -343,23 +468,108 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1         &kp F2          &kp F3          &kp F4              &kp F5                                                                                                                                                             &kp F6             &kp F7               &kp F8           &kp F9              &kp F10
-&kp EQUAL      &kp N1          &kp N2          &kp N3              &kp N4            &kp N5                                                                                                                                  &kp N6   &kp N7             &kp N8               &kp N9           &kp N0              &kp MINUS
-&kp TAB        &kp Q           &kp W           &kp E               &kp R             &kp T                                                                                                                                   &kp Y    &kp U              &kp I                &kp O            &kp P               &kp BSLH
-&caps_word_tp  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F  &lt 2 G                                                                                                                                 &lt 2 H  &mt RIGHT_SHIFT J  &mt RIGHT_CONTROL K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &kp SQT
-&kp GRAVE      &kp Z           &kp X           &kp C               &kp V             &kp B    &lt 6 ESCAPE     &key_repeat    &sk LS(LA(LC(LCTRL)))             &sk LS(LA(LC(LEFT_CONTROL)))       &key_repeat  &lt 5 ENTER  &kp N    &kp M              &kp COMMA            &kp DOT          &kp FSLH            &kp RSHFT
-&magic 1 0     &kp HOME        &kp PG_UP       &kp PG_DN           &kp END                    &lt 3 BACKSPACE  &lt 11 DELETE  &sticky_lower_layer 9 LEFT_SHIFT  &sticky_lower_layer 9 RIGHT_SHIFT  &kp TAB      &lt 4 SPACE           &kp LS(LPAR)       &kp LBKT             &kp RBKT         &kp LS(RPAR)        &magic 1 0
+&kp F1         &kp F2             &kp F3          &kp F4              &kp F5                                                                                                                                                              &kp F6             &kp F7               &kp F8           &kp F9              &kp F10
+&kp EQUAL      &kp N1             &kp N2          &kp N3              &kp N4              &kp N5                                                                                                                                 &kp N6   &kp N7             &kp N8               &kp N9           &kp N0              &kp MINUS
+&kp TAB        &kp Q              &kp W           &kp E               &kp R               &kp T                                                                                                                                  &kp Y    &kp U              &kp I                &kp O            &kp P               &kp BSLH
+&caps_word_tp  &mt LEFT_GUI A     &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F    &lt 9 G                                                                                                                                &lt 9 H  &mt RIGHT_SHIFT J  &mt RIGHT_CONTROL K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &screenshot_td
+&kp GRAVE      &kp Z              &kp X           &kp C               &kp V               &kp B    &lt 4 ESCAPE     &key_repeat   &sk LS(LA(LC(LCTRL)))             &sk LS(LA(LC(LEFT_CONTROL)))       &key_repeat  &lt 5 ENTER  &kp N    &kp M              &kp COMMA            &kp DOT          &kp FSLH            &kp RSHFT
+&magic 10 0    &win_desktop_left  &kp LC(PG_UP)   &kp LC(PG_DN)       &win_desktop_right           &lt 1 BACKSPACE  &lt 3 DELETE  &sticky_lower_layer 7 LEFT_SHIFT  &sticky_lower_layer 7 RIGHT_SHIFT  &kp TAB      &lt 2 SPACE           &kp LS(LPAR)       &kp LBKT             &kp RBKT         &kp LS(RPAR)        &magic 10 0
             >;
         };
 
-        magic_layer {
+        cursor_layer {
             bindings = <
-&bt BT_CLR   &none            &none            &none            &none                                                                                     &none  &none  &none  &none  &bt BT_CLR_ALL
-&none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
-&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
-&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
-&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
+&trans     &trans             &trans        &trans        &trans                                                                                                                                               &trans       &trans         &trans     &trans     &trans
+&kp ESC    &kp RET            &kp SPACE     &kp TAB       &kp DEL                              &kp INSERT                                                                                         &kp INSERT   &kp DEL      &kp TAB        &kp SPACE  &kp RET    &kp ESC
+&kp LC(K)  &layer_mo_tog 6 6  &redo         &undo         &kp BSPC                             &cut                                                                                               &kp LG(TAB)  &kp LA(TAB)  &undo          &redo      &cut       &kp LC(K)
+&kp LC(L)  &kp LGUI           &kp LALT      &kp LCTRL     &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &copy                                                                                              &kp LEFT     &kp DOWN     &kp UP         &kp RIGHT  &copy      &kp LC(L)
+&kp LC(J)  &key_repeat        &kp SPACE     &kp ENTER     &kp BACKSPACE                        &paste      &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none            &extend_line  &extend_word  &kp HOME     &kp PG_DN    &kp PG_UP      &kp END    &paste     &kp LC(J)
+&kp LC(H)  &kp LS(LC(G))      &extend_line  &extend_word  &kp LC(G)                                        &none        &kp LC(TAB)  &tog 1   &selec_all_copy_all_tp  &select_line  &select_word               &kp LC(F)    &kp LC(LS(G))  &kp LC(G)  &kp LC(H)  &kp LG(DOT)
+            >;
+        };
+
+        symbols_layer {
+            bindings = <
+&none            &none           &none                 &none                  &none                                                                                                                &none                 &none        &none     &none                  &none
+&none            &kp GRAVE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON     &kp COMMA                                                                           &none          &none                 &none        &none     &none                  &none
+&kp EXCLAMATION  &kp LEFT_BRACE  &kp SQT               &kp DOUBLE_QUOTES      &kp RIGHT_BRACE   &kp QUESTION                                                                        &kp SEMICOLON  &kp LSHFT             &kp LCTRL    &kp LALT  &kp RIGHT_GUI          &none
+&kp HASH         &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR        &kp ASTERISK                                                                        &kp DOT        &kp SPACE             &kp BSPC     &kp TAB   &kp RET                &none
+&kp AT_SIGN      &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp NON_US_BACKSLASH  &kp SLASH    &kp PERIOD  &kp ASTERISK   &none   &none  &none  &kp FSLH       &kp DEL               &kp LS(TAB)  &none     &none                  &none
+&kp TILDE        &kp AMPERSAND   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PLUS                                &kp PERCENT  &kp COLON   &kp SEMICOLON  &tog 2  &none  &none                 &kp LEFT_PARENTHESIS  &kp LBKT     &kp RBKT  &kp RIGHT_PARENTHESIS  &none
+            >;
+        };
+
+        number_layer {
+            bindings = <
+&none           &none         &none         &none             &none                                                                                                            &none     &none      &none     &none      &none
+&kp ESC         &kp RET       &kp SPACE     &kp TAB           &kp DEL                              &kp INSERT                                                       &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
+&none           &kp LSHFT     &redo         &undo             &kp BSPC                             &kp SPACE                                                        &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp K
+&kp KP_NUMLOCK  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &kp B                                                            &kp PLUS   &kp N4    &kp N5     &kp N6    &kp MINUS  &kp J
+&none           &kp LC(A)     &select_line  &select_word      &kp UNDER                            &kp C       &kp D  &kp E  &kp F   &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp SLASH  &kp G
+&none           &none         &extend_line  &extend_word      &kp X                                            &none  &none  &tog 3  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
+            >;
+        };
+
+        function_layer {
+            bindings = <
+&none       &none           &none         &none             &none                                                                                                                        &none                     &none                 &none                 &none                     &none
+&kp ESCAPE  &kp ENTER       &kp SPACE     &kp TAB           &kp DELETE      &kp INSERT                                                                           &kp C_AL_MOVIE_BROWSER  &kp LC(MINUS)             &kp LC(PLUS)          &kp LC(EQUAL)         &kp C_STOP                &kp C_EJECT
+&none       &sk LEFT_SHIFT  &redo         &undo             &kp BACKSPACE   &none                                                                                &kp C_RW                &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
+&caps_word  &kp LEFT_WIN    &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none                                                                                &kp K_CALCULATOR        &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
+&none       &kp LC(A)       &select_line  &select_word      &none           &none       &none  &none  &none   &kp C_PREV  &kp C_NEXT         &play_next_prev_td  &kp C_AL_FILE_BROWSER   &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
+&none       &none           &extend_line  &extend_word      &none                       &none  &none  &tog 4  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                             &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
+            >;
+        };
+
+        system_layer {
+            bindings = <
+&none            &none            &none            &none            &none                                                                                                                         &none               &none            &none            &none            &none
+&none            &none            &none            &none            &none            &none                                                                                       &none            &none               &none            &none            &none            &none
+&none            &none            &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &none            &none                                                                                       &rgb_ug RGB_SAI  &kp LSHFT           &kp LCTRL        &kp LALT         &kp RIGHT_GUI    &rgb_ug RGB_SAD
+&rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &kp K_CONTEXT_MENU                                                                          &rgb_ug RGB_HUI  &kp K_CONTEXT_MENU  &kp LG(ESCAPE)   &kp LG(L)        &kp LC(LA(DEL))  &rgb_ug RGB_HUD
+&none            &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &none               &kp LG(L)        &kp LG(ESCAPE)  &kp LC(LA(DEL))  &none   &none  &none  &rgb_ug RGB_SPI  &rgb_ug RGB_TOG     &kp PRINTSCREEN  &kp SCROLLLOCK   &kp PAUSE_BREAK  &rgb_ug RGB_SPD
+&none            &none            &none            &none            &none                                &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &tog 5  &none  &none                   &rgb_ug RGB_EFF     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &none
+            >;
+        };
+
+        teams_layer {
+            bindings = <
+&none  &none  &none             &none             &none                                                                                                                                &none              &none              &none           &none          &none
+&none  &none  &kp LC(N1)        &kp LC(N2)        &kp LC(N3)         &kp LC(N4)                                                                                         &kp LG(N1)     &kp LA(LS(EQUAL))  &kp LA(LS(MINUS))  &kp LA(LS(N0))  &none          &none
+&none  &none  &none             &kp LS(LA(UP))    &none              &none                                                                                              &kp LC(LA(U))  &mst_react_td      &kp LC(R)          &mst_reply_td   &kp LA(LS(N))  &none
+&none  &none  &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                                              &kp LC(L)      &kp DOWN           &kp UP             &kp LC(M)       &kp LC(J)      &none
+&none  &none  &kp LA(N1)        &kp LA(N2)        &kp LA(N3)         &kp LA(N4)  &none  &none  &none   &kp LG(N1)         &mst_show_screen_vid_td  &kp LC(LS(K))        &mst_offline   &mst_available     &mst_brb           &mst_away       &kp LC(SLASH)  &none
+&none  &none  &none             &none             &none                          &none  &none  &tog 6  &mst_call_cmds_td  &kp LC(LS(H))            &mt SPACE LS(LC(M))                 &kp LC(F)          &mst_busy          &kp LG(N1)      &none          &none
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+&kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT  &kp C_PP                                                                                                                        &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none            &kp PAUSE_BREAK
+&none         &none         &none       &my_email   &none      &kp HOME                                                                                                  &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
+&none         &tog 10       &none       &kp UP      &none      &kp END                                                                                                   &kp RPAR   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp SLCK
+&none         &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                                                                 &kp PRCNT  &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &none
+&none         &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &tog 4  &none   &none                        &none                              &none  &tog 5  &kp COMMA  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &none
+&magic 0 0    &kp CAPS      &kp INS     &kp F11     &kp F12               &tog 1  &tog 3  &sticky_lower_layer 7 LSHFT  &sticky_lower_layer 7 RIGHT_SHIFT  &none  &tog 2             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &magic 0 0
+            >;
+        };
+
+        gaming_layer {
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  F1   |  F2 |  F3 |  F4  |  F5  |                                                               |  F6   |  F7   |  F8  |   F9  |  F10 |
+            // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                                                 |  Y   |   U   |   I   |  O   |   P   |   \  |
+            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                                                 |  H   |   J   |   K   |  L   |   ;   |   '  |
+            // |   `   |  Z  |  X  |  C   |  V   |  B   | LSHFT | LCTRL | LOWER | | LGUI  | RCTRL | RSHFT |  N   |   M   |   ,   |  .   |   /   | PGUP |
+            // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
+
+            bindings = <
+&kp F1         &kp F2    &kp F3     &kp F4     &kp F5                                                                                                                              &kp F6        &kp F7     &kp F8    &kp F9        &kp F10
+&kp EQUAL      &kp N1    &kp N2     &kp N3     &kp N4   &kp N5                                                                                                             &kp N6  &kp N7        &kp N8     &kp N9    &kp N0        &kp MINUS
+&kp TAB        &kp Q     &kp W      &kp E      &kp R    &kp T                                                                                                              &kp Y   &kp U         &kp I      &kp O     &kp P         &kp BSLH
+&caps_word_tp  &kp A     &kp S      &kp D      &kp F    &kp G                                                                                                              &kp H   &kp J         &kp K      &kp L     &kp SEMI      &kp SQT
+&kp GRAVE      &kp Z     &kp X      &kp C      &kp V    &kp B   &kp ESC   &kp LS(LA(LCTRL))  &kp LS(LG(LA(LCTRL)))  &kp LS(LG(LA(RCTRL)))  &kp LS(LA(RCTRL))  &kp RET      &kp N   &kp M         &kp COMMA  &kp DOT   &kp FSLH      &kp RSHFT
+&magic 0 0     &kp HOME  &kp PG_UP  &kp PG_DN  &kp END          &kp BSPC  &kp DEL            &kp LSHFT              &kp LSHFT              &kp TAB            &lt 3 SPACE          &kp LS(LPAR)  &kp LBKT   &kp RBKT  &kp LS(RPAR)  &magic 0 0
             >;
         };
 
@@ -374,66 +584,14 @@
             >;
         };
 
-        cursor_layer {
+        magic_layer {
             bindings = <
-&trans     &trans         &trans        &trans        &trans                                                                                                                  &trans     &trans         &trans     &trans     &trans
-&kp ESC    &kp RET        &kp SPACE     &kp TAB       &kp DEL    &kp INSERT                                                                                       &kp INSERT  &kp DEL    &kp TAB        &kp SPACE  &kp RET    &kp ESC
-&kp LC(K)  &sk LSHFT      &redo         &undo         &kp BSPC   &cut                                                                                             &sk LSHFT   &kp BSPC   &undo          &redo      &cut       &kp LC(K)
-&kp LC(L)  &kp LGUI       &kp LALT      &kp LCTRL     &kp LSHFT  &copy                                                                                            &kp LEFT    &kp DOWN   &kp UP         &kp RIGHT  &copy      &kp LC(L)
-&kp LC(J)  &kp LC(A)      &select_line  &select_word  &kp LC(F)  &paste      &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none          &extend_line  &extend_word  &kp HOME    &kp PG_DN  &kp PG_UP      &kp END    &paste     &kp LC(J)
-&kp LC(H)  &kp LS(LC(G))  &extend_line  &extend_word  &kp LC(G)              &none        &kp LC(TAB)  &tog 3   &select_and_copy_all  &select_line  &select_word              &kp LC(F)  &kp LC(LS(G))  &kp LC(G)  &kp LC(H)  &kp LG(DOT)
-            >;
-        };
-
-        symbols_layer {
-            bindings = <
-&none            &none           &none                 &none                  &none                                                                                                                 &none                 &none        &none     &none                  &none
-&none            &kp GRAVE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON     &kp COMMA                                                                            &none          &none                 &none        &none     &none                  &none
-&kp EXCLAMATION  &kp LEFT_BRACE  &kp SQT               &kp DOUBLE_QUOTES      &kp RIGHT_BRACE   &kp QUESTION                                                                         &kp SEMICOLON  &kp LSHFT             &kp LCTRL    &kp LALT  &kp RIGHT_GUI          &none
-&kp HASH         &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR        &kp ASTERISK                                                                         &kp DOT        &kp SPACE             &kp BSPC     &kp TAB   &kp RET                &none
-&kp AT_SIGN      &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp NON_US_BACKSLASH  &kp SLASH    &kp PERIOD  &kp ASTERISK   &none    &none  &none  &kp FSLH       &kp DEL               &kp LS(TAB)  &none     &none                  &none
-&kp TILDE        &kp AMPERSAND   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PLUS                                &kp PERCENT  &kp COLON   &kp SEMICOLON  &tog 10  &none  &none                 &kp LEFT_PARENTHESIS  &kp LBKT     &kp RBKT  &kp RIGHT_PARENTHESIS  &none
-            >;
-        };
-
-        system_layer {
-            bindings = <
-&none            &none            &none            &none            &none                                                                                                                         &none               &none            &none            &none            &none
-&none            &none            &none            &none            &none            &none                                                                                       &none            &none               &none            &none            &none            &none
-&none            &none            &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &none            &none                                                                                       &rgb_ug RGB_SAI  &kp LSHFT           &kp LCTRL        &kp LALT         &kp RIGHT_GUI    &rgb_ug RGB_SAD
-&rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &kp K_CONTEXT_MENU                                                                          &rgb_ug RGB_HUI  &kp K_CONTEXT_MENU  &kp LG(ESCAPE)   &kp LG(L)        &kp LC(LA(DEL))  &rgb_ug RGB_HUD
-&none            &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &none               &kp LG(ESCAPE)   &kp LG(L)       &kp LC(LA(DEL))  &none   &none  &none  &rgb_ug RGB_SPI  &rgb_ug RGB_TOG     &kp PRINTSCREEN  &kp SCROLLLOCK   &kp PAUSE_BREAK  &rgb_ug RGB_SPD
-&none            &none            &none            &none            &none                                &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &tog 5  &none  &none                   &rgb_ug RGB_EFF     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &none
-            >;
-        };
-
-        function_layer {
-            bindings = <
-&none       &none           &none         &none             &none                                                                                                                        &none                     &none                 &none                 &none                     &none
-&kp ESCAPE  &kp ENTER       &kp SPACE     &kp TAB           &kp DELETE      &kp INSERT                                                                           &kp C_AL_MOVIE_BROWSER  &none                     &none                 &none                 &kp C_STOP                &kp C_EJECT
-&none       &sk LEFT_SHIFT  &redo         &undo             &kp BACKSPACE   &none                                                                                &kp C_RW                &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
-&caps_word  &kp LEFT_WIN    &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none                                                                                &kp K_CALCULATOR        &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
-&none       &kp LC(A)       &select_line  &select_word      &none           &none       &none  &none  &none   &kp C_PREV  &kp C_NEXT         &play_next_prev_td  &kp C_AL_FILE_BROWSER   &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
-&none       &none           &extend_line  &extend_word      &none                       &none  &none  &tog 6  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                             &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
-            >;
-        };
-
-        gaming_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |                                                               |  F6   |  F7   |  F8  |   F9  |  F10 |
-            // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                                                 |  Y   |   U   |   I   |  O   |   P   |   \  |
-            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                                                 |  H   |   J   |   K   |  L   |   ;   |   '  |
-            // |   `   |  Z  |  X  |  C   |  V   |  B   | LSHFT | LCTRL | LOWER | | LGUI  | RCTRL | RSHFT |  N   |   M   |   ,   |  .   |   /   | PGUP |
-            // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
-
-            bindings = <
-&kp F1         &kp F2    &kp F3     &kp F4     &kp F5                                                                                                                               &kp F6        &kp F7     &kp F8    &kp F9        &kp F10
-&kp EQUAL      &kp N1    &kp N2     &kp N3     &kp N4   &kp N5                                                                                                              &kp N6  &kp N7        &kp N8     &kp N9    &kp N0        &kp MINUS
-&kp TAB        &kp Q     &kp W      &kp E      &kp R    &kp T                                                                                                               &kp Y   &kp U         &kp I      &kp O     &kp P         &kp BSLH
-&caps_word_tp  &kp A     &kp S      &kp D      &kp F    &kp G                                                                                                               &kp H   &kp J         &kp K      &kp L     &kp SEMI      &kp SQT
-&kp GRAVE      &kp Z     &kp X      &kp C      &kp V    &kp B   &kp ESC   &kp LS(LA(LCTRL))  &kp LS(LG(LA(LCTRL)))  &kp LS(LG(LA(RCTRL)))  &kp LS(LA(RCTRL))  &kp RET       &kp N   &kp M         &kp COMMA  &kp DOT   &kp FSLH      &kp RSHFT
-&magic 1 0     &kp HOME  &kp PG_UP  &kp PG_DN  &kp END          &kp BSPC  &kp DEL            &kp LSHFT              &kp LSHFT              &kp TAB            &lt 10 SPACE          &kp LS(LPAR)  &kp LBKT   &kp RBKT  &kp LS(RPAR)  &magic 1 0
+&bt BT_CLR   &none            &none            &none            &none                                                                                     &none  &none  &none  &none  &bt BT_CLR_ALL
+&none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
+&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
+&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
+&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
         };
 
@@ -447,23 +605,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1         &kp F2    &kp F3     &kp F4     &kp F5                                                                                                                               &kp F6        &kp F7     &kp F8    &kp F9        &kp F10
-&kp EQUAL      &kp N1    &kp N2     &kp N3     &kp N4   &kp N5                                                                                                              &kp N6  &kp N7        &kp N8     &kp N9    &kp N0        &kp MINUS
-&kp TAB        &kp Q     &kp W      &kp E      &kp R    &kp T                                                                                                               &kp Y   &kp U         &kp I      &kp O     &kp P         &kp BSLH
-&caps_word_tp  &kp A     &kp S      &kp D      &kp F    &kp G                                                                                                               &kp H   &kp J         &kp K      &kp L     &kp SEMI      &kp SQT
-&kp GRAVE      &kp Z     &kp X      &kp C      &kp V    &kp B   &kp ESC   &kp LS(LA(LCTRL))  &kp LS(LG(LA(LCTRL)))  &kp LS(LG(LA(RCTRL)))  &kp LS(LA(RCTRL))  &kp RET       &kp N   &kp M         &kp COMMA  &kp DOT   &kp FSLH      &kp RSHFT
-&magic 1 0     &kp HOME  &kp PG_UP  &kp PG_DN  &kp END          &kp BSPC  &kp DEL            &kp LSHFT              &kp LSHFT              &kp TAB            &lt 10 SPACE          &kp LS(LPAR)  &kp LBKT   &kp RBKT  &kp LS(RPAR)  &magic 1 0
-            >;
-        };
-
-        lower_layer {
-            bindings = <
-&kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT  &kp C_PP                                                                                                                          &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none            &kp PAUSE_BREAK
-&none         &none         &none       &my_email   &none      &kp HOME                                                                                                    &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
-&none         &none         &none       &kp UP      &none      &kp END                                                                                                     &kp RPAR   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp SLCK
-&none         &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                                                                   &kp PRCNT  &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &none
-&none         &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &tog 6  &none    &none                        &none                              &none  &tog 5   &kp COMMA  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &none
-&magic 1 0    &kp CAPS      &kp INS     &kp F11     &kp F12               &tog 3  &tog 11  &sticky_lower_layer 9 LSHFT  &sticky_lower_layer 9 RIGHT_SHIFT  &none  &tog 10             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &magic 1 0
+&kp F1         &kp F2    &kp F3     &kp F4     &kp F5                                                                                                                              &kp F6        &kp F7     &kp F8    &kp F9        &kp F10
+&kp EQUAL      &kp N1    &kp N2     &kp N3     &kp N4   &kp N5                                                                                                             &kp N6  &kp N7        &kp N8     &kp N9    &kp N0        &kp MINUS
+&kp TAB        &kp Q     &kp W      &kp E      &kp R    &kp T                                                                                                              &kp Y   &kp U         &kp I      &kp O     &kp P         &kp BSLH
+&caps_word_tp  &kp A     &kp S      &kp D      &kp F    &kp G                                                                                                              &kp H   &kp J         &kp K      &kp L     &kp SEMI      &kp SQT
+&kp GRAVE      &kp Z     &kp X      &kp C      &kp V    &kp B   &kp ESC   &kp LS(LA(LCTRL))  &kp LS(LG(LA(LCTRL)))  &kp LS(LG(LA(RCTRL)))  &kp LS(LA(RCTRL))  &kp RET      &kp N   &kp M         &kp COMMA  &kp DOT   &kp FSLH      &kp RSHFT
+&magic 0 0     &kp HOME  &kp PG_UP  &kp PG_DN  &kp END          &kp BSPC  &kp DEL            &kp LSHFT              &kp LSHFT              &kp TAB            &lt 3 SPACE          &kp LS(LPAR)  &kp LBKT   &kp RBKT  &kp LS(RPAR)  &magic 0 0
             >;
         };
 
@@ -475,17 +622,6 @@
 &kp N3  &kp N9  &kp N5  &kp N1  &kp N7  &kp N2                                                  &kp N2  &kp N7  &kp N1  &kp N5  &kp N9  &kp N3
 &kp N4  &kp N0  &kp N6  &kp N2  &kp N8  &kp N3  &kp N4  &kp N5  &kp N6  &kp N6  &kp N5  &kp N4  &kp N3  &kp N8  &kp N2  &kp N6  &kp N0  &kp N4
 &kp N5  &kp N1  &kp N7  &kp N3  &kp N9          &kp N7  &kp N8  &kp N9  &kp N9  &kp N8  &kp N7          &kp N9  &kp N3  &kp N7  &kp N1  &kp N5
-            >;
-        };
-
-        number_layer {
-            bindings = <
-&none           &none         &none         &none             &none                                                                                        &none     &none      &none     &none      &none
-&kp ESC         &kp RET       &kp SPACE     &kp TAB           &kp DEL         &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
-&none           &kp LSHFT     &kp LC(Y)     &kp LC(U)         &kp BSPC        &kp A                                                             &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp K
-&kp KP_NUMLOCK  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp B                                                             &kp PLUS   &kp N4    &kp N5     &kp N6    &kp MINUS  &kp J
-&none           &kp LC(A)     &select_line  &select_word      &kp UNDER       &kp C       &kp D  &kp E  &kp F    &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp SLASH  &kp G
-&none           &none         &extend_line  &extend_word      &kp X                       &none  &none  &tog 11  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
             >;
         };
     };

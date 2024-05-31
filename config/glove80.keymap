@@ -518,7 +518,7 @@
         cursor_layer {
             bindings = <
 &trans     &trans             &trans        &trans        &trans                                                                                                                                               &trans       &trans         &trans     &trans     &trans
-&kp ESC    &kp RET            &kp SPACE     &kp TAB       &kp DEL                              &kp INSERT                                                                                         &kp INSERT   &kp DEL      &kp TAB        &kp SPACE  &kp RET    &kp ESC
+&kp ESC    &kp RET            &kp SPACE     &kp TAB       &kp DEL                              &kp INSERT                                                                                         &kp INSERT   &kp K_MENU   &kp TAB        &kp SPACE  &kp RET    &kp ESC
 &kp LC(K)  &layer_mo_tog 6 6  &redo         &undo         &kp BSPC                             &cut                                                                                               &kp LG(TAB)  &kp LA(TAB)  &undo          &redo      &cut       &kp LC(K)
 &kp LC(L)  &kp LGUI           &kp LALT      &kp LCTRL     &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &copy                                                                                              &kp LEFT     &kp DOWN     &kp UP         &kp RIGHT  &copy      &kp LC(L)
 &kp LC(J)  &key_repeat        &kp SPACE     &kp ENTER     &kp BACKSPACE                        &paste      &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none            &extend_line  &extend_word  &kp HOME     &kp PG_DN    &kp PG_UP      &kp END    &paste     &kp LC(J)

@@ -570,7 +570,7 @@
             >;
         };
 
-        teams_layer {
+        teams_mst_layer {
             bindings = <
 &none   &none       &none             &none             &none                                                                                                                                    &none              &none              &none           &none          &none
 &none   &kp LC(N1)  &kp LC(N2)        &kp LC(N3)        &kp LC(N4)         &kp LC(N5)                                                                                             &kp LG(N1)     &kp LA(LS(EQUAL))  &kp LA(LS(MINUS))  &kp LA(LS(N0))  &none          &none

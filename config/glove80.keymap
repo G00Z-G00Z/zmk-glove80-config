@@ -577,7 +577,7 @@
 &none  &tog 6      &none             &kp LS(LA(UP))    &none              &none                                                                                                  &kp LC(LA(U))  &mst_react_td      &kp LC(R)          &mst_reply_td   &kp LA(LS(N))  &none
 &none  &none       &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                                                  &kp LC(L)      &kp DOWN           &kp UP             &kp LC(M)       &kp LC(J)      &none
 &none  &kp LA(N1)  &kp LA(N2)        &kp LA(N3)        &kp LA(N4)         &kp LA(N5)  &tog 6  &none  &none  &kp LG(N1)         &mst_show_screen_vid_td  &kp LC(LS(K))            &mst_offline   &mst_available     &mst_brb           &mst_away       &kp LC(SLASH)  &none
-&none  &none       &none             &none             &none                          &mo 1   &none  &none  &mst_call_cmds_td  &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                 &kp LC(F)          &mst_busy          &kp LG(N1)      &none          &none
+&none  &none       &none             &none             &none                          &none   &none  &none  &mst_call_cmds_td  &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                 &kp LC(F)          &mst_busy          &kp LG(N1)      &none          &none
             >;
         };
 

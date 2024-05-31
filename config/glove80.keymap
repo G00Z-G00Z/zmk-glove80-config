@@ -180,9 +180,9 @@
             hold-trigger-on-release;
         };
 
-        hmr_right: hmr_right {
+        hrm_right: hrm_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR_RIGHT";
+            label = "HRM_RIGHT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -544,7 +544,7 @@
 &kp F1         &kp F2             &kp F3          &kp F4              &kp F5                                                                                                                                                              &kp F6             &kp F7               &kp F8           &kp F9              &kp F10
 &kp EQUAL      &kp N1             &kp N2          &kp N3              &kp N4              &kp N5                                                                                                                                 &kp N6   &kp N7             &kp N8               &kp N9           &kp N0              &kp MINUS
 &kp TAB        &kp Q              &kp W           &kp E               &kp R               &kp T                                                                                                                                  &kp Y    &kp U              &kp I                &kp O            &kp P               &kp BSLH
-&caps_word_tp  &mt LEFT_GUI A     &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F    &lt 9 G                                                                                                                                &lt 9 H  &mt RIGHT_SHIFT J  &mt RIGHT_CONTROL K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &screenshot_td
+&caps_word_tp  &hrm_left LEFT_GUI A     &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hrm_left LEFT_SHIFT F    &lt 9 G                                                                                                                                &lt 9 H  &hrm_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &screenshot_td
 &kp GRAVE      &kp Z              &kp X           &kp C               &kp V               &kp B    &lt 4 ESCAPE     &key_repeat   &sk LS(LA(LC(LCTRL)))             &sk LS(LA(LC(LEFT_CONTROL)))       &key_repeat  &lt 5 ENTER  &kp N    &kp M              &kp COMMA            &kp DOT          &kp FSLH            &kp RSHFT
 &magic 10 0    &win_desktop_left  &kp LC(PG_UP)   &kp LC(PG_DN)       &win_desktop_right           &lt 1 BACKSPACE  &lt 3 DELETE  &sticky_lower_layer 7 LEFT_SHIFT  &sticky_lower_layer 7 RIGHT_SHIFT  &kp TAB      &lt 2 SPACE           &kp LS(LPAR)       &kp LBKT             &kp RBKT         &kp LS(RPAR)        &magic 10 0
             >;

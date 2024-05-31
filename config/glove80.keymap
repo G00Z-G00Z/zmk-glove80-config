@@ -17,11 +17,6 @@
 
 // layers
 
-&mt {
-    flavor = "tap-preferred";
-    quick-tap-ms = <300>;
-};
-
 &key_repeat { usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>; };
 
 &lt { quick-tap-ms = <300>; };

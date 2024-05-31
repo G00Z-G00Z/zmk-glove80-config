@@ -17,14 +17,7 @@
 
 // layers
 
-&mt {
-    flavor = "tap-preferred";
-    quick-tap-ms = <300>;
-};
-
 &key_repeat { usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>; };
-
-&lt { quick-tap-ms = <300>; };
 
 / {
     behaviors {
@@ -164,6 +157,45 @@
             label = "MST_REACT_TD";
             #binding-cells = <0>;
             bindings = <&mst_react_happy>, <&mst_react_last_msg>;
+        };
+
+        hrm_left: hrm_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <125>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <55 56 57 72 73 74 40 58 28 16 6 7 8 9 18 19 20 21 30 31 32 33 42 43 44 45 60 61 62 63 76 77 78 79 5 6 17 18 29 30 41 42 59 60 75 76 52 53 54 70 71 69>;
+            hold-trigger-on-release;
+        };
+
+        hrm_right: hrm_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <125>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <0 2 3 4 14 13 12 10 11 1 22 23 35 34 46 47 64 65 66 67 68 69 70 71 54 53 52 50 48 49 37 36 24 25 26 15 39 38 27 51 55 56 57 74 73 72>;
+            hold-trigger-on-release;
+        };
+
+        lt_thumbs_keys: lt_thumbs_keys {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_THUMBS_KEYS";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <300>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -513,12 +545,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1         &kp F2             &kp F3          &kp F4              &kp F5                                                                                                                                                              &kp F6             &kp F7               &kp F8           &kp F9              &kp F10
-&kp EQUAL      &kp N1             &kp N2          &kp N3              &kp N4              &kp N5                                                                                                                                 &kp N6   &kp N7             &kp N8               &kp N9           &kp N0              &kp MINUS
-&kp TAB        &kp Q              &kp W           &kp E               &kp R               &kp T                                                                                                                                  &kp Y    &kp U              &kp I                &kp O            &kp P               &kp BSLH
-&caps_word_tp  &mt LEFT_GUI A     &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F    &lt 9 G                                                                                                                                &lt 9 H  &mt RIGHT_SHIFT J  &mt RIGHT_CONTROL K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &screenshot_td
-&kp GRAVE      &kp Z              &kp X           &kp C               &kp V               &kp B    &lt 4 ESCAPE     &key_repeat   &sk LS(LA(LC(LCTRL)))             &sk LS(LA(LC(LEFT_CONTROL)))       &key_repeat  &lt 5 ENTER  &kp N    &kp M              &kp COMMA            &kp DOT          &kp FSLH            &kp RSHFT
-&magic 10 0    &win_desktop_left  &kp LC(PG_UP)   &kp LC(PG_DN)       &win_desktop_right           &lt 1 BACKSPACE  &lt 3 DELETE  &sticky_lower_layer 7 LEFT_SHIFT  &sticky_lower_layer 7 RIGHT_SHIFT  &kp TAB      &lt 2 SPACE           &kp LS(LPAR)       &kp LBKT             &kp RBKT         &kp LS(RPAR)        &magic 10 0
+&kp F1         &kp F2                &kp F3                &kp F4                    &kp F5                                                                                                                                                                  &kp F6                    &kp F7                      &kp F8                  &kp F9                     &kp F10
+&kp EQUAL      &kp N1                &kp N2                &kp N3                    &kp N4                  &kp N5                                                                                                                                 &kp N6   &kp N7                    &kp N8                      &kp N9                  &kp N0                     &kp MINUS
+&kp TAB        &kp Q                 &kp W                 &kp E                     &kp R                   &kp T                                                                                                                                  &kp Y    &kp U                     &kp I                       &kp O                   &kp P                      &kp BSLH
+&caps_word_tp  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hrm_left LEFT_SHIFT F  &lt 9 G                                                                                                                                &lt 9 H  &hrm_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &screenshot_td
+&kp GRAVE      &kp Z                 &kp X                 &kp C                     &kp V                   &kp B    &lt_thumbs_keys 4 ESCAPE     &key_repeat   &sk LS(LA(LC(LCTRL)))             &sk LS(LA(LC(LEFT_CONTROL)))       &key_repeat  &lt_thumbs_keys 5 ENTER  &kp N    &kp M                     &kp COMMA                   &kp DOT                 &kp FSLH                   &kp RSHFT
+&magic 10 0    &win_desktop_left     &kp LC(PG_UP)         &kp LC(PG_DN)             &win_desktop_right               &lt_thumbs_keys 1 BACKSPACE  &lt_thumbs_keys 3 DELETE  &sticky_lower_layer 7 LEFT_SHIFT  &sticky_lower_layer 7 RIGHT_SHIFT  &kp TAB      &lt_thumbs_keys 2 SPACE           &kp LS(LPAR)              &kp LBKT                    &kp RBKT                &kp LS(RPAR)               &magic 10 0
             >;
         };
 

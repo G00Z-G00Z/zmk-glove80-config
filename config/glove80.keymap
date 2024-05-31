@@ -110,7 +110,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SELEC_ALL_COPY_ALL_TP";
             #binding-cells = <0>;
-            bindings = <&kp LC(A)>, <&select_and_copy_all>, <&select_all_cut>;
+            bindings = <&select_and_copy_all>, <&select_all_cut>;
         };
 
         screenshot_td: screenshot_td {

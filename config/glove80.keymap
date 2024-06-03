@@ -42,6 +42,7 @@
             bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
         };
 
+        // Caps word and dt for CAPSLOCK 
         caps_word_tp: caps_word_tp {
             compatible = "zmk,behavior-tap-dance";
             label = "CAPS_WORD_TP";
@@ -99,6 +100,7 @@
             tapping-term-ms = <200>;
         };
 
+        // 1t: selet all, 2t: cut all, 3t: copy all
         selec_all_copy_all_tp: selec_all_copy_all_tp {
             compatible = "zmk,behavior-tap-dance";
             label = "SELEC_ALL_COPY_ALL_TP";
@@ -106,6 +108,7 @@
             bindings = <&kp LC(A)>, <&select_all_cut>, <&select_and_copy_all>;
         };
 
+        // dt the ' to screenshot (convinient)
         screenshot_td: screenshot_td {
             compatible = "zmk,behavior-tap-dance";
             label = "SCREENSHOT_TD";
@@ -113,6 +116,7 @@
             bindings = <&kp SQT>, <&kp PRINTSCREEN>;
         };
 
+        // Hold like shift key, and tap to toggle it
         key_tog_hold: key_tog_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "KEY_TOG_HOLD";
@@ -122,6 +126,7 @@
             tapping-term-ms = <200>;
         };
 
+        // 1t: show screen, 2t: toggle camera
         mst_show_screen_vid_td: mst_show_screen_vid_td {
             compatible = "zmk,behavior-tap-dance";
             label = "Show screen and toggle video";
@@ -129,6 +134,7 @@
             bindings = <&kp LS(LC(E))>, <&kp LS(LC(O))>;
         };
 
+        // 1t: go to call window, 2t: answer call from toast, 3t: Call someone from the chat
         mst_call_cmds_td: mst_call_cmds_td {
             compatible = "zmk,behavior-tap-dance";
             label = "MST_CALL_CMDS_TD";
@@ -145,6 +151,7 @@
             tapping-term-ms = <200>;
         };
 
+        // 1t: reply to selcted message, 2t: reply to last message
         mst_reply_td: mst_reply_td {
             compatible = "zmk,behavior-tap-dance";
             label = "MST_REPLY_TD";
@@ -152,12 +159,25 @@
             bindings = <&mst_reply_current_msg>, <&mst_reply_last_msg>;
         };
 
+        // 1t: react happy to selcted message, 2t: react happy to last message
         mst_react_td: mst_react_td {
             compatible = "zmk,behavior-tap-dance";
             label = "MST_REACT_TD";
             #binding-cells = <0>;
             bindings = <&mst_react_happy>, <&mst_react_last_msg>;
         };
+
+        /* 
+        * Home row mods
+        *
+        * This mods allow you to put modifiers in the home row, and be comfortable. Inspiration from: https://github.com/urob/zmk-config
+        *
+        * 1. Do not allow same hand mods (avoids collitions from the same hand)
+        * 2. Quick tapping for tap hold behavior
+        * 3. Hold trigger on release allows you to write fast without activating false positives
+        *
+        * There is a left and right version of the behaviour. You must put them accordingly
+        */
 
         hrm_left: hrm_left {
             compatible = "zmk,behavior-hold-tap";
@@ -187,6 +207,7 @@
             hold-trigger-on-release;
         };
 
+        // Similar to HRM but in thumbs for custom behaviour
         lt_thumbs_keys: lt_thumbs_keys {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_THUMBS_KEYS";
@@ -503,10 +524,11 @@
     };
 
     combos {
+        // IMPORTANT NOTICE: This combos are based in QWERTY layout
+    
         compatible = "zmk,combos";
 
         // w + l (vim like) to switch to workspace in the right
-
         combo_win_desktop_right {
             bindings = <&win_desktop_right>;
             key-positions = <43 24>;
@@ -514,7 +536,6 @@
         };
 
         // w + h (vim like) to switch to workspace in the left
-
         combo_win_desktop_left {
             bindings = <&win_desktop_left>;
             key-positions = <40 24>;
@@ -522,25 +543,33 @@
         };
 
         // WIN + Q becomes ALT + F4 (closes any app)
-
         combo_alt_close_app {
             bindings = <&close_app>;
             key-positions = <44 23>;
             require-prior-idle-ms = <100>;
         };
+        /*
+        *
+        * MST (Microsoft Teams) combos 
+        *
+        * This combos are available in the teams layer
+        * */
 
+        // j + k for putting available status
         combo_mst_available {
             bindings = <&mst_available>;
             key-positions = <41 42>;
             layers = <6>;
         };
 
+        // l + k for putting available brb
         combo_mst_brb {
             bindings = <&mst_brb>;
             key-positions = <42 43>;
             layers = <6>;
         };
 
+        // u+i This toggles temas layer. Available in base layer and teams layer for easy transitioning
         combo_toggle_teams {
             bindings = <&tog 6>;
             key-positions = <29 30>;
@@ -626,6 +655,7 @@
             >;
         };
 
+        // This is the teams layer for shorcuts for the Microsoft Teams desktop app
         teams_mst_layer {
             bindings = <
 &none   &none       &none             &none             &none                                                                                                                                    &none                    &none                    &none           &none                        &none

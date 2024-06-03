@@ -244,6 +244,13 @@
             #binding-cells = <0>;
             bindings = <&paste>, <&copy>, <&cut>;
         };
+
+        lock_td: lock_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LOCK_TD";
+            #binding-cells = <0>;
+            bindings = <&kp LG(L)>, <&kp LG(ESCAPE)>;
+        };
     };
 
     macros {
@@ -650,12 +657,12 @@
 
         function_layer {
             bindings = <
-&none       &none           &none         &none             &none                                                                                                       &none                     &none                 &none                 &none                     &none
-&kp ESCAPE  &kp ENTER       &kp SPACE     &kp TAB           &kp DELETE      &kp INSERT                                                          &kp C_AL_MOVIE_BROWSER  &kp LC(MINUS)             &kp LC(PLUS)          &kp LC(EQUAL)         &kp C_STOP                &kp C_EJECT
-&none       &sk LEFT_SHIFT  &redo         &undo             &kp BACKSPACE   &none                                                               &kp C_RW                &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
-&caps_word  &kp LEFT_WIN    &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none                                                               &kp K_CALCULATOR        &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
-&none       &kp LC(A)       &select_line  &select_word      &none           &none       &none  &none  &none   &none  &none  &play_next_prev_td  &kp C_AL_FILE_BROWSER   &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
-&trans      &none           &extend_line  &extend_word      &none                       &none  &none  &tog 4  &none  &none  &media_control_tp                           &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
+&none       &none           &none         &none             &none                                                                                                         &none                     &none                 &none                 &none                     &none
+&kp ESCAPE  &kp ENTER       &kp SPACE     &kp TAB           &kp DELETE      &kp INSERT                                                            &kp C_AL_MOVIE_BROWSER  &kp LC(MINUS)             &kp LC(PLUS)          &kp LC(EQUAL)         &kp C_STOP                &kp C_EJECT
+&none       &sk LEFT_SHIFT  &redo         &undo             &kp BACKSPACE   &none                                                                 &kp C_RW                &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
+&caps_word  &kp LEFT_WIN    &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none                                                                 &kp K_CALCULATOR        &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
+&none       &kp LC(A)       &select_line  &select_word      &none           &none       &none  &none  &none   &none  &lock_td  &none              &kp C_AL_FILE_BROWSER   &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
+&trans      &none           &extend_line  &extend_word      &none                       &none  &none  &tog 4  &none  &none     &media_control_tp                          &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
             >;
         };
 
@@ -726,12 +733,12 @@
 
         magic_layer {
             bindings = <
-&bt BT_CLR   &none            &none            &none            &none                                                                                     &none  &none  &none  &none  &bt BT_CLR_ALL
-&none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
-&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
-&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
-&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &kp LC(LA(DEL))  &kp LG(ESCAPE)  &kp LG(L)  &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &kp PAUSE_BREAK  &kp SCROLLLOCK  &kp PRINTSCREEN         &none  &none  &none  &none  &to 0
+&bt BT_CLR   &none            &none            &none            &none                                                                                                                  &none  &none  &none  &none  &bt BT_CLR_ALL
+&none        &none            &none            &none            &none            &none                                                                                          &none  &none  &none  &none  &none  &none
+&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                                &none  &none  &none  &none  &none  &none
+&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                                &none  &none  &none  &none  &none  &bootloader
+&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none            &kp LG(ESCAPE)  &kp LG(L)        &none  &none  &none  &none  &none  &sys_reset
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &kp PAUSE_BREAK  &none           &kp PRINTSCREEN         &none  &none  &none  &none  &to 0
             >;
         };
 

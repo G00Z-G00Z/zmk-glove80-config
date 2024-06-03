@@ -657,12 +657,12 @@
 
         function_layer {
             bindings = <
-&none       &none           &none         &none             &none                                                                                                         &none                     &none                 &none                 &none                     &none
-&none  &none       &none     &none           &none      &none                                                            &none  &kp LC(MINUS)             &kp LC(PLUS)          &kp LC(EQUAL)         &none                &none
-&none       &sk LEFT_SHIFT  &redo         &undo             &none   &none                                                                 &none                &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
-&caps_word  &kp LEFT_WIN    &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none                                                                 &none        &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
-&none       &none       &none  &none      &none           &none       &none  &none  &none   &none  &lock_td  &none              &none   &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
-&trans      &none           &none  &none      &none                       &none  &none  &tog 4  &none  &none     &media_control_tp                          &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
+&none       &none         &none         &none             &none                                                                                                        &none                     &none                 &none                 &none                     &none
+&none       &none         &none         &none             &none                                &none                                                            &none  &kp LC(MINUS)             &kp LC(PLUS)          &kp LC(EQUAL)         &none                     &none
+&none       &none         &redo         &undo             &none                                &none                                                            &none  &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
+&caps_word  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &none                                                            &none  &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
+&none       &none         &none         &none             &none                                &none  &none  &none  &none   &none  &lock_td  &kp K_APPLICATION  &none  &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
+&trans      &none         &none         &none             &none                                       &none  &none  &tog 4  &none  &none     &media_control_tp         &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
             >;
         };
 

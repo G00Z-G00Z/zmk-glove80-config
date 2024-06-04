@@ -43,6 +43,7 @@
         };
 
         // Caps word and dt for CAPSLOCK 
+
         caps_word_tp: caps_word_tp {
             compatible = "zmk,behavior-tap-dance";
             label = "CAPS_WORD_TP";
@@ -101,6 +102,7 @@
         };
 
         // 1t: selet all, 2t: cut all, 3t: copy all
+
         selec_all_copy_all_tp: selec_all_copy_all_tp {
             compatible = "zmk,behavior-tap-dance";
             label = "SELEC_ALL_COPY_ALL_TP";
@@ -109,6 +111,7 @@
         };
 
         // dt the ' to screenshot (convinient)
+
         screenshot_td: screenshot_td {
             compatible = "zmk,behavior-tap-dance";
             label = "SCREENSHOT_TD";
@@ -117,6 +120,7 @@
         };
 
         // Hold like shift key, and tap to toggle it
+
         key_tog_hold: key_tog_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "KEY_TOG_HOLD";
@@ -127,6 +131,7 @@
         };
 
         // 1t: show screen, 2t: toggle camera
+
         mst_show_screen_vid_td: mst_show_screen_vid_td {
             compatible = "zmk,behavior-tap-dance";
             label = "Show screen and toggle video";
@@ -135,6 +140,7 @@
         };
 
         // 1t: go to call window, 2t: answer call from toast, 3t: Call someone from the chat
+
         mst_call_cmds_td: mst_call_cmds_td {
             compatible = "zmk,behavior-tap-dance";
             label = "MST_CALL_CMDS_TD";
@@ -152,6 +158,7 @@
         };
 
         // 1t: reply to selcted message, 2t: reply to last message
+
         mst_reply_td: mst_reply_td {
             compatible = "zmk,behavior-tap-dance";
             label = "MST_REPLY_TD";
@@ -160,6 +167,7 @@
         };
 
         // 1t: react happy to selcted message, 2t: react happy to last message
+
         mst_react_td: mst_react_td {
             compatible = "zmk,behavior-tap-dance";
             label = "MST_REACT_TD";
@@ -208,6 +216,7 @@
         };
 
         // Similar to HRM but in thumbs for custom behaviour
+
         lt_thumbs_keys: lt_thumbs_keys {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_THUMBS_KEYS";
@@ -525,10 +534,11 @@
 
     combos {
         // IMPORTANT NOTICE: This combos are based in QWERTY layout
-    
+
         compatible = "zmk,combos";
 
         // w + l (vim like) to switch to workspace in the right
+
         combo_win_desktop_right {
             bindings = <&win_desktop_right>;
             key-positions = <43 24>;
@@ -536,6 +546,7 @@
         };
 
         // w + h (vim like) to switch to workspace in the left
+
         combo_win_desktop_left {
             bindings = <&win_desktop_left>;
             key-positions = <40 24>;
@@ -543,19 +554,21 @@
         };
 
         // WIN + Q becomes ALT + F4 (closes any app)
+
         combo_alt_close_app {
             bindings = <&close_app>;
             key-positions = <44 23>;
             require-prior-idle-ms = <100>;
         };
+
         /*
         *
         * MST (Microsoft Teams) combos 
         *
         * This combos are available in the teams layer
         * */
-
         // j + k for putting available status
+
         combo_mst_available {
             bindings = <&mst_available>;
             key-positions = <41 42>;
@@ -563,6 +576,7 @@
         };
 
         // l + k for putting available brb
+
         combo_mst_brb {
             bindings = <&mst_brb>;
             key-positions = <42 43>;
@@ -570,6 +584,7 @@
         };
 
         // u+i This toggles temas layer. Available in base layer and teams layer for easy transitioning
+
         combo_toggle_teams {
             bindings = <&tog 6>;
             key-positions = <29 30>;
@@ -656,14 +671,15 @@
         };
 
         // This is the teams layer for shorcuts for the Microsoft Teams desktop app
+
         teams_mst_layer {
             bindings = <
 &none   &none       &none             &none             &none                                                                                                                                    &none                    &none                    &none           &none                        &none
 &none   &kp LC(N1)  &kp LC(N2)        &kp LC(N3)        &kp LC(N4)         &kp LC(N5)                                                                                             &kp LG(N1)     &kp LA(LS(EQUAL))        &kp LA(LS(MINUS))        &kp LA(LS(N0))  &none                        &none
 &none   &tog 6      &none             &kp LS(LA(UP))    &none              &none                                                                                                  &kp LC(LA(U))  &mst_react_td            &mst_key_exit_mst LC(R)  &mst_reply_td   &kp LA(LS(N))                &none
 &none   &none       &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                                                  &kp LC(L)      &kp DOWN                 &kp UP                   &kp LC(M)       &kp LC(J)                    &none
-&none   &kp LA(N1)  &kp LA(N2)        &kp LA(N3)        &kp LA(N4)         &kp LA(N5)  &tog 6  &none  &none  &kp LG(N1)         &mst_show_screen_vid_td  &kp LC(LS(K))            &mst_offline   &mst_available           &mst_brb                 &mst_away       &mst_key_exit_mst LC(SLASH)  &none
-&trans  &none       &none             &none             &none                          &none   &none  &none  &mst_call_cmds_td  &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                 &mst_key_exit_mst LC(F)  &mst_busy                &kp LG(N1)      &none                        &trans
+&none   &kp LA(N1)  &kp LA(N2)        &kp LA(N3)        &kp LA(N4)         &kp LA(N5)  &tog 6  &none  &none  &mst_call_cmds_td  &mst_show_screen_vid_td  &kp LC(LS(K))            &mst_offline   &mst_available           &mst_brb                 &mst_away       &mst_key_exit_mst LC(SLASH)  &none
+&trans  &none       &none             &none             &none                          &none   &none  &none  &kp LG(NUMBER_1)   &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                 &mst_key_exit_mst LC(F)  &mst_busy                &kp LG(N1)      &none                        &trans
             >;
         };
 

@@ -228,16 +228,6 @@
             flavor = "tap-preferred";
         };
 
-        media_control_tp: media_control_tp {
-            compatible = "zmk,behavior-tap-dance";
-            label = "MEDIA_CONTROL_TP";
-            #binding-cells = <0>;
-            bindings =
-                <&mt C_VOLUME_UP C_PLAY_PAUSE>,
-                <&mt C_VOLUME_DOWN C_NEXT>,
-                <&mt C_MUTE C_PREVIOUS>;
-        };
-
         paste_copy_cut_td: paste_copy_cut_td {
             compatible = "zmk,behavior-tap-dance";
             label = "PASTE_COPY_CUT_TD";
@@ -661,21 +651,20 @@
 &none       &none         &none         &none             &none                                &none                                                            &none  &kp LC(MINUS)             &kp LC(PLUS)          &kp LC(EQUAL)         &none                     &none
 &none       &none         &redo         &undo             &none                                &none                                                            &none  &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
 &caps_word  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &none                                                            &none  &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
-&none       &none         &none         &none             &none                                &none  &none  &none  &none   &none  &lock_td  &kp K_APPLICATION  &none  &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
-&trans      &none         &none         &none             &none                                       &none  &none  &tog 4  &none  &none     &media_control_tp         &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
+&none       &none         &none         &none             &none                                &none  &none  &none  &none   &lock_td  &kp K_APPLICATION  &play_next_prev_td  &none  &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
+&trans      &none         &none         &none             &none                                       &none  &none  &tog 4  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP         &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
             >;
         };
 
         // This is the teams layer for shorcuts for the Microsoft Teams desktop app
-
         teams_mst_layer {
             bindings = <
-&none   &none       &none             &none             &none                                                                                                                                    &none                    &none                    &none           &none                        &none
-&none   &kp LC(N1)  &kp LC(N2)        &kp LC(N3)        &kp LC(N4)         &kp LC(N5)                                                                                             &kp LG(N1)     &kp LA(LS(EQUAL))        &kp LA(LS(MINUS))        &kp LA(LS(N0))  &none                        &none
-&none   &tog 5      &none             &kp LS(LA(UP))    &none              &none                                                                                                  &kp LC(LA(U))  &mst_react_td            &mst_key_exit_mst LC(R)  &mst_reply_td   &kp LA(LS(N))                &none
-&none   &none       &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                                                  &kp LC(L)      &kp DOWN                 &kp UP                   &kp LC(M)       &kp LC(J)                    &none
-&none   &kp LA(N1)  &kp LA(N2)        &kp LA(N3)        &kp LA(N4)         &kp LA(N5)  &tog 6  &none  &none  &mst_call_cmds_td  &mst_show_screen_vid_td  &kp LC(LS(K))            &mst_offline   &mst_available           &mst_brb                 &mst_away       &mst_key_exit_mst LC(SLASH)  &none
-&trans  &none       &none             &none             &none                          &none   &none  &none  &kp LG(NUMBER_1)   &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                 &mst_key_exit_mst LC(F)  &mst_busy                &kp LG(N1)      &none                        &trans
+&none       &none       &none             &none             &none                                                                                                                                                               &none                    &none                    &none           &none                        &none
+&none       &kp LC(N1)  &kp LC(N2)        &kp LC(N3)        &kp LC(N4)         &kp LC(N5)                                                                                                                        &kp LG(N1)     &kp LA(LS(EQUAL))        &kp LA(LS(MINUS))        &kp LA(LS(N0))  &none                        &none
+&kp TAB     &tog 6      &none             &kp LS(LA(UP))    &none              &none                                                                                                                             &kp LC(LA(U))  &mst_react_td            &mst_key_exit_mst LC(R)  &mst_reply_td   &kp LA(LS(N))                &none
+&kp ESCAPE  &none       &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                                                                             &kp LC(L)      &kp DOWN                 &kp UP                   &kp LC(M)       &kp LC(J)                    &kp ENTER
+&none       &kp LA(N1)  &kp LA(N2)        &kp LA(N3)        &kp LA(N4)         &kp LA(N5)  &tog 6           &none         &kp C_MUTE        &mst_call_cmds_td  &mst_show_screen_vid_td  &kp LC(LS(K))            &mst_offline   &mst_available           &mst_brb                 &mst_away       &mst_key_exit_mst LC(SLASH)  &none
+&trans      &none       &none             &none             &none                          &kp C_VOLUME_UP  &kp C_VOL_DN  &kp C_PLAY_PAUSE  &kp LG(NUMBER_1)   &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                 &mst_key_exit_mst LC(F)  &mst_busy                &kp LG(N1)      &none                        &trans
             >;
         };
 

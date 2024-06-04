@@ -569,16 +569,16 @@
         * */
         // j + k for putting available status
 
-        combo_mst_available {
-            bindings = <&mst_available>;
+        combo_mst_enter {
+            bindings = <&kp ENTER>;
             key-positions = <41 42>;
             layers = <6>;
         };
 
         // l + k for putting available brb
 
-        combo_mst_brb {
-            bindings = <&mst_brb>;
+        combo_mst_esc {
+            bindings = <&kp ESCAPE>;
             key-positions = <42 43>;
             layers = <6>;
         };

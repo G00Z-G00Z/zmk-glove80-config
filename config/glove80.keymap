@@ -584,7 +584,7 @@
 
         combo_toggle_teams {
             bindings = <&tog 5>;
-            key-positions = <29 30>;
+            key-positions = <29 30 31>;
             require-prior-idle-ms = <200>;
             layers = <0 5>;
         };

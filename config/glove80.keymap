@@ -625,12 +625,12 @@
 
         symbols_layer {
             bindings = <
-&none            &none           &none                 &none                  &none                                                                                                                &none                 &none        &none     &none                  &none
-&none            &kp GRAVE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON     &kp COMMA                                                                           &none          &none                 &none        &none     &none                  &none
-&kp EXCLAMATION  &kp LEFT_BRACE  &kp SQT               &kp DOUBLE_QUOTES      &kp RIGHT_BRACE   &kp QUESTION                                                                        &kp SEMICOLON  &kp LSHFT             &kp LCTRL    &kp LALT  &kp RIGHT_GUI          &none
-&kp HASH         &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR        &kp ASTERISK                                                                        &kp DOT        &kp SPACE             &kp BSPC     &kp TAB   &kp RET                &none
-&kp AT_SIGN      &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp NON_US_BACKSLASH  &kp SLASH    &kp PERIOD  &kp ASTERISK   &none   &none  &none  &kp FSLH       &kp DEL               &kp LS(TAB)  &none     &none                  &none
-&kp TILDE        &kp AMPERSAND   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PLUS                                &kp PERCENT  &kp COLON   &kp SEMICOLON  &tog 2  &none  &none                 &kp LEFT_PARENTHESIS  &kp LBKT     &kp RBKT  &kp RIGHT_PARENTHESIS  &trans
+&none            &none             &none                 &none                  &none                                                                                                                &none                 &none        &none      &none                  &none
+&none            &kp GRAVE         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON      &kp TILDE                                                                          &none          &none                 &none        &none      &none                  &none
+&kp EXCLAMATION  &kp LEFT_BRACE    &kp SQT               &kp DOUBLE_QUOTES      &kp RIGHT_BRACE    &kp QUESTION                                                                       &kp SEMICOLON  &kp LSHFT             &kp LCTRL    &kp LALT   &kp RIGHT_GUI          &none
+&kp HASH         &kp CARET         &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR         &kp ASTERISK                                                                       &kp DOT        &kp SPACE             &kp BSPC     &kp TAB    &kp RET                &none
+&kp AT_SIGN      &kp LESS_THAN     &kp PIPE              &kp MINUS              &kp GREATER_THAN   &kp NON_US_BACKSLASH  &kp SLASH    &kp TILDE  &kp AMPERSAND  &none   &none  &none  &kp FSLH       &kp DEL               &kp LS(TAB)  &kp TILDE  &kp SLASH              &none
+&kp TILDE        &kp LEFT_BRACKET  &kp AMPERSAND         &kp PLUS               &kp RIGHT_BRACKET                        &kp PERCENT  &kp COLON  &kp SEMICOLON  &tog 2  &none  &none                 &kp LEFT_PARENTHESIS  &kp LBKT     &kp RBKT   &kp RIGHT_PARENTHESIS  &trans
             >;
         };
 

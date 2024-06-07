@@ -527,6 +527,34 @@
             bindings = <&kp LC(R) &kp LS(TAB) &kp ENTER &kp TAB &kp ENTER &tog 4>;
             label = "MST_REPLY_LAST_MSG";
         };
+
+        kp_then_tog_layer: kp_then_tog_layer {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &tog MACRO_PLACEHOLDER>;
+            label = "KP_THEN_TOG_LAYER";
+        };
+
+        vim_kp_exit_norm: vim_to_insert {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp_then_tog_layer MACRO_PLACEHOLDER 6>;
+            label = "VIM_TO_INSERT";
+        };
+
+        vim_exit_visual: vim_tog_visual {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp_then_tog_layer MACRO_PLACEHOLDER 7>;
+            label = "VIM_TOG_VISUAL";
+        };
+
+        vim_enter_visual: vim_enter_visual {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 7 &kt LEFT_SHIFT>;
+            label = "VIM_ENTER_VISUAL";
+        };
     };
 
     combos {

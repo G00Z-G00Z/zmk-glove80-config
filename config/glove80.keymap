@@ -810,12 +810,12 @@
 
         magic_layer {
             bindings = <
-&bt BT_CLR   &none            &none            &none            &none                                                                                                        &none                            &none  &none  &none  &bt BT_CLR_ALL
-&none        &none            &none            &none            &none            &none                                                                                &none  &none                            &none  &none  &none  &none
-&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                      &none  &rgb_ug RGB_COLOR_HSB(0,100,50)  &none  &none  &none  &none
-&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &none                            &none  &none  &none  &bootloader
-&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &none                            &none  &none  &none  &sys_reset
-&none        &none            &none            &rgb_ug RGB_OFF  &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                            &none  &none  &none  &to 0
+&bt BT_CLR   &none                            &none                              &none                              &none                                                                                                        &none                              &none                             &none                             &none  &bt BT_CLR_ALL
+&none        &none                            &none                              &none                              &none            &none                                                                                &none  &none                              &none                             &none                             &none  &none
+&none        &rgb_ug RGB_SPI                  &rgb_ug RGB_SAI                    &rgb_ug RGB_HUI                    &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                      &none  &rgb_ug RGB_COLOR_HSB(209,94,11)   &rgb_ug RGB_COLOR_HSB(130,72,64)  &rgb_ug RGB_COLOR_HSB(0,0,100)    &none  &none
+&bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                    &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)  &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none  &bootloader
+&sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(229,100,50)  &rgb_ug RGB_COLOR_HSB(128,100,50)  &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)  &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &none  &sys_reset
+&none        &none                            &none                              &rgb_ug RGB_OFF                    &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                              &none                             &none                             &none  &to 0
             >;
         };
 

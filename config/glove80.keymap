@@ -524,7 +524,12 @@
         mst_reply_last_msg: mst_reply_last_msg {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(R) &kp LS(TAB) &kp ENTER &kp TAB &kp ENTER &tog 4>;
+            bindings =
+                <&macro_wait_time 100>,
+                <&kp LC(R) &kp LS(TAB)>,
+                <&macro_wait_time 30>,
+                <&kp ENTER &kp TAB &kp ENTER &tog 4>;
+
             label = "MST_REPLY_LAST_MSG";
         };
 

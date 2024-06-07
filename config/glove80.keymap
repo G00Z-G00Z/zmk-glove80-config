@@ -241,6 +241,21 @@
             #binding-cells = <0>;
             bindings = <&kp LG(L)>, <&kp LG(ESCAPE)>;
         };
+
+        vim_norm_delete: vim_norm_delete {
+            compatible = "zmk,behavior-tap-dance";
+            label = "VIM_NORM_DELETE";
+            #binding-cells = <0>;
+            bindings = <&kp DELETE>, <&del_line>;
+        };
+
+        vim_norm_copy: vim_norm_copy {
+            compatible = "zmk,behavior-tap-dance";
+            label = "VIM_NORM_COPY";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>, <&copy_line>;
+        };
+
     };
 
     macros {
@@ -579,9 +594,17 @@
         del_line: del_line {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&select_line &kp DEL>;
+            bindings = <&kp HOME &kp LS(END) &kp LC(X)>;
             label = "DEL_LINE";
         };
+
+        copy_line: copy_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END) &kp LC(C) &kp ESCAPE>;
+            label = "COPY_LINE";
+        };
+
     };
 
     combos {
@@ -724,12 +747,12 @@
 
         vim_normal_layer {
             bindings = <
-&trans  &trans  &trans         &trans         &trans                                                                                                            &trans    &trans        &trans     &trans  &trans
-&trans  &trans  &trans         &trans         &trans             &trans                                                                         &trans          &trans    &trans        &trans     &trans  &trans
-&trans  &trans  &kp LC(RIGHT)  &kp LC(RIGHT)  &trans             &trans                                                                         &trans          &trans    &trans        &trans     &trans  &trans
-&trans  &trans  &trans         &trans         &trans             &trans                                                                         &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans         &trans         &vim_enter_visual  &kp LC(LEFT)  &tog 6  &trans  &trans  &trans  &trans  &vim_kp_exit_norm ENTER  &trans          &trans    &trans        &trans     &trans  &trans
-&trans  &trans  &trans         &trans         &trans                           &trans  &trans  &trans  &trans  &trans  &mo 5                                    &trans    &trans        &trans     &trans  &trans
+&trans  &trans                   &trans                    &trans            &trans                                                                                                            &trans    &trans        &trans     &trans  &trans
+&trans  &trans                   &trans                    &trans            &trans             &trans                                                                         &trans          &trans    &trans        &trans     &trans  &trans
+&trans  &trans                   &kp LC(RIGHT)             &kp LC(RIGHT)     &trans             &trans                                                                         &vim_norm_copy          &undo    &tog 6        &kp LC(V)     &trans  &trans
+&trans  &vim_kp_exit_norm RIGHT  &vim_kp_exit_norm DELETE  &vim_norm_delete  &kp LC(F)          &trans                                                                         &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
+&trans  &trans                   &trans                    &trans            &vim_enter_visual  &kp LC(LEFT)  &tog 6  &trans  &trans  &trans  &trans  &vim_kp_exit_norm ENTER  &trans          &trans    &trans        &trans     &trans  &trans
+&trans  &trans                   &trans                    &trans            &trans                           &trans  &trans  &trans  &trans  &trans  &mo 5                                    &trans    &trans        &trans     &trans  &trans
             >;
         };
 

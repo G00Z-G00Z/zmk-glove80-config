@@ -560,6 +560,21 @@
             bindings = <&tog 7 &kt LEFT_SHIFT>;
             label = "VIM_ENTER_VISUAL";
         };
+
+        mst_go_to_teams: mst_go_to_teams {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_wait_time 100>,
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&kp NUMBER_1>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "MST_GO_TO_TEAMS";
+        };
     };
 
     combos {
@@ -685,7 +700,7 @@
 &kp TAB     &tog 4      &none             &kp LS(LA(UP))    &none              &none                                                                                                                             &kp LC(LA(U))  &mst_react_td            &mst_key_exit_mst LC(R)  &mst_reply_td   &kp LA(LS(N))                &none
 &kp ESCAPE  &none       &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                                                                             &kp LC(L)      &kp DOWN                 &kp UP                   &kp LC(M)       &kp LC(J)                    &kp ENTER
 &none       &kp LA(N1)  &kp LA(N2)        &kp LA(N3)        &kp LA(N4)         &kp LA(N5)  &tog 4           &none         &kp C_MUTE        &mst_call_cmds_td  &mst_show_screen_vid_td  &kp LC(LS(K))            &mst_offline   &mst_available           &mst_brb                 &mst_away       &mst_key_exit_mst LC(SLASH)  &none
-&trans      &none       &none             &none             &none                          &kp C_VOLUME_UP  &kp C_VOL_DN  &kp C_PLAY_PAUSE  &kp LG(NUMBER_1)   &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                 &mst_key_exit_mst LC(F)  &mst_busy                &kp LG(N1)      &none                        &trans
+&trans      &none       &none             &none             &none                          &kp C_VOLUME_UP  &kp C_VOL_DN  &kp C_PLAY_PAUSE  &mst_go_to_teams   &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                 &mst_key_exit_mst LC(F)  &mst_busy                &kp LG(N1)      &none                        &trans
             >;
         };
 

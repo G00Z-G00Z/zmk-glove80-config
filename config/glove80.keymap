@@ -575,6 +575,13 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>;
             label = "DT_KP";
         };
+
+        del_line: del_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&select_line &kp DEL>;
+            label = "DEL_LINE";
+        };
     };
 
     combos {

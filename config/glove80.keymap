@@ -793,12 +793,12 @@
 
         vim_symbols_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans  &trans  &trans                                                                                  &trans     &trans         &trans  &trans  &trans
+&trans  &trans            &trans  &trans  &trans            &trans                                                        &trans  &trans     &trans         &trans  &trans  &trans
+&trans  &trans            &trans  &trans  &trans            &kp LC(F)                                                     &trans  &trans     &trans         &trans  &trans  &trans
+&trans  &kp HOME          &trans  &trans  &kp END           &kp LC(F)                                                     &trans  &trans     &trans         &trans  &trans  &trans
+&trans  &two_kp HOME DEL  &trans  &trans  &two_kp HOME TAB  &kp LC(F)  &kp LC(F)  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans         &trans  &kp F   &trans
+&trans  &trans            &trans  &trans  &trans                       &trans     &trans  &trans  &trans  &trans  &trans          &kp LC(G)  &kp LC(LS(G))  &trans  &trans  &trans
             >;
         };
 

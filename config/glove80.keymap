@@ -690,6 +690,12 @@
             require-prior-idle-ms = <200>;
             layers = <0 4>;
         };
+
+        enter_vim_mode {
+            bindings = <&tog 6>;
+            key-positions = <52 57>;
+            layers = <0>;
+        };
     };
 
     keymap {

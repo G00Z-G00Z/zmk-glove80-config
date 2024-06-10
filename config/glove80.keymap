@@ -248,13 +248,6 @@
             #binding-cells = <0>;
             bindings = <&kp DELETE>, <&del_line>;
         };
-
-        vim_norm_copy: vim_norm_copy {
-            compatible = "zmk,behavior-tap-dance";
-            label = "VIM_NORM_COPY";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>, <&copy_line>;
-        };
     };
 
     macros {
@@ -629,6 +622,20 @@
             bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 7 &tog 6>;
             label = "VIM_EXIT_VISUAL_NORM";
         };
+
+        vim_copy_kp: vim_copy_kp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C) &kp ESCAPE>;
+            label = "VIM_COPY_KP";
+        };
+
+        vim_o_kp: vim_o_kp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &kp ENTER &tog 6>;
+            label = "VIM_O_KP";
+        };
     };
 
     combos {
@@ -777,23 +784,23 @@
 
         vim_normal_layer {
             bindings = <
-&none  &none                    &none                     &none             &none                                                                                                         &none     &none         &none      &none  &none
-&none  &none                    &none                     &none             &none              &none                                                                      &none           &none     &none         &none      &none  &none
-&none  &none                    &kp LC(RIGHT)             &kp LC(RIGHT)     &none              &none                                                                      &vim_norm_copy  &undo     &tog 6        &kp LC(V)  &none  &none
-&none  &vim_kp_exit_norm RIGHT  &vim_kp_exit_norm DELETE  &vim_norm_delete  &kp LC(F)          &none                                                                      &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &none  &none
-&none  &none                    &none                     &none             &vim_enter_visual  &kp LC(LEFT)  &tog 6  &none  &none  &none  &none  &vim_kp_exit_norm ENTER  &none           &none     &none         &none      &none  &none
-&none  &none                    &none                     &none             &none                            &none   &none  &none  &none  &none  &mo 5                                    &none     &none         &none      &none  &none
+&none  &none                    &none                     &none             &none                                                                                                         &none     &none         &none      &none      &none
+&none  &none                    &none                     &none             &none              &none                                                                      &none           &none     &none         &none      &none      &none
+&none  &none                    &kp LC(RIGHT)             &kp LC(RIGHT)     &none              &none                                                                      &copy_line      &undo     &tog 6        &vim_o_kp  &kp LC(V)  &none
+&none  &vim_kp_exit_norm RIGHT  &vim_kp_exit_norm DELETE  &vim_norm_delete  &kp LC(F)          &none                                                                      &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &none      &none
+&none  &none                    &none                     &none             &vim_enter_visual  &kp LC(LEFT)  &tog 6  &none  &none  &none  &none  &vim_kp_exit_norm ENTER  &none           &none     &none         &none      &none      &none
+&none  &none                    &none                     &none             &none                            &none   &none  &none  &none  &none  &mo 5                                    &none     &none         &none      &none      &none
             >;
         };
 
         vim_visual_layer {
             bindings = <
-&trans  &trans  &trans                            &trans                   &trans                                                                                                                    &trans  &trans  &trans                  &trans  &trans
-&trans  &trans  &trans                            &trans                   &trans                   &trans                                                                   &trans                  &trans  &trans  &trans                  &trans  &trans
-&trans  &trans  &trans                            &trans                   &none                    &trans                                                                   &vim_exit_visual LC(C)  &none   &none   &vim_exit_visual LC(V)  &trans  &trans
-&trans  &trans  &vim_exit_visual_and_norm DELETE  &vim_exit_visual DELETE  &trans                   &trans                                                                   &trans                  &trans  &trans  &trans                  &trans  &trans
-&trans  &trans  &trans                            &trans                   &vim_exit_visual ESCAPE  &trans  &vim_exit_visual ESCAPE  &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                  &trans  &trans
-&trans  &trans  &trans                            &trans                   &trans                           &trans                   &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans                  &trans  &trans
+&none  &none   &none                             &none                    &none                                                                                                               &none   &none   &none   &none                   &none
+&none  &none   &none                             &none                    &none                    &none                                                              &none                   &none   &none   &none   &none                   &none
+&none  &none   &none                             &none                    &none                    &none                                                              &vim_exit_visual LC(C)  &none   &none   &none   &vim_exit_visual LC(V)  &none
+&none  &trans  &vim_exit_visual_and_norm DELETE  &vim_exit_visual DELETE  &trans                   &none                                                              &trans                  &trans  &trans  &trans  &none                   &none
+&none  &none   &none                             &none                    &vim_exit_visual ESCAPE  &none  &vim_exit_visual ESCAPE  &none  &none  &none  &none  &none  &none                   &none   &none   &none   &none                   &none
+&none  &none   &none                             &none                    &none                           &none                    &none  &none  &none  &none  &none                          &none   &none   &none   &none                   &none
             >;
         };
 

@@ -255,7 +255,6 @@
             #binding-cells = <0>;
             bindings = <&kp LC(C)>, <&copy_line>;
         };
-
     };
 
     macros {
@@ -767,7 +766,7 @@
             bindings = <
 &trans  &trans                   &trans                    &trans            &trans                                                                                                            &trans    &trans        &trans     &trans  &trans
 &trans  &trans                   &trans                    &trans            &trans             &trans                                                                         &trans          &trans    &trans        &trans     &trans  &trans
-&trans  &trans                   &kp LC(RIGHT)             &kp LC(RIGHT)     &trans             &trans                                                                         &vim_norm_copy          &undo    &tog 6        &kp LC(V)     &trans  &trans
+&trans  &trans                   &kp LC(RIGHT)             &kp LC(RIGHT)     &trans             &trans                                                                         &vim_norm_copy  &undo     &tog 6        &kp LC(V)  &trans  &trans
 &trans  &vim_kp_exit_norm RIGHT  &vim_kp_exit_norm DELETE  &vim_norm_delete  &kp LC(F)          &trans                                                                         &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
 &trans  &trans                   &trans                    &trans            &vim_enter_visual  &kp LC(LEFT)  &tog 6  &trans  &trans  &trans  &trans  &vim_kp_exit_norm ENTER  &trans          &trans    &trans        &trans     &trans  &trans
 &trans  &trans                   &trans                    &trans            &trans                           &trans  &trans  &trans  &trans  &trans  &mo 5                                    &trans    &trans        &trans     &trans  &trans
@@ -828,12 +827,12 @@
 
         magic_layer {
             bindings = <
-&bt BT_CLR   &none                            &none                              &none                              &none                                                                                                        &none                              &none                             &none                             &none  &bt BT_CLR_ALL
-&none        &none                            &none                              &none                              &none            &none                                                                                &none  &none                              &none                             &none                             &none  &none
-&none        &rgb_ug RGB_SPI                  &rgb_ug RGB_SAI                    &rgb_ug RGB_HUI                    &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                      &none  &rgb_ug RGB_COLOR_HSB(209,94,11)   &rgb_ug RGB_COLOR_HSB(130,72,64)  &rgb_ug RGB_COLOR_HSB(0,0,100)    &none  &none
-&bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                    &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)  &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none  &bootloader
-&sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(229,100,50)  &rgb_ug RGB_COLOR_HSB(128,100,50)  &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)  &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &none  &sys_reset
-&none        &none                            &none                              &rgb_ug RGB_OFF                    &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                              &none                             &none                             &none  &to 0
+&bt BT_CLR   &none                            &none                              &none                                       &none                                                                                                        &none                                     &none                             &none                             &none  &bt BT_CLR_ALL
+&none        &none                            &none                              &none                                       &none            &none                                                                                &none  &none                                     &none                             &none                             &none  &none
+&none        &rgb_ug RGB_SPI                  &rgb_ug RGB_SAI                    &rgb_ug RGB_HUI                             &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                      &none  &mo_w_glow 1 RGB_COLOR_HSB_VAL(0,100,50)  &rgb_ug RGB_COLOR_HSB(130,72,64)  &rgb_ug RGB_COLOR_HSB(0,0,100)    &none  &none
+&bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                             &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)         &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none  &bootloader
+&sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(125,100,50)  &mo_w_glow 1 RGB_COLOR_HSB_VAL(250,100,50)  &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)         &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &none  &sys_reset
+&none        &none                            &none                              &rgb_ug RGB_OFF                             &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                                     &none                             &none                             &none  &to 0
             >;
         };
 

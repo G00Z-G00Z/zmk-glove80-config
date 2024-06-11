@@ -780,12 +780,12 @@
 
         symbols_layer {
             bindings = <
-&none            &none             &none                 &none                  &none                                                                                                                &none                 &none        &none      &none                  &none
-&none            &kp GRAVE         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON      &kp TILDE                                                                          &none          &none                 &none        &none      &none                  &none
-&kp EXCLAMATION  &kp LEFT_BRACE    &kp SQT               &kp DOUBLE_QUOTES      &kp RIGHT_BRACE    &kp QUESTION                                                                       &kp SEMICOLON  &kp LSHFT             &kp LCTRL    &kp LALT   &kp RIGHT_GUI          &none
-&kp HASH         &kp CARET         &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR         &kp ASTERISK                                                                       &kp DOT        &kp SPACE             &kp BSPC     &kp TAB    &kp RET                &none
-&kp AT_SIGN      &kp LESS_THAN     &kp PIPE              &kp MINUS              &kp GREATER_THAN   &kp NON_US_BACKSLASH  &kp SLASH    &kp TILDE  &kp AMPERSAND  &none   &none  &none  &kp FSLH       &kp DEL               &kp LS(TAB)  &kp TILDE  &kp SLASH              &none
-&kp TILDE        &kp LEFT_BRACKET  &kp AMPERSAND         &kp PLUS               &kp RIGHT_BRACKET                        &kp PERCENT  &kp COLON  &kp SEMICOLON  &tog 5  &none  &none                 &kp LEFT_PARENTHESIS  &kp LBKT     &kp RBKT   &kp RIGHT_PARENTHESIS  &trans
+&none            &none             &none                 &none                  &none                                                                                                                  &none                 &none      &none      &none                  &none
+&none            &kp GRAVE         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE          &kp SEMICOLON                                                                        &none          &none                 &none      &none      &none                  &none
+&kp EXCLAMATION  &kp LEFT_BRACE    &kp SQT               &kp DOUBLE_QUOTES      &kp RIGHT_BRACE    &kp QUESTION                                                                         &kp SEMICOLON  &kp LSHFT             &kp LCTRL  &kp LALT   &kp RIGHT_GUI          &none
+&kp HASH         &kp CARET         &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR         &kp ASTERISK                                                                         &kp DOT        &kp SPACE             &kp BSPC   &kp TAB    &kp RET                &none
+&kp AT_SIGN      &kp LESS_THAN     &kp PIPE              &kp MINUS              &kp GREATER_THAN   &kp SLASH      &kp NON_US_BACKSLASH  &kp TILDE  &kp AMPERSAND  &none   &none  &none  &kp COMMA      &kp DEL               &kp COMMA  &kp TILDE  &kp SLASH              &none
+&kp TILDE        &kp LEFT_BRACKET  &kp AMPERSAND         &kp PLUS               &kp RIGHT_BRACKET                 &kp PERCENT           &kp COLON  &kp SEMICOLON  &tog 5  &none  &none                 &kp LEFT_PARENTHESIS  &kp LBKT   &kp RBKT   &kp RIGHT_PARENTHESIS  &trans
             >;
         };
 
@@ -804,7 +804,7 @@
             bindings = <
 &none   &none  &none                             &none                    &none                                                                                                                 &none   &none   &none   &none                   &none
 &none   &none  &none                             &none                    &none                    &none                                                                &none                   &none   &none   &none   &none                   &none
-&none   &none  &trans                            &trans                   &none                    &none                                                                &vim_exit_visual LC(C)  &trans  &tog 7  &none   &vim_exit_visual LC(V)  &none
+&none   &none  &trans                            &trans                   &trans                    &none                                                                &vim_exit_visual LC(C)  &trans  &tog 7  &none   &vim_exit_visual LC(V)  &none
 &none   &none  &vim_exit_visual_and_norm DELETE  &vim_exit_visual DELETE  &none                    &none                                                                &trans                  &trans  &trans  &trans  &none                   &none
 &none   &none  &none                             &none                    &vim_exit_visual ESCAPE  &trans  &vim_exit_visual ESCAPE  &none  &none  &none  &none  &none   &none                   &none   &none   &trans  &none                   &none
 &trans  &none  &none                             &none                    &none                            &none                    &none  &none  &none  &none  &trans                          &none   &none   &none   &none                   &trans

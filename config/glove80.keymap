@@ -685,7 +685,7 @@
         vim_norm_V_kp: vim_V_kp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 2 &kt LEFT_SHIFT &kp HOME &kp END>;
+            bindings = <&tog 2 &kp HOME &kt LEFT_SHIFT &kp END>;
             label = "VIM_V_KP";
         };
     };

@@ -694,6 +694,21 @@
 
             label = "VIM_V_KP";
         };
+
+        app_switcher: app_switcher {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "APP_SWITCHER";
+        };
     };
 
     combos {
@@ -811,7 +826,7 @@
             bindings = <
 &trans     &trans             &trans        &trans        &trans                                                                                                                                               &trans             &trans         &trans     &trans              &trans
 &kp ESC    &kp RET            &kp SPACE     &kp TAB       &kp DEL                              &kp INSERT                                                                                         &kp INSERT   &kp K_APPLICATION  &kp TAB        &kp SPACE  &kp RET             &kp ESC
-&kp LC(K)  &layer_mo_tog 6 6  &redo         &undo         &kp BSPC                             &cut                                                                                               &kp LG(TAB)  &kp LA(TAB)        &undo          &redo      &paste_copy_cut_td  &kp LC(K)
+&kp LC(K)  &layer_mo_tog 6 6  &redo         &undo         &app_switcher                        &cut                                                                                               &kp LG(TAB)  &app_switcher      &undo          &redo      &paste_copy_cut_td  &kp LC(K)
 &kp LC(L)  &kp LGUI           &kp LALT      &kp LCTRL     &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &copy                                                                                              &kp LEFT     &kp DOWN           &kp UP         &kp RIGHT  &kp BACKSPACE       &kp LC(L)
 &kp LC(J)  &key_repeat        &kp SPACE     &kp ENTER     &kp BACKSPACE                        &paste      &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none            &extend_line  &extend_word  &kp HOME     &kp PG_DN          &kp PG_UP      &kp END    &paste_copy_cut_td  &kp LC(J)
 &trans     &kp LS(LC(G))      &extend_line  &extend_word  &kp LC(G)                                        &none        &kp LC(TAB)  &tog 3   &selec_all_copy_all_tp  &select_line  &select_word               &kp LC(F)          &kp LC(LS(G))  &kp LC(G)  &kp LC(H)           &kp LG(DOT)

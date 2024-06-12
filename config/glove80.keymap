@@ -666,7 +666,9 @@
         vim_norm_c_inner_word: vim_norm_c_inner_word {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(DOWN) &kp LS(END) &kp DEL &tog 1>;
+            bindings = 
+                <&macro_wait_time 100>,
+                <&select_word_right &kp DELETE &tog 1>;
             label = "VIM_NORM_C_INNER_WORD";
         };
     };

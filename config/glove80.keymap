@@ -578,7 +578,7 @@
         vim_exit_visual: vim_tog_visual {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 2>;
+            bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 2 &kp RIGHT &kp LEFT_ARROW>;
             label = "VIM_TOG_VISUAL";
         };
 
@@ -647,7 +647,7 @@
         vim_exit_visual_and_norm: vim_exit_visual_norm {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 2 &tog 1>;
+            bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 2 &tog 1 &kp RIGHT &kp LEFT_ARROW>;
             label = "VIM_EXIT_VISUAL_NORM";
         };
 

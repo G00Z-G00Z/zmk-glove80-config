@@ -813,12 +813,12 @@
 
         vim_visual_layer {
             bindings = <
-&none   &none  &none                             &none                             &none                                                                               &none   &none   &none   &none                   &none
-&none   &none  &none                             &none                             &none   &none                                               &none                   &none   &none   &none   &none                   &none
-&none   &none  &trans                            &trans                            &trans  &none                                               &vim_exit_visual LC(C)  &trans  &tog 2  &none   &vim_exit_visual LC(V)  &none
-&none   &none  &vim_exit_visual_and_norm DELETE  &vim_exit_visual DELETE           &none   &none                                               &trans                  &trans  &trans  &trans  &none                   &none
-&none   &none  &none                             &vim_exit_visual_and_norm DELETE  &tog 2  &trans  &tog 2  &none  &none  &none  &none  &none   &none                   &none   &none   &trans  &none                   &none
-&trans  &none  &none                             &none                             &none           &none   &none  &none  &none  &none  &trans                          &none   &none   &none   &none                   &trans
+&none   &none  &none                             &none                            &none                                                                               &none   &none   &none   &none                   &none
+&none   &none  &none                             &none                            &none   &none                                               &none                   &none   &none   &none   &none                   &none
+&none   &none  &trans                            &trans                           &trans  &none                                               &vim_exit_visual LC(C)  &trans  &tog 2  &none   &vim_exit_visual LC(V)  &none
+&none   &none  &vim_exit_visual_and_norm DELETE  &vim_exit_visual LC(X)           &none   &none                                               &trans                  &trans  &trans  &trans  &none                   &none
+&none   &none  &none                             &vim_exit_visual_and_norm LC(X)  &tog 2  &trans  &tog 2  &none  &none  &none  &none  &none   &none                   &none   &none   &trans  &none                   &none
+&trans  &none  &none                             &none                            &none           &none   &none  &none  &none  &none  &trans                          &none   &none   &none   &none                   &trans
             >;
         };
 

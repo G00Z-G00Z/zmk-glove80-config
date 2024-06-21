@@ -137,7 +137,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "MST_CALL_CMDS_TD";
             #binding-cells = <0>;
-            bindings = <&mst_go_call>, <&kp LS(LC(J))>, <&kp LA(LS(A))>;
+            bindings = <&mst_go_call_window>, <&kp LS(LC(J))>, <&kp LA(LS(A))>;
         };
 
         layer_mo_tog: layer_mo_tog {
@@ -517,7 +517,7 @@
             label = "mst_AWAY";
         };
 
-        mst_go_call: mst_go_call {
+        mst_go_call_window: mst_go_call {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =

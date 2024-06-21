@@ -137,7 +137,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "MST_CALL_CMDS_TD";
             #binding-cells = <0>;
-            bindings = <&mst_go_call_window>, <&kp LS(LC(J))>, <&kp LA(LS(A))>;
+            bindings = <&mst_go_call_window>, <&mst_join_call>, <&kp LA(LS(A))>;
         };
 
         layer_mo_tog: layer_mo_tog {
@@ -708,6 +708,25 @@
                 <&kp LEFT_ALT>;
 
             label = "APP_SWITCHER";
+        };
+
+        mst_join_call: mst_join_call {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_wait_time 2000>,
+                <&kp LC(LS(J))>,
+                <&macro_wait_time 200>,
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp TAB &kp TAB>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp ENTER>;
+
+            label = "MST_JOIN_CALL";
         };
     };
 

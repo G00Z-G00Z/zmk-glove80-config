@@ -851,7 +851,7 @@
 &none   &none        &kp LC(RIGHT)             &kp LC(RIGHT)     &redo                       &none                                                                          &copy_line      &undo                             &vim_norm_i                        &vim_o_kp                   &kp LC(V)      &none
 &none   &vim_norm_a  &vim_kp_exit_norm DELETE  &vim_norm_delete  &hrm_left LEFT_SHIFT LC(F)  &none                                                                          &kp LEFT_ARROW  &hrm_right LEFT_SHIFT DOWN_ARROW  &hrm_right RIGHT_CONTROL UP_ARROW  &hrm_right RIGHT_ALT RIGHT  &kp RIGHT_WIN  &none
 &none   &none        &kp DELETE                &vim_norm_c       &vim_norm_v                 &kp LC(LEFT)  &tog 1  &none  &none  &none  &none  &vim_kp_exit_norm ENTER      &none           &none                             &none                              &key_repeat                 &none          &none
-&trans  &none        &none                     &none             &none                                     &mo 3   &none  &none  &none  &none  &lt_thumbs_keys 7 BACKSPACE                  &none                             &none                              &none                       &none          &trans
+&trans  &none        &none                     &none             &none                                     &mo 3   &none  &none  &none  &none  &lt_thumbs_keys 7 BACKSPACE                  &kp LC(G)                         &none                              &none                       &none          &trans
             >;
         };
 

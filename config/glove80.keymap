@@ -19,6 +19,8 @@
 
 &key_repeat { usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>; };
 
+&sk { quick-release; };
+
 / {
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.

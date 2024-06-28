@@ -910,12 +910,12 @@
 
         number_layer {
             bindings = <
-&tog 4          &tog 4        &tog 4        &tog 4            &tog 4                                                                                                            &tog 4    &tog 4     &tog 4    &tog 4     &tog 4
-&kp ESC         &kp RET       &kp SPACE     &kp TAB           &kp DEL                              &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
-&none           &kp LSHFT     &redo         &undo             &kp BSPC                             &kp A                                                             &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp K
-&kp KP_NUMLOCK  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &kp P                                                             &kp PLUS   &kp N4    &kp N5     &kp N6    &kp MINUS  &kp J
-&none           &kp LC(A)     &select_line  &kp SPACE         &kp UNDER                            &kp MINUS   &kp D  &kp E   &kp F   &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp SLASH  &kp G
-&trans          &none         &extend_line  &extend_word      &kp X                                            &none  &tog 4  &tog 4  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
+&tog 4          &tog 4                &tog 4        &tog 4            &tog 4                                                                                                            &tog 4    &tog 4     &tog 4    &tog 4     &tog 4
+&kp ESC         &kp RET               &kp SPACE     &kp TAB           &kp DEL                              &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
+&none           &kp P                 &redo         &undo             &kp BSPC                             &kp M                                                             &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp M
+&kp KP_NUMLOCK  &hrm_left LEFT_WIN A  &kp LEFT_ALT  &kp LEFT_CONTROL  &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &kp H                                                             &kp PLUS   &kp N4    &kp N5     &kp N6    &kp MINUS  &kp H
+&none           &kp LC(A)             &select_line  &kp SPACE         &kp UNDER                            &kp MINUS   &kp D  &kp E   &kp F   &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp SLASH  &kp G
+&trans          &none                 &extend_line  &extend_word      &kp X                                            &none  &tog 4  &tog 4  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
             >;
         };
 

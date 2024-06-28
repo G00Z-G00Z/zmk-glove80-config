@@ -285,6 +285,13 @@
             #binding-cells = <0>;
             bindings = <&app_switcher>, <&app_switcher_killer>;
         };
+
+        sk_shift_caps_word_td: sk_shift_caps_word_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SK_SHIFT_CAPS_WORD_TD";
+            #binding-cells = <0>;
+            bindings = <&sk RIGHT_SHIFT>, <&caps_word>;
+        };
     };
 
     macros {
@@ -844,12 +851,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE     &kp C_MUTE            &kp C_VOL_DN          &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                         &kp LG(P)                 &kp K_CALCULATOR            &kp LG(E)               &kp C_BRIGHTNESS_INC       &kp C_BRIGHTNESS_DEC
-&kp EQUAL      &kp N1                &kp N2                &mt PRINTSCREEN NUMBER_3  &kp N4                  &kp N5                                                                                                                                     &kp N6  &kp N7                    &kp N8                      &kp N9                  &kp N0                     &kp MINUS
-&kp TAB        &kp Q                 &kp W                 &kp E                     &kp R                   &kp T                                                                                                                                      &kp Y   &kp U                     &kp I                       &kp O                   &kp P                      &kp BSLH
-&caps_word_tp  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hrm_left LEFT_SHIFT F  &kp G                                                                                                                                      &kp H   &hrm_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &kp SQT
-&kp GRAVE      &kp Z                 &kp X                 &kp C                     &kp V                   &kp B   &lt_thumbs_keys 5 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB          &kp ENTER                &kp N   &kp M                     &kp COMMA                   &kp DOT                 &kp FSLH                   &kp RSHFT
-&magic 12 0    &win_desktop_left     &kp LC(PG_UP)         &kp LC(PG_DN)             &win_desktop_right              &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk RIGHT_SHIFT  &lt_thumbs_keys 7 SPACE          &kp LS(LPAR)              &kp LBKT                    &kp RBKT                &kp LS(RPAR)               &magic 12 0
+&kp ESCAPE     &kp C_MUTE            &kp C_VOL_DN          &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                                &kp LG(P)                 &kp K_CALCULATOR            &kp LG(E)               &kp C_BRIGHTNESS_INC       &kp C_BRIGHTNESS_DEC
+&kp EQUAL      &kp N1                &kp N2                &mt PRINTSCREEN NUMBER_3  &kp N4                  &kp N5                                                                                                                                            &kp N6  &kp N7                    &kp N8                      &kp N9                  &kp N0                     &kp MINUS
+&kp TAB        &kp Q                 &kp W                 &kp E                     &kp R                   &kp T                                                                                                                                             &kp Y   &kp U                     &kp I                       &kp O                   &kp P                      &kp BSLH
+&caps_word_tp  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hrm_left LEFT_SHIFT F  &kp G                                                                                                                                             &kp H   &hrm_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &kp SQT
+&kp GRAVE      &kp Z                 &kp X                 &kp C                     &kp V                   &kp B   &lt_thumbs_keys 5 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB                 &kp ENTER                &kp N   &kp M                     &kp COMMA                   &kp DOT                 &kp FSLH                   &kp RSHFT
+&magic 12 0    &win_desktop_left     &kp LC(PG_UP)         &kp LC(PG_DN)             &win_desktop_right              &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk_shift_caps_word_td  &lt_thumbs_keys 7 SPACE          &kp LS(LPAR)              &kp LBKT                    &kp RBKT                &kp LS(RPAR)               &magic 12 0
             >;
         };
 

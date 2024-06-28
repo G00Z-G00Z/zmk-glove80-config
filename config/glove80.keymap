@@ -593,7 +593,7 @@
             label = "VIM_TO_INSERT";
         };
 
-        vim_exit_visual: vim_tog_visual {
+        vim_exit_visual_kp: vim_tog_visual {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 2 &kp RIGHT &kp LEFT_ARROW>;
@@ -764,6 +764,13 @@
 
             label = "APP_SWITCHER_KILLER";
         };
+
+        vim_exit_visual: vim_exit_visual {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_SHIFT &tog 2>;
+            label = "VIM_EXIT_VISUAL";
+        };
     };
 
     combos {
@@ -904,12 +911,12 @@
 
         vim_visual_layer {
             bindings = <
-&none   &none  &none                             &none                            &none                                                                               &none   &none   &none   &none                   &none
-&none   &none  &none                             &none                            &none   &none                                               &none                   &none   &none   &none   &none                   &none
-&none   &none  &trans                            &trans                           &trans  &none                                               &vim_exit_visual LC(C)  &trans  &tog 2  &none   &vim_exit_visual LC(V)  &none
-&none   &none  &vim_exit_visual_and_norm DELETE  &vim_exit_visual LC(X)           &none   &none                                               &trans                  &trans  &trans  &trans  &none                   &none
-&none   &none  &none                             &vim_exit_visual_and_norm LC(X)  &tog 2  &trans  &tog 2  &none  &none  &none  &none  &none   &none                   &none   &none   &trans  &none                   &none
-&trans  &none  &none                             &none                            &none           &none   &none  &none  &none  &none  &trans                          &none   &none   &none   &none                   &trans
+&none   &none  &none                             &none                            &none                                                                                                      &none   &none   &none   &none                      &none
+&none   &none  &none                             &none                            &none             &none                                                         &none                      &none   &none   &none   &none                      &none
+&none   &none  &trans                            &trans                           &trans            &none                                                         &vim_exit_visual_kp LC(C)  &trans  &tog 2  &none   &vim_exit_visual_kp LC(V)  &none
+&none   &none  &vim_exit_visual_and_norm DELETE  &vim_exit_visual_kp LC(X)        &none             &none                                                         &trans                     &trans  &trans  &trans  &none                      &none
+&none   &none  &none                             &vim_exit_visual_and_norm LC(X)  &vim_exit_visual  &trans  &vim_exit_visual  &none  &none  &none  &none  &none   &none                      &none   &none   &trans  &none                      &none
+&trans  &none  &none                             &none                            &none                     &none             &none  &none  &none  &none  &trans                             &none   &none   &none   &none                      &trans
             >;
         };
 

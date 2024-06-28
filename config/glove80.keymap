@@ -844,12 +844,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE     &kp C_MUTE            &kp C_VOL_DN          &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                             &kp LG(P)                 &kp K_CALCULATOR            &kp LG(E)               &kp C_BRIGHTNESS_INC       &kp C_BRIGHTNESS_DEC
-&kp EQUAL      &kp N1                &kp N2                &mt PRINTSCREEN NUMBER_3  &kp N4                  &kp N5                                                                                                                                       &kp N6    &kp N7                    &kp N8                      &kp N9                  &kp N0                     &kp MINUS
-&kp TAB        &kp Q                 &kp W                 &kp E                     &kp R                   &kp T                                                                                                                                        &kp Y     &kp U                     &kp I                       &kp O                   &kp P                      &kp BSLH
-&caps_word_tp  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hrm_left LEFT_SHIFT F  &lt 13 G                                                                                                                                     &lt 13 H  &hrm_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &kp SQT
-&kp GRAVE      &kp Z                 &kp X                 &kp C                     &kp V                   &kp B     &lt_thumbs_keys 5 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB          &kp ENTER                &kp N     &kp M                     &kp COMMA                   &kp DOT                 &kp FSLH                   &kp RSHFT
-&magic 12 0    &win_desktop_left     &kp LC(PG_UP)         &kp LC(PG_DN)             &win_desktop_right                &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk RIGHT_SHIFT  &lt_thumbs_keys 7 SPACE            &kp LS(LPAR)              &kp LBKT                    &kp RBKT                &kp LS(RPAR)               &magic 12 0
+&kp ESCAPE     &kp C_MUTE            &kp C_VOL_DN          &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                         &kp LG(P)                 &kp K_CALCULATOR            &kp LG(E)               &kp C_BRIGHTNESS_INC       &kp C_BRIGHTNESS_DEC
+&kp EQUAL      &kp N1                &kp N2                &mt PRINTSCREEN NUMBER_3  &kp N4                  &kp N5                                                                                                                                     &kp N6  &kp N7                    &kp N8                      &kp N9                  &kp N0                     &kp MINUS
+&kp TAB        &kp Q                 &kp W                 &kp E                     &kp R                   &kp T                                                                                                                                      &kp Y   &kp U                     &kp I                       &kp O                   &kp P                      &kp BSLH
+&caps_word_tp  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hrm_left LEFT_SHIFT F  &kp G                                                                                                                                      &kp H   &hrm_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &kp SQT
+&kp GRAVE      &kp Z                 &kp X                 &kp C                     &kp V                   &kp B   &lt_thumbs_keys 5 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB          &kp ENTER                &kp N   &kp M                     &kp COMMA                   &kp DOT                 &kp FSLH                   &kp RSHFT
+&magic 12 0    &win_desktop_left     &kp LC(PG_UP)         &kp LC(PG_DN)             &win_desktop_right              &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk RIGHT_SHIFT  &lt_thumbs_keys 7 SPACE          &kp LS(LPAR)              &kp LBKT                    &kp RBKT                &kp LS(RPAR)               &magic 12 0
             >;
         };
 
@@ -982,17 +982,6 @@
 &bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                             &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)         &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none  &bootloader
 &sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(125,100,50)  &mo_w_glow 3 RGB_COLOR_HSB_VAL(250,100,50)  &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)         &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &none  &sys_reset
 &none        &none                            &none                              &rgb_ug RGB_OFF                             &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                                     &none                             &none                             &none  &to 0
-            >;
-        };
-
-        no_repeat_homerows_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                              &trans  &trans  &trans  &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                              &trans  &trans  &trans  &trans  &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                              &trans  &trans  &trans  &trans  &trans         &trans
-&trans  &kp A   &kp S   &kp D   &kp F   &trans                                                              &trans  &kp J   &kp K   &kp L   &kp SEMICOLON  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp ESCAPE     &trans   &trans  &trans  &trans   &kp ENTER  &trans  &trans  &trans  &trans  &trans         &trans
-&trans  &trans  &trans  &trans  &trans          &kp BACKSPACE  &kp DEL  &trans  &trans  &kp TAB  &kp SPACE          &trans  &trans  &trans  &trans         &trans
             >;
         };
 

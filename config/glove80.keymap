@@ -139,7 +139,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "MST_CALL_CMDS_TD";
             #binding-cells = <0>;
-            bindings = <&mst_go_call_window>, <&mst_join_call>, <&kp LA(LS(A))>;
+            bindings = <&mst_go_mst_meeting>, <&mst_join_call>, <&kp LA(LS(A))>;
         };
 
         layer_mo_tog: layer_mo_tog {
@@ -533,7 +533,7 @@
             label = "mst_AWAY";
         };
 
-        mst_go_call_window: mst_go_call {
+        mst_go_mst_meeting: mst_go_call {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -850,6 +850,20 @@
         combo_cut {
             bindings = <&copy>;
             key-positions = <49 48 50>;
+        };
+
+        combo_go_meeting {
+            bindings = <&mst_go_mst_meeting>;
+            key-positions = <41 42 43>;
+            require-prior-idle-ms = <200>;
+            layers = <6>;
+        };
+
+        combo_go_teams {
+            bindings = <&mst_go_to_teams>;
+            key-positions = <59 60 61>;
+            require-prior-idle-ms = <200>;
+            layers = <6>;
         };
     };
 

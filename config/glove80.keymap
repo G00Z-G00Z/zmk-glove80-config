@@ -843,12 +843,12 @@
         };
 
         combo_paste {
-            bindings = <&copy>;
+            bindings = <&paste>;
             key-positions = <49 48>;
         };
 
         combo_cut {
-            bindings = <&copy>;
+            bindings = <&cut>;
             key-positions = <49 48 50>;
         };
 

@@ -284,8 +284,6 @@
             label = "APP_SWITCHER_TD";
             #binding-cells = <0>;
             bindings = <&app_switcher>, <&app_switcher_killer>;
-
-            tapping-term-ms = <100>;
         };
 
         sk_shift_caps_word_td: sk_shift_caps_word_td {

@@ -834,12 +834,12 @@
 
         combo_copy {
             bindings = <&copy>;
-            key-positions = <50 49>;
+            key-positions = <49 48>;
         };
 
         combo_paste {
             bindings = <&paste>;
-            key-positions = <49 48>;
+            key-positions = <49 50>;
         };
 
         combo_cut {

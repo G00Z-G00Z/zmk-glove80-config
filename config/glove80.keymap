@@ -809,21 +809,7 @@
         * This combos are available in the teams layer
         * */
         // j + k for putting available status
-
-        combo_mst_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <41 42>;
-            layers = <6>;
-        };
-
         // l + k for putting available brb
-
-        combo_mst_esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <42 43>;
-            layers = <6>;
-        };
-
         // u+i This toggles temas layer. Available in base layer and teams layer for easy transitioning
 
         combo_toggle_teams {
@@ -863,14 +849,14 @@
 
         combo_go_meeting {
             bindings = <&mst_go_mst_meeting>;
-            key-positions = <41 42 43>;
+            key-positions = <42 43>;
             require-prior-idle-ms = <200>;
             layers = <6>;
         };
 
         combo_go_teams {
             bindings = <&mst_go_to_teams>;
-            key-positions = <59 60 61>;
+            key-positions = <41 42>;
             require-prior-idle-ms = <200>;
             layers = <6>;
         };

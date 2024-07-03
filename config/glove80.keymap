@@ -292,6 +292,42 @@
             #binding-cells = <0>;
             bindings = <&sk RIGHT_SHIFT>, <&caps_word>;
         };
+
+        better_parentesis: better_parentesis {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BETTER_PARENTESIS";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        better_sqr_bracket: better_sqr_bracket {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BETTER_SQR_BRACKET";
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        better_braces: better_braces {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BETTER_BRACES";
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        better_anchor: better_anchor {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BETTER_ANCHOR";
+            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {

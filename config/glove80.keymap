@@ -894,6 +894,31 @@
             require-prior-idle-ms = <200>;
             layers = <6>;
         };
+
+        combo_parentesis {
+            bindings = <&better_parentesis>;
+            key-positions = <38 39>;
+            layers = <0>;
+            layers = <0 3>;
+        };
+
+        combo_sqr_brackets {
+            bindings = <&better_sqr_bracket>;
+            key-positions = <50 51>;
+            layers = <0 3>;
+        };
+
+        combo_better_braces {
+            bindings = <&better_braces>;
+            key-positions = <26 27>;
+            layers = <0 3>;
+        };
+
+        combo_anchor {
+            bindings = <&better_anchor>;
+            key-positions = <14 15>;
+            layers = <0 3>;
+        };
     };
 
     keymap {

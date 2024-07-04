@@ -934,6 +934,34 @@
             key-positions = <39 40>;
             layers = <0 7>;
         };
+
+        combo_repeat_right {
+            bindings = <&key_repeat>;
+            key-positions = <62 61>;
+        };
+
+        combo_repeat_left {
+            bindings = <&key_repeat>;
+            key-positions = <47 48>;
+        };
+
+        combo_slash {
+            bindings = <&better_slash>;
+            key-positions = <42 30>;
+            layers = <0 7 4>;
+        };
+
+        combo_backspace_num {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <41 42>;
+            layers = <4>;
+        };
+
+        combo_del_num {
+            bindings = <&kp DELETE>;
+            key-positions = <42 43>;
+            layers = <4>;
+        };
     };
 
     keymap {

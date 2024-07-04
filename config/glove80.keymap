@@ -928,6 +928,12 @@
             key-positions = <14 15>;
             layers = <0 3>;
         };
+
+        combo_tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <39 40>;
+            layers = <0 7>;
+        };
     };
 
     keymap {

@@ -877,17 +877,20 @@
 
         combo_copy {
             bindings = <&copy>;
-            key-positions = <49 48>;
+            key-positions = <24 25>;
+            require-prior-idle-ms = <100>;
         };
 
         combo_paste {
             bindings = <&paste>;
-            key-positions = <49 50>;
+            key-positions = <25 26>;
+            require-prior-idle-ms = <200>;
         };
 
         combo_cut {
             bindings = <&cut>;
-            key-positions = <49 48 50>;
+            key-positions = <24 25 26>;
+            require-prior-idle-ms = <200>;
         };
 
         combo_go_meeting {

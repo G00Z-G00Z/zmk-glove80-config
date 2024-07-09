@@ -965,7 +965,7 @@
 
         combo_quick_switch {
             bindings = <&app_switcher>;
-            key-positions = <41 29>;
+            key-positions = <41 40>;
         };
     };
 

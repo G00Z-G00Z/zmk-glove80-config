@@ -938,6 +938,16 @@
             layers = <0 7>;
         };
 
+        combo_repeat_right {
+            bindings = <&key_repeat>;
+            key-positions = <62 61>;
+        };
+
+        combo_repeat_left {
+            bindings = <&key_repeat>;
+            key-positions = <47 48>;
+        };
+
         combo_slash {
             bindings = <&better_slash>;
             key-positions = <42 30>;
@@ -954,16 +964,6 @@
             bindings = <&kp SPACE>;
             key-positions = <42 43>;
             layers = <4>;
-        };
-
-        combo_thumb_right_repeat {
-            bindings = <&key_repeat>;
-            key-positions = <57 56>;
-        };
-
-        combo_thumb_left_repeat {
-            bindings = <&key_repeat>;
-            key-positions = <52 53>;
         };
 
         combo_quick_switch {

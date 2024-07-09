@@ -877,17 +877,17 @@
 
         combo_copy {
             bindings = <&copy>;
-            key-positions = <49 48>;
+            key-positions = <24 25>;
         };
 
         combo_paste {
             bindings = <&paste>;
-            key-positions = <49 50>;
+            key-positions = <25 26>;
         };
 
         combo_cut {
             bindings = <&cut>;
-            key-positions = <49 48 50>;
+            key-positions = <24 25 26>;
         };
 
         combo_go_meeting {
@@ -935,16 +935,6 @@
             layers = <0 7>;
         };
 
-        combo_repeat_right {
-            bindings = <&key_repeat>;
-            key-positions = <62 61>;
-        };
-
-        combo_repeat_left {
-            bindings = <&key_repeat>;
-            key-positions = <47 48>;
-        };
-
         combo_slash {
             bindings = <&better_slash>;
             key-positions = <42 30>;
@@ -962,6 +952,16 @@
             key-positions = <42 43>;
             layers = <4>;
         };
+
+        combo_thumb_right_repeat {
+            bindings = <&key_repeat>;
+            key-positions = <57 56>;
+        };
+
+        combo_thumb_left_repeat {
+            bindings = <&key_repeat>;
+            key-positions = <52 53>;
+        };
     };
 
     keymap {
@@ -977,23 +977,23 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE     &kp C_MUTE            &kp C_VOL_DN          &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                                &kp LG(P)                 &kp K_CALCULATOR            &kp LG(E)               &kp C_BRIGHTNESS_INC       &kp C_BRIGHTNESS_DEC
-&kp EQUAL      &kp N1                &kp N2                &mt PRINTSCREEN NUMBER_3  &kp N4                  &kp N5                                                                                                                                            &kp N6  &kp N7                    &kp N8                      &kp N9                  &kp N0                     &kp MINUS
-&kp TAB        &kp Q                 &kp W                 &kp E                     &kp R                   &kp T                                                                                                                                             &kp Y   &kp U                     &kp I                       &kp O                   &kp P                      &kp BSLH
-&caps_word_tp  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_SHIFT D  &hrm_left LEFT_CONTROL F  &kp G                                                                                                                                             &kp H   &hrm_right RIGHT_CONTROL J  &hrm_right RIGHT_SHIFT K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &kp SQT
-&kp GRAVE      &kp Z                 &kp X                 &kp C                     &kp V                   &kp B   &lt_thumbs_keys 5 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB                 &kp ENTER                &kp N   &kp M                     &kp COMMA                   &kp DOT                 &better_slash              &kp RSHFT
-&magic 12 0    &win_desktop_left     &kp LC(PG_UP)         &kp LC(PG_DN)             &win_desktop_right              &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk_shift_caps_word_td  &lt_thumbs_keys 7 SPACE          &better_parentesis        &better_sqr_bracket         &better_braces          &better_anchor             &magic 12 0
+&kp ESCAPE     &kp C_MUTE            &kp C_VOL_DN          &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                                  &kp LG(P)                   &kp K_CALCULATOR          &kp LG(E)               &kp C_BRIGHTNESS_INC       &kp C_BRIGHTNESS_DEC
+&kp EQUAL      &kp N1                &kp N2                &mt PRINTSCREEN NUMBER_3  &kp N4                    &kp N5                                                                                                                                            &kp N6  &kp N7                      &kp N8                    &kp N9                  &kp N0                     &kp MINUS
+&kp TAB        &kp Q                 &kp W                 &kp E                     &kp R                     &kp T                                                                                                                                             &kp Y   &kp U                       &kp I                     &kp O                   &kp P                      &kp BSLH
+&caps_word_tp  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_SHIFT D    &hrm_left LEFT_CONTROL F  &kp G                                                                                                                                             &kp H   &hrm_right RIGHT_CONTROL J  &hrm_right RIGHT_SHIFT K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &kp SQT
+&kp GRAVE      &kp Z                 &kp X                 &kp C                     &kp V                     &kp B   &lt_thumbs_keys 5 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB                 &kp ENTER                &kp N   &kp M                       &kp COMMA                 &kp DOT                 &better_slash              &kp RSHFT
+&magic 12 0    &win_desktop_left     &kp LC(PG_UP)         &kp LC(PG_DN)             &win_desktop_right                &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk_shift_caps_word_td  &lt_thumbs_keys 7 SPACE          &better_parentesis          &better_sqr_bracket       &better_braces          &better_anchor             &magic 12 0
             >;
         };
 
         vim_normal_layer {
             bindings = <
-&none   &none        &none                     &none             &none                                                                                                                      &none                             &none                              &none                       &none          &none
-&none   &none        &none                     &none             &none                       &none                                                                          &none           &none                             &none                              &none                       &none          &none
-&none   &none        &kp LC(RIGHT)             &kp LC(RIGHT)     &redo                       &none                                                                          &copy_line      &undo                             &vim_norm_i                        &vim_o_kp                   &kp LC(V)      &none
+&none   &none        &none                     &none             &none                                                                                                                      &none                               &none                            &none                       &none          &none
+&none   &none        &none                     &none             &none                       &none                                                                          &none           &none                               &none                            &none                       &none          &none
+&none   &none        &kp LC(RIGHT)             &kp LC(RIGHT)     &redo                       &none                                                                          &copy_line      &undo                               &vim_norm_i                      &vim_o_kp                   &kp LC(V)      &none
 &none   &vim_norm_a  &vim_kp_exit_norm DELETE  &vim_norm_delete  &hrm_left LEFT_SHIFT LC(F)  &none                                                                          &kp LEFT_ARROW  &hrm_right LEFT_CONTROL DOWN_ARROW  &hrm_right RIGHT_SHIFT UP_ARROW  &hrm_right RIGHT_ALT RIGHT  &kp RIGHT_WIN  &none
-&none   &none        &kp DELETE                &vim_norm_c       &vim_norm_v                 &kp LC(LEFT)  &tog 1  &none  &none  &none  &none  &vim_kp_exit_norm ENTER      &none           &none                             &none                              &key_repeat                 &none          &none
-&trans  &none        &none                     &none             &none                                     &mo 3   &none  &none  &none  &none  &lt_thumbs_keys 7 BACKSPACE                  &kp LC(G)                         &none                              &none                       &none          &trans
+&none   &none        &kp DELETE                &vim_norm_c       &vim_norm_v                 &kp LC(LEFT)  &tog 1  &none  &none  &none  &none  &vim_kp_exit_norm ENTER      &none           &none                               &none                            &key_repeat                 &none          &none
+&trans  &none        &none                     &none             &none                                     &mo 3   &none  &none  &none  &none  &lt_thumbs_keys 7 BACKSPACE                  &kp LC(G)                           &none                            &none                       &none          &trans
             >;
         };
 
@@ -1010,34 +1010,34 @@
 
         cursor_layer {
             bindings = <
-&tog 3   &tog 3             &tog 3     &tog 3         &tog 3                                                                                                                                                   &tog 3        &tog 3         &tog 3         &tog 3              &tog 3
-&kp ESC  &kp RET            &kp K_APP  &kp LC(EQUAL)  &app_switcher_killer                 &kp INSERT                                                                                             &kp INSERT   &kp LC(PLUS)  &kp LC(MINUS)  &kp K_APP      &kp RET             &kp ESC
-&none    &layer_mo_tog 6 6  &redo      &undo          &app_switcher_td                     &cut                                                                                                   &kp LG(TAB)  &kp LA(TAB)   &undo          &redo          &paste_copy_cut_td  &kp LC(K)
-&none    &kp LGUI           &kp LALT   &key_tog_hold LEFT_SHIFT LEFT_SHIFT      &kp LCTRL  &copy                                                                                                  &kp LEFT     &kp DOWN      &kp UP         &kp RIGHT      &kp BACKSPACE       &kp LC(L)
-&none    &key_repeat        &kp SPACE  &kp ENTER      &kp BACKSPACE                        &kp LG(PERIOD)  &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none            &extend_line  &extend_word  &kp HOME     &kp PG_DN     &kp PG_UP      &kp END        &kp LC(F)           &kp LC(J)
-&trans   &none              &none      &none          &none                                                &tog 3       &kp LC(TAB)  &tog 3   &selec_all_copy_all_tp  &select_line  &select_word               &kp LC(F)     &kp LC(G)      &kp LC(LS(G))  &kp LC(H)           &kp LG(DOT)
+&tog 3   &tog 3             &tog 3     &tog 3                               &tog 3                                                                                                                                    &tog 3        &tog 3         &tog 3         &tog 3              &tog 3
+&kp ESC  &kp RET            &kp K_APP  &kp LC(EQUAL)                        &app_switcher_killer  &kp INSERT                                                                                             &kp INSERT   &kp LC(PLUS)  &kp LC(MINUS)  &kp K_APP      &kp RET             &kp ESC
+&none    &layer_mo_tog 6 6  &redo      &undo                                &app_switcher_td      &cut                                                                                                   &kp LG(TAB)  &kp LA(TAB)   &undo          &redo          &paste_copy_cut_td  &kp LC(K)
+&none    &kp LGUI           &kp LALT   &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &kp LCTRL             &copy                                                                                                  &kp LEFT     &kp DOWN      &kp UP         &kp RIGHT      &kp BACKSPACE       &kp LC(L)
+&none    &key_repeat        &kp SPACE  &kp ENTER                            &kp BACKSPACE         &kp LG(PERIOD)  &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none            &extend_line  &extend_word  &kp HOME     &kp PG_DN     &kp PG_UP      &kp END        &kp LC(F)           &kp LC(J)
+&trans   &none              &none      &none                                &none                                 &tog 3       &kp LC(TAB)  &tog 3   &selec_all_copy_all_tp  &select_line  &select_word               &kp LC(F)     &kp LC(G)      &kp LC(LS(G))  &kp LC(H)           &kp LG(DOT)
             >;
         };
 
         number_layer {
             bindings = <
-&tog 4          &tog 4                &tog 4        &tog 4            &tog 4                                                                                       &tog 4    &tog 4     &tog 4    &tog 4     &tog 4
-&kp ESC         &kp RET               &kp SPACE     &kp TAB           &kp DEL         &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
-&none           &kp P                 &redo         &undo             &kp BSPC        &kp M                                                             &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp M
+&tog 4          &tog 4                &tog 4        &tog 4          &tog 4                                                                                         &tog 4    &tog 4     &tog 4    &tog 4     &tog 4
+&kp ESC         &kp RET               &kp SPACE     &kp TAB         &kp DEL           &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
+&none           &kp P                 &redo         &undo           &kp BSPC          &kp M                                                             &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp M
 &kp KP_NUMLOCK  &hrm_left LEFT_WIN A  &kp LEFT_ALT  &kp LEFT_SHIFT  &sk LEFT_CONTROL  &kp H                                                             &kp PLUS   &kp N4    &kp N5     &kp N6    &kp MINUS  &kp H
-&none           &kp LC(A)             &select_line  &kp SPACE         &kp UNDER       &kp MINUS   &kp D  &kp E   &kp F   &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp SLASH  &kp G
-&trans          &none                 &extend_line  &extend_word      &kp X                       &none  &tog 4  &tog 4  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
+&none           &kp LC(A)             &select_line  &kp SPACE       &kp UNDER         &kp MINUS   &kp D  &kp E   &kp F   &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp SLASH  &kp G
+&trans          &none                 &extend_line  &extend_word    &kp X                         &none  &tog 4  &tog 4  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
             >;
         };
 
         function_layer {
             bindings = <
-&tog 5           &tog 5          &tog 5        &tog 5            &tog 5                                                                                                              &tog 5                    &tog 5                &tog 5                &tog 5                    &tog 5
-&none            &none           &none         &none             &none           &none                                                                                        &none  &kp LC(PLUS)              &kp LC(MINUS)         &kp LC(EQUAL)         &none                     &none
-&kp PAUSE_BREAK  &kp SCROLLLOCK  &redo         &undo             &none           &kp PRINTSCREEN                                                                              &none  &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
+&tog 5           &tog 5          &tog 5        &tog 5          &tog 5                                                                                                                &tog 5                    &tog 5                &tog 5                &tog 5                    &tog 5
+&none            &none           &none         &none           &none             &none                                                                                        &none  &kp LC(PLUS)              &kp LC(MINUS)         &kp LC(EQUAL)         &none                     &none
+&kp PAUSE_BREAK  &kp SCROLLLOCK  &redo         &undo           &none             &kp PRINTSCREEN                                                                              &none  &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
 &kp CAPS         &kp LEFT_WIN    &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &rgb_ug RGB_TOG                                                                              &none  &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
-&none            &kp KP_NUMLOCK  &none         &none             &none           &kp K_SCREENSAVER  &tog 5  &none  &none   &lock_td    &kp K_APPLICATION  &play_next_prev_td  &none  &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
-&trans           &none           &none         &none             &none                              &none   &none  &tog 5  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
+&none            &kp KP_NUMLOCK  &none         &none           &none             &kp K_SCREENSAVER  &tog 5  &none  &none   &lock_td    &kp K_APPLICATION  &play_next_prev_td  &none  &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
+&trans           &none           &none         &none           &none                                &none   &none  &tog 5  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP            &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
             >;
         };
 

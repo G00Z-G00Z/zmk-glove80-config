@@ -940,12 +940,12 @@
 
         combo_repeat_right {
             bindings = <&key_repeat>;
-            key-positions = <62 61>;
+            key-positions = <30 41 43>;
         };
 
         combo_repeat_left {
             bindings = <&key_repeat>;
-            key-positions = <47 48>;
+            key-positions = <25 38 36>;
         };
 
         combo_slash {

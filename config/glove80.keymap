@@ -962,6 +962,11 @@
             bindings = <&key_repeat>;
             key-positions = <52 53>;
         };
+
+        combo_quick_switch {
+            bindings = <&app_switcher>;
+            key-positions = <41 29>;
+        };
     };
 
     keymap {

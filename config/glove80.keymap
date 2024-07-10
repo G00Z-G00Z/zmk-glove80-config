@@ -916,19 +916,19 @@
 
         combo_sqr_brackets {
             bindings = <&better_sqr_bracket>;
-            key-positions = <50 51>;
+            key-positions = <26 27>;
             layers = <0 3>;
         };
 
         combo_better_braces {
             bindings = <&better_braces>;
-            key-positions = <26 27>;
+            key-positions = <14 15>;
             layers = <0 3>;
         };
 
         combo_anchor {
             bindings = <&better_anchor>;
-            key-positions = <14 15>;
+            key-positions = <50 51>;
             layers = <0 3>;
         };
 

@@ -879,12 +879,14 @@
             bindings = <&copy>;
             key-positions = <24 25>;
             require-prior-idle-ms = <100>;
+            timeout-ms = <18>;
         };
 
         combo_paste {
             bindings = <&paste>;
             key-positions = <25 26>;
             require-prior-idle-ms = <200>;
+            timeout-ms = <18>;
         };
 
         combo_cut {

@@ -846,7 +846,14 @@
         full_screen_window: full_screen_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(UP_ARROW) &kp LG(UP_ARROW) &kp LG(DOWN) &kp LG(UP_ARROW)>;
+            bindings = 
+                <&macro_wait_time 100>,
+                <&macro_press>,
+                <&kp LEFT_GUI>,
+                <&macro_tap>,
+                <&kp UP_ARROW &kp UP_ARROW &kp DOWN &kp UP_ARROW>,
+                <&macro_release>,
+                <&kp LEFT_GUI>;
             label = "FULL_SCREEN_WINDOW";
         };
 

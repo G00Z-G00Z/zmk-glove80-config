@@ -849,6 +849,24 @@
             bindings = <&kp LG(UP_ARROW) &kp LG(UP_ARROW) &kp LG(DOWN) &kp LG(UP_ARROW)>;
             label = "FULL_SCREEN_WINDOW";
         };
+
+        go_call_unmute_mute_go_back: go_call_unmute_mute_go_back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_wait_time 500>,
+                <&mst_go_mst_meeting>,
+                <&macro_wait_time 30>,
+                <&macro_press>,
+                <&kp LC(SPACE)>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LC(SPACE)>,
+                <&macro_tap>,
+                <&kp LA(TAB)>;
+
+            label = "GO_CALL_UNMUTE_MUTE_GO_BACK";
+        };
     };
 
     combos {

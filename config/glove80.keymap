@@ -872,7 +872,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_wait_time 300>,
+                <&macro_wait_time 200>,
                 <&mst_go_mst_meeting>,
                 <&macro_wait_time 30>,
                 <&macro_press>,

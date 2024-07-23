@@ -1042,6 +1042,14 @@
             bindings = <&app_switcher>;
             key-positions = <41 40>;
         };
+
+        combo_go_team_layer {
+            bindings = <&tog 6>;
+            key-positions = <27 25>;
+            layers = <0 6>;
+            require-prior-idle-ms = <500>;
+            timeout-ms = <20>;
+        };
     };
 
     keymap {

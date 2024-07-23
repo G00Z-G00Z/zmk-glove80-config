@@ -908,6 +908,20 @@
             bindings = <&kp K_APP &kp DOWN &kp DOWN &kp DOWN &kp ENTER>;
             label = "MST_TOG_CHAT_MUTE";
         };
+
+        win_move_screen_left: win_move_screen_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(LEFT))>;
+            label = "WIN_MOVE_SCREEN_LEFT";
+        };
+
+        win_move_screen_right: win_move_screen_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(RIGHT))>;
+            label = "WIN_MOVE_SCREEN_RIGHT";
+        };
     };
 
     combos {
@@ -1081,12 +1095,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE     &kp C_MUTE            &kp C_VOL_DN          &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                                           &kp LG(P)                       &play_next_prev_td          &kp LG(E)               &kp C_BRIGHTNESS_INC       &kp C_BRIGHTNESS_DEC
-&kp EQUAL      &kp N1                &kp N2                &mt PRINTSCREEN NUMBER_3  &kp N4                        &kp N5                                                                                                                                                 &kp N6  &kp N7                          &kp N8                      &kp N9                  &kp N0                     &kp MINUS
-&kp TAB        &kp Q                 &kp W                 &kp E                     &kp R                         &kp T                                                                                                                                                  &kp Y   &kp U                           &kp I                       &kp O                   &kp P                      &kp BSLH
-&caps_word_tp  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                  &kp H   &hmr_shift_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &kp SQT
-&kp GRAVE      &kp Z                 &kp X                 &kp C                     &kp V                         &kp B   &lt_thumbs_keys 5 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB                      &kp ENTER                &kp N   &kp M                           &kp COMMA                   &kp DOT                 &better_slash              &kp RSHFT
-&magic 12 0    &win_desktop_left     &kp LC(PG_UP)         &kp LC(PG_DN)             &win_desktop_right                    &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk_shift_caps_word_caps_td  &lt_thumbs_keys 7 SPACE          &better_parentesis              &better_sqr_bracket         &better_braces          &better_anchor             &magic 12 0
+&kp ESCAPE     &kp C_MUTE             &kp C_VOL_DN          &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                                           &kp LG(P)                       &play_next_prev_td          &kp LG(E)               &kp C_BRIGHTNESS_INC       &kp C_BRIGHTNESS_DEC
+&kp LC(Z)      &kp N1                 &kp N2                &mt PRINTSCREEN NUMBER_3  &kp N4                        &kp N5                                                                                                                                                 &kp N6  &kp N7                          &kp N8                      &kp N9                  &kp N0                     &kp MINUS
+&lt 4 TAB      &kp Q                  &kp W                 &kp E                     &kp R                         &kp T                                                                                                                                                  &kp Y   &kp U                           &kp I                       &kp O                   &kp P                      &kp GRAVE
+&caps_word_tp  &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                  &kp H   &hmr_shift_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SEMI  &kp SQT
+&kp EQUAL      &kp Z                  &kp X                 &kp C                     &kp V                         &kp B   &lt_thumbs_keys 5 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB                      &kp ENTER                &kp N   &kp M                           &kp COMMA                   &kp DOT                 &better_slash              &kp RSHFT
+&magic 12 0    &win_move_screen_left  &kp LC(PG_UP)         &kp LC(PG_DN)             &win_move_screen_right                &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk_shift_caps_word_caps_td  &lt_thumbs_keys 7 SPACE          &better_parentesis              &better_sqr_bracket         &better_braces          &better_anchor             &magic 12 0
             >;
         };
 
@@ -1147,12 +1161,12 @@
 
         teams_mst_layer {
             bindings = <
-&tog 6      &tog 6            &tog 6            &tog 6            &tog 6                                                                                                                                                                                                   &tog 6                   &go_call_unmute_mute_go_back  &tog 6               &tog 6                       &tog 6
-&none       &kp LC(N1)        &kp LC(N2)        &kp LC(N3)        &kp LC(N4)         &kp LC(N5)                                                                                                                                           &kp LG(N1)                       &kp LA(LS(EQUAL))        &kp LA(LS(MINUS))             &kp LA(LS(N0))       &none                        &none
-&kp TAB     &tog 6            &none             &kp LS(LA(UP))    &none              &none                                                                                                                                                &kp LC(LA(U))                    &mst_react_td            &mst_key_exit_mst LC(R)       &mst_reply_td        &kp LA(LS(N))                &none
-&kp ESCAPE  &none             &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))  &none                                                                                                                                                &mst_chatlist_go_unread_mute_td  &kp DOWN                 &kp UP                        &kp LC(M)            &kp LC(J)                    &kp ENTER
-&none       &kp LA(N1)        &kp LA(N2)        &kp LA(N3)        &kp LA(N4)         &kp LA(N5)  &tog 6             &none            &kp C_MUTE        &mst_call_cmds_td  &mst_show_screen_vid_td  &mst_raise_hand_go_unmute 0 LC(LS(K))  &mst_offline                     &mst_available           &mst_brb                      &mst_away            &mst_key_exit_mst LC(SLASH)  &none
-&trans      &kp LS(LG(LEFT))  &none             &none             &kp LS(LG(RIGHT))              &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE  &mst_go_to_teams   &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                                                 &mst_key_exit_mst LC(F)  &mst_busy                     &full_screen_window  &none                        &trans
+&tog 6      &tog 6                 &tog 6            &tog 6            &tog 6                                                                                                                                                                                                        &tog 6                   &go_call_unmute_mute_go_back  &tog 6               &tog 6                       &tog 6
+&none       &kp LC(N1)             &kp LC(N2)        &kp LC(N3)        &kp LC(N4)              &kp LC(N5)                                                                                                                                           &kp LG(N1)                       &kp LA(LS(EQUAL))        &kp LA(LS(MINUS))             &kp LA(LS(N0))       &none                        &none
+&kp TAB     &tog 6                 &none             &kp LS(LA(UP))    &none                   &none                                                                                                                                                &kp LC(LA(U))                    &mst_react_td            &mst_key_exit_mst LC(R)       &mst_reply_td        &kp LA(LS(N))                &none
+&kp ESCAPE  &none                  &kp LS(LA(LEFT))  &kp LS(LA(DOWN))  &kp LS(LA(RIGHT))       &none                                                                                                                                                &mst_chatlist_go_unread_mute_td  &kp DOWN                 &kp UP                        &kp LC(M)            &kp LC(J)                    &kp ENTER
+&none       &kp LA(N1)             &kp LA(N2)        &kp LA(N3)        &kp LA(N4)              &kp LA(N5)  &tog 6             &none            &kp C_MUTE        &mst_call_cmds_td  &mst_show_screen_vid_td  &mst_raise_hand_go_unmute 0 LC(LS(K))  &mst_offline                     &mst_available           &mst_brb                      &mst_away            &mst_key_exit_mst LC(SLASH)  &none
+&trans      &win_move_screen_left  &none             &none             &win_move_screen_right              &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE  &mst_go_to_teams   &kp LC(LS(H))            &mt LC(SPACE) LS(LC(M))                                                 &mst_key_exit_mst LC(F)  &mst_busy                     &full_screen_window  &none                        &trans
             >;
         };
 

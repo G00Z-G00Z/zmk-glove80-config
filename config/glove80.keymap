@@ -1080,6 +1080,13 @@
             bindings = <&app_switcher>;
             key-positions = <41 40>;
         };
+
+        combo_undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <47 25>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <500>;
+        };
     };
 
     keymap {

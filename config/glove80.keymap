@@ -1194,7 +1194,7 @@
 &none          &kp GRAVE         &kp SQT               &kp DOUBLE_QUOTES      &kp TILDE          &kp SEMICOLON                                                                            &none          &key_repeat           &kp LC(Z)         &none              &none                  &none
 &kp LESS_THAN  &kp LEFT_BRACE    &kp LEFT_BRACKET      &kp RBKT               &kp RIGHT_BRACE    &kp GREATER_THAN                                                                         &kp SEMICOLON  &kp MINUS             &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp UNDERSCORE         &kp TILDE
 &kp HASH       &kp CARET         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR         &kp ASTERISK                                                                             &kp DOT        &kp LEFT_SHIFT        &kp LEFT_CONTROL  &kp LEFT_ALT       &kp LEFT_WIN           &kp SQT
-&kp AT_SIGN    &kp EQUAL         &kp PIPE              &better_underscore     &kp QUESTION       &kp EXCLAMATION   &kp NON_US_BACKSLASH  &kp TILDE  &key_repeat    &none   &none  &none   &kp COMMA      &kp SPACE             &kp BACKSPACE     &paste             &kp SLASH              &none
+&kp AT_SIGN    &kp PIPE          &kp EQUAL             &better_underscore     &kp QUESTION       &kp EXCLAMATION   &kp NON_US_BACKSLASH  &kp TILDE  &key_repeat    &none   &none  &none   &kp COMMA      &kp SPACE             &kp BACKSPACE     &paste             &kp SLASH              &none
 &kp TILDE      &kp LEFT_BRACKET  &kp AMPERSAND         &kp PLUS               &kp RIGHT_BRACKET                    &kp PERCENT           &kp COLON  &kp SEMICOLON  &tog 7  &none  &tog 7                 &kp LEFT_PARENTHESIS  &kp LBKT          &kp RBKT           &kp RIGHT_PARENTHESIS  &trans
             >;
         };

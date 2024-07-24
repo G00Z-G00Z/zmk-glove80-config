@@ -21,6 +21,8 @@
 
 &sk { quick-release; };
 
+&lt { quick-tap-ms = <300>; };
+
 / {
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.

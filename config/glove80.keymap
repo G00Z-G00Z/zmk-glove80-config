@@ -1098,6 +1098,34 @@
             timeout-ms = <30>;
             require-prior-idle-ms = <500>;
         };
+
+        combo_symbols_space {
+            bindings = <&kp SPACE>;
+            key-positions = <36 37>;
+            layers = <7>;
+        };
+
+        combo_symbols_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <38 37>;
+            layers = <7>;
+        };
+
+        combo_base_colon {
+            bindings = <&kp COLON>;
+            key-positions = <30 31>;
+            layers = <0>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
+        };
+
+        combo_base_dash {
+            bindings = <&kp MINUS>;
+            key-positions = <29 30>;
+            layers = <0>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
+        };
     };
 
     keymap {

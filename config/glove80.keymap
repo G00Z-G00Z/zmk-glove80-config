@@ -1154,6 +1154,30 @@
             key-positions = <42 60>;
             layers = <0 7 4>;
         };
+
+        combo_double_quotes {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <29 26 25 30>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+        };
+
+        combo_single_quote {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <26 29>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+        };
+
+        combo_backtick {
+            bindings = <&kp GRAVE>;
+            key-positions = <25 30>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+        };
     };
 
     keymap {

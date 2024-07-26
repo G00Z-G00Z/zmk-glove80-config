@@ -150,8 +150,8 @@
             bindings = <&mo>, <&to>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
-            flavor = "balanced";
+            tapping-term-ms = <200>;
+            flavor = "tap-unless-interrupted";
         };
 
         // 1t: reply to selcted message, 2t: reply to last message

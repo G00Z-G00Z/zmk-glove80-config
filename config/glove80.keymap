@@ -1107,27 +1107,37 @@
             bindings = <&kp COLON>;
             key-positions = <30 31>;
             layers = <0>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
         };
 
         combo_base_dash {
             bindings = <&kp MINUS>;
             key-positions = <29 30>;
             layers = <0>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
         };
 
         combo_move_screen_left {
             bindings = <&kp LG(LS(LEFT))>;
             key-positions = <24 28>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <30>;
         };
 
         combo_move_screen_right {
             bindings = <&kp LG(LS(RIGHT))>;
             key-positions = <24 31>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <30>;
         };
 
         combo_full_screen {
             bindings = <&full_screen_window>;
             key-positions = <24 59>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <30>;
         };
 
         combo_eq {
@@ -1139,18 +1149,24 @@
         combo_double_quotes {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <29 26 25 30>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
             layers = <0>;
         };
 
         combo_single_quote {
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <26 29>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
             layers = <0>;
         };
 
         combo_backtick {
             bindings = <&kp GRAVE>;
             key-positions = <25 30>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
             layers = <0>;
         };
     };

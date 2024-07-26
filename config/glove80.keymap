@@ -388,15 +388,6 @@
                 <&mst_tog_unread_chat>,
                 <&mst_tog_mute_chat>;
         };
-
-        better_underscore: better_underscore {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BETTER_UNDERSCORE";
-            #binding-cells = <0>;
-            bindings = <&kp UNDERSCORE>, <&kp MINUS>;
-
-            tapping-term-ms = <150>;
-        };
     };
 
     macros {

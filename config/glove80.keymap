@@ -1144,7 +1144,7 @@
 
         combo_full_screen {
             bindings = <&full_screen_window>;
-            key-positions = <24 29 30>;
+            key-positions = <24 59>;
             require-prior-idle-ms = <100>;
             timeout-ms = <30>;
         };

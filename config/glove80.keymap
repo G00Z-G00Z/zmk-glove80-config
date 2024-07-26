@@ -1148,6 +1148,12 @@
             require-prior-idle-ms = <100>;
             timeout-ms = <30>;
         };
+
+        combo_eq {
+            bindings = <&kp EQUAL>;
+            key-positions = <42 60>;
+            layers = <0 7 4>;
+        };
     };
 
     keymap {

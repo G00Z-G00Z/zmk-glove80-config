@@ -1127,6 +1127,27 @@
             timeout-ms = <18>;
             require-prior-idle-ms = <200>;
         };
+
+        combo_move_screen_left {
+            bindings = <&kp LG(LS(LEFT))>;
+            key-positions = <24 28>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <30>;
+        };
+
+        combo_move_screen_right {
+            bindings = <&kp LG(LS(RIGHT))>;
+            key-positions = <24 31>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <30>;
+        };
+
+        combo_full_screen {
+            bindings = <&full_screen_window>;
+            key-positions = <24 29 30>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <30>;
+        };
     };
 
     keymap {

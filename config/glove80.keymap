@@ -1116,7 +1116,7 @@
             key-positions = <29 30>;
             layers = <0>;
             timeout-ms = <18>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <100>;
         };
 
         combo_move_screen_left {

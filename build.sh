@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+python ./scripts/update-max-combo.py ./config/glove80.keymap ./config/glove80.conf
+
 IMAGE=glove80-zmk-config-docker
 BRANCH="${1:-main}"
 

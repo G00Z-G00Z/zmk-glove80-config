@@ -401,10 +401,10 @@
             require-prior-idle-ms = <100>;
         };
 
-        hold_bt_1: hold_bt_1 {
+        hold_bt_0: hold_bt_0 {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_BT_1";
-            bindings = <&bt_1>, <&kp>;
+            label = "HOLD_BT_0";
+            bindings = <&bt_0>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -417,6 +417,18 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_BT_2";
             bindings = <&bt_2>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        hold_bt_1: hold_bt_1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_BT_1";
+            bindings = <&bt_1>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -1234,7 +1246,7 @@
 
             bindings = <
 &kp ESCAPE   &kp C_MUTE             &kp C_VOL_DN           &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                                                                                     &kp LG(P)                       &play_next_prev_td          &kp LG(E)                &kp C_BRIGHTNESS_INC       &kp C_BRIGHTNESS_DEC
-&kp LC(Z)    &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &mt C_VOLUME_DOWN NUMBER_4    &mt C_VOLUME_UP N5                                                                                                                                                 &mst_raise_hand_go_unmute 0 NUMBER_6  &hold_repeat 0 N7               &mt C_MUTE N8               &mt C_BRIGHTNESS_INC N9  &mt C_BRI_DEC N0           &kp MINUS
+&kp LC(Z)    &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &mt C_VOLUME_DOWN NUMBER_4    &mt C_VOLUME_UP N5                                                                                                                                                 &mst_raise_hand_go_unmute 0 NUMBER_6  &hold_repeat 0 N7               &mt C_MUTE N8               &mt C_BRIGHTNESS_INC N9  &hold_bt_0 0 N0            &kp MINUS
 &lt 4 TAB    &kp Q                  &kp W                  &kp E                     &kp R                         &kp T                                                                                                                                                              &kp Y                                 &kp U                           &kp I                       &kp O                    &kp P                      &kp GRAVE
 &kp EQUAL    &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S   &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                              &kp H                                 &hmr_shift_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L   &hrm_right RIGHT_GUI SEMI  &kp SQT
 &tog 1       &kp Z                  &kp X                  &kp C                     &kp V                         &kp B               &lt_thumbs_keys 8 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB                      &kp ENTER                &kp N                                 &kp M                           &kp COMMA                   &kp DOT                  &better_slash              &full_screen_window

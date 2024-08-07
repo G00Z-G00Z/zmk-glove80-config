@@ -1122,7 +1122,7 @@
 
         combo_undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <47 25>;
+            key-positions = <48 49>;
             timeout-ms = <30>;
             require-prior-idle-ms = <500>;
         };

@@ -1215,7 +1215,7 @@
 
         combo_mute_and_lock {
             bindings = <&mute_and_lock>;
-            key-positions = <69 38 74 41>;
+            key-positions = <69 74 37 42>;
             require-prior-idle-ms = <100>;
         };
     };

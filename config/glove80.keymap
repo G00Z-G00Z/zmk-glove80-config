@@ -962,10 +962,10 @@
             label = "WIN_MOVE_SCREEN_RIGHT";
         };
 
-        mute_and_lock: mute_and_lock {
+        pause_mute_lock: mute_and_lock {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_MUTE &kp LG(L)>;
+            bindings = <&kp C_PAUSE &kp C_MUTE &kp LG(L)>;
             label = "MUTE_AND_LOCK";
         };
     };
@@ -1214,7 +1214,7 @@
         };
 
         combo_mute_and_lock {
-            bindings = <&mute_and_lock>;
+            bindings = <&pause_mute_lock>;
             key-positions = <69 74 37 42>;
             require-prior-idle-ms = <100>;
         };

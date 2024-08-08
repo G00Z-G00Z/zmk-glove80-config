@@ -34,6 +34,30 @@ jobs:
         with:
           name: moergo-glove80-zmk-dev
           skipPush: true
+
+      # Setup python to run scripts
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # Install the dependencies
+      # - name: Cache Python dependencies
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ~/.cache/pip
+      #     key: ${{ runner.os }}-pip-${{ hashFiles('**/scripts/requirements.txt') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-pip-
+      # - name: Install Python dependencies
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     pip install -r scripts/requirements.txt
+      
+      # Updates the max combo of the files
+      - name: Run Python script
+        run: python scripts/update-max-combo.py config/glove80.keymap config/glove80.conf
+
       - name: Build Glove80 combined firmware
         run: nix-build config -o combined
       - name: Copy result out of nix store
@@ -44,3 +68,4 @@ jobs:
         with:
           name: "glove80-${{ github.sha }}.uf2" # Include commit hash in the artifact name
           path: glove80.uf2
+

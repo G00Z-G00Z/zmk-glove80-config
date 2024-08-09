@@ -296,42 +296,6 @@
             bindings = <&sk RIGHT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
         };
 
-        better_parentesis: better_parentesis {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BETTER_PARENTESIS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        better_sqr_bracket: better_sqr_bracket {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BETTER_SQR_BRACKET";
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        better_braces: better_braces {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BETTER_BRACES";
-            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        better_anchor: better_anchor {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BETTER_ANCHOR";
-            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         better_slash: better_slash {
             compatible = "zmk,behavior-mod-morph";
             label = "BETTER_SLASH";
@@ -980,6 +944,34 @@
             bindings = <&kp C_MUTE &kp LG(L)>;
             label = "MUTE_AND_LOCK";
         };
+
+        better_parenthesis: better_parenthesis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+            label = "BETTER_PARENTHESIS";
+        };
+
+        better_sqr_brackets: better_sqr_brackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
+            label = "BETTER_SQR_BRACKETS";
+        };
+
+        better_braces: better_squirly_braces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+            label = "BETTER_SQUIRLY_BRACES";
+        };
+
+        better_anchor: better_anchor {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT_ARROW>;
+            label = "BETTER_ANCHOR";
+        };
     };
 
     combos {
@@ -1075,15 +1067,15 @@
             layers = <5>;
         };
 
-        combo_parentesis {
-            bindings = <&better_parentesis>;
+        combo_parenthesis {
+            bindings = <&better_parenthesis>;
             key-positions = <38 39>;
             layers = <0>;
             layers = <0 3>;
         };
 
         combo_sqr_brackets {
-            bindings = <&better_sqr_bracket>;
+            bindings = <&better_sqr_brackets>;
             key-positions = <26 27>;
             layers = <0 3>;
         };
@@ -1250,7 +1242,7 @@
 &lt 4 TAB    &kp Q                  &kp W                  &kp E                     &kp R                         &kp T                                                                                                                                                              &kp Y                                 &kp U                           &kp I                       &kp O                    &kp P                      &kp GRAVE
 &kp EQUAL    &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S   &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                              &kp H                                 &hmr_shift_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L   &hrm_right RIGHT_GUI SEMI  &kp SQT
 &tog 1       &kp Z                  &kp X                  &kp C                     &kp V                         &kp B               &lt_thumbs_keys 8 ESCAPE     &kp DELETE           &key_repeat      &key_repeat           &kp TAB                      &kp ENTER                &kp N                                 &kp M                           &kp COMMA                   &kp DOT                  &better_slash              &full_screen_window
-&magic 12 0  &win_move_screen_left  &kp LC(PG_UP)          &kp LC(PG_DN)             &win_move_screen_right                            &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk_shift_caps_word_caps_td  &lt_thumbs_keys 6 SPACE                                        &better_parentesis              &better_sqr_bracket         &better_braces           &better_anchor             &magic 12 0
+&magic 12 0  &win_move_screen_left  &kp LC(PG_UP)          &kp LC(PG_DN)             &win_move_screen_right                            &lt_thumbs_keys 3 BACKSPACE  &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk_shift_caps_word_caps_td  &lt_thumbs_keys 6 SPACE                                        &better_parenthesis             &better_sqr_brackets        &better_braces           &better_anchor             &magic 12 0
             >;
         };
 

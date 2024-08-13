@@ -1072,8 +1072,8 @@
         combo_toggle_teams {
             bindings = <&tog 5>;
             key-positions = <29 30 31>;
-            require-prior-idle-ms = <200>;
             layers = <0 5>;
+            require-prior-idle-ms = <200>;
         };
 
         enter_vim_mode {
@@ -1092,41 +1092,44 @@
         combo_copy {
             bindings = <&copy>;
             key-positions = <24 25>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
 
         combo_paste {
             bindings = <&paste>;
             key-positions = <25 26>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
 
         combo_cut {
             bindings = <&cut>;
             key-positions = <24 25 26>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_go_meeting {
             bindings = <&mst_go_mst_meeting>;
             key-positions = <42 43>;
-            require-prior-idle-ms = <200>;
             layers = <5>;
+            require-prior-idle-ms = <200>;
         };
 
         combo_go_teams {
             bindings = <&mst_go_to_teams>;
             key-positions = <41 42>;
-            require-prior-idle-ms = <200>;
             layers = <5>;
+            require-prior-idle-ms = <200>;
         };
 
         combo_tilde {
             bindings = <&kp TILDE>;
             key-positions = <39 40>;
             layers = <0 6>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_repeat_right {
@@ -1143,97 +1146,107 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <41 42>;
             layers = <4>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_space_num {
             bindings = <&kp SPACE>;
             key-positions = <42 43>;
             layers = <4>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_quick_switch {
             bindings = <&app_switcher>;
             key-positions = <41 40>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_undo {
             bindings = <&kp LC(Z)>;
             key-positions = <48 49>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <500>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_symbols_space {
             bindings = <&kp SPACE>;
             key-positions = <36 37>;
             layers = <6>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_symbols_backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <38 37>;
             layers = <6>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_base_colon {
             bindings = <&kp COLON>;
             key-positions = <30 31>;
             layers = <0>;
+            require-prior-idle-ms = <150>;
             timeout-ms = <18>;
-            require-prior-idle-ms = <200>;
         };
 
         combo_base_dash {
             bindings = <&kp MINUS>;
             key-positions = <29 30>;
             layers = <0>;
+            require-prior-idle-ms = <150>;
             timeout-ms = <18>;
-            require-prior-idle-ms = <100>;
         };
 
         combo_move_screen_left {
             bindings = <&kp LG(LS(LEFT))>;
             key-positions = <24 28>;
-            require-prior-idle-ms = <100>;
-            timeout-ms = <30>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_move_screen_right {
             bindings = <&kp LG(LS(RIGHT))>;
             key-positions = <24 31>;
             require-prior-idle-ms = <100>;
-            timeout-ms = <30>;
+            timeout-ms = <18>;
         };
 
         combo_full_screen {
             bindings = <&full_screen_window>;
             key-positions = <24 59>;
             require-prior-idle-ms = <100>;
-            timeout-ms = <30>;
+            timeout-ms = <18>;
         };
 
         combo_better_double_quotes {
             bindings = <&better_delimiter DOUBLE_QUOTES DOUBLE_QUOTES>;
             key-positions = <29 26 25 30>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <200>;
             layers = <0>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_better_quote {
             bindings = <&better_delimiter SINGLE_QUOTE SINGLE_QUOTE>;
             key-positions = <26 29>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <200>;
             layers = <0>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_better_backtick {
             bindings = <&better_delimiter GRAVE GRAVE>;
             key-positions = <25 30>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <200>;
             layers = <0>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_mute_and_lock {
@@ -1245,33 +1258,33 @@
         combo_lpar {
             bindings = <&hrm_right_lpar LS(LEFT_CONTROL) 0>;
             key-positions = <41 42>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <175>;
             layers = <0 6>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_rpar {
             bindings = <&hrm_right_rpar LA(LEFT_CONTROL) 0>;
             key-positions = <42 43>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <175>;
             layers = <0 6>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_lbra_cur {
             bindings = <&lbra_cur>;
             key-positions = <59 60>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <175>;
             layers = <0 6>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
 
         combo_rbra_cur {
             bindings = <&rbra_cur>;
             key-positions = <60 61>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <175>;
             layers = <0 6>;
+            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
         };
     };
 

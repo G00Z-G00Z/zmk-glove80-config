@@ -1286,6 +1286,78 @@
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
+
+        combo_tab {
+            bindings = <&hrm_left LA(LEFT_CONTROL) TAB>;
+            key-positions = <36 35>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0 6 5>;
+        };
+
+        combo_esc {
+            bindings = <&kp ESC>;
+            key-positions = <23 24>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0 6 5>;
+        };
+
+        combo_enter {
+            bindings = <&hrm_left LS(LEFT_CONTROL) ENTER>;
+            key-positions = <37 38>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0 6 5>;
+        };
+
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <38 50>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0 6 5>;
+        };
+
+        combo_dolar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <38 26>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0 6 5>;
+        };
+
+        combo_hashtag {
+            bindings = <&kp HASH>;
+            key-positions = <25 37>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0 6 5>;
+        };
+
+        combo_at {
+            bindings = <&kp AT_SIGN>;
+            key-positions = <24 36>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0 6 5>;
+        };
+
+        combo_slash {
+            bindings = <&better_slash>;
+            key-positions = <61 43>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0 6 5>;
+        };
+
+        combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <62 44>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0 6 5>;
+        };
     };
 
     keymap {

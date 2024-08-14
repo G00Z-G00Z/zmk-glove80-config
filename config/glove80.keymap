@@ -1196,14 +1196,6 @@
             timeout-ms = <18>;
         };
 
-        combo_base_dash {
-            bindings = <&kp MINUS>;
-            key-positions = <29 30>;
-            layers = <0>;
-            require-prior-idle-ms = <150>;
-            timeout-ms = <18>;
-        };
-
         combo_move_screen_left {
             bindings = <&kp LG(LS(LEFT))>;
             key-positions = <24 28>;
@@ -1303,8 +1295,8 @@
             layers = <0 6 5>;
         };
 
-        combo_enter {
-            bindings = <&hrm_left LS(LEFT_CONTROL) ENTER>;
+        combo_dash {
+            bindings = <&hrm_left LS(LEFT_CONTROL) MINUS>;
             key-positions = <37 38>;
             timeout-ms = <18>;
             require-prior-idle-ms = <150>;

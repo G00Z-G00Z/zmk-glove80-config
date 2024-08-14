@@ -1288,7 +1288,7 @@
         };
 
         combo_tab {
-            bindings = <&hrm_left LA(LEFT_CONTROL) TAB>;
+            bindings = <&hrm_left LG(LEFT_ALT) TAB>;
             key-positions = <36 35>;
             timeout-ms = <18>;
             require-prior-idle-ms = <150>;

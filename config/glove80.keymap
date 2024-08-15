@@ -1070,7 +1070,7 @@
         // u+i This toggles temas layer. Available in base layer and teams layer for easy transitioning
 
         combo_toggle_teams {
-            bindings = <&tog 5>;
+            bindings = <&layer_mo_to 5 5>;
             key-positions = <29 30 31>;
             layers = <0 5>;
             require-prior-idle-ms = <200>;

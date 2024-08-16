@@ -1306,16 +1306,16 @@
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
             key-positions = <38 50>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
             layers = <0 6 5>;
         };
 
         combo_dolar {
             bindings = <&kp DOLLAR>;
             key-positions = <38 26>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
             layers = <0 6 5>;
         };
 
@@ -1330,24 +1330,24 @@
         combo_at {
             bindings = <&kp AT_SIGN>;
             key-positions = <24 36>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
             layers = <0 6 5>;
         };
 
         combo_slash {
             bindings = <&better_slash>;
             key-positions = <61 43>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
             layers = <0 6 5>;
         };
 
         combo_pipe {
             bindings = <&kp PIPE>;
             key-positions = <62 44>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
             layers = <0 6 5>;
         };
     };

@@ -1139,7 +1139,7 @@
 
         combo_repeat_left {
             bindings = <&key_repeat>;
-            key-positions = <25 38 36>;
+            key-positions = <38 39>;
         };
 
         combo_backspace_num {

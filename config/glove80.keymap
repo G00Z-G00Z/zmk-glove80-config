@@ -1112,14 +1112,14 @@
 
         combo_go_meeting {
             bindings = <&mst_go_mst_meeting>;
-            key-positions = <42 43>;
+            key-positions = <37 36>;
             layers = <5>;
             require-prior-idle-ms = <200>;
         };
 
         combo_go_teams {
             bindings = <&mst_go_to_teams>;
-            key-positions = <41 42>;
+            key-positions = <38 37>;
             layers = <5>;
             require-prior-idle-ms = <200>;
         };

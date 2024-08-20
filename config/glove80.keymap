@@ -1400,6 +1400,14 @@
             timeout-ms = <100>;
             require-prior-idle-ms = <15>;
         };
+
+        combo_percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <38 50>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 6>;
+        };
     };
 
     keymap {

@@ -47,14 +47,6 @@
         };
 
         // Caps word and dt for CAPSLOCK 
-
-        caps_word_tp: caps_word_tp {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CAPS_WORD_TP";
-            #binding-cells = <0>;
-            bindings = <&caps_word>, <&kp CAPSLOCK>;
-        };
-
         /* Selection behaviours morphs
          *
          * This behaviours select text in a particular way.
@@ -353,18 +345,6 @@
                 <&mst_tog_mute_chat>;
 
             tapping-term-ms = <300>;
-        };
-
-        hold_repeat: hold_repeat {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_REPEAT";
-            bindings = <&key_repeat>, <&kp>;
-
-            #binding-cells = <2>;
-            quick-tap-ms = <300>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            require-prior-idle-ms = <100>;
         };
 
         hold_bt_0: hold_bt_0 {

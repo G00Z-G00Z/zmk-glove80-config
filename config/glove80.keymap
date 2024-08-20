@@ -488,6 +488,13 @@
             quick-tap-ms = <300>;
             flavor = "tap-preferred";
         };
+
+        copy_cut_td: copy_cut_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COPY_CUT_TD";
+            #binding-cells = <0>;
+            bindings = <&copy>, <&cut>;
+        };
     };
 
     macros {
@@ -1121,7 +1128,7 @@
         };
 
         combo_copy {
-            bindings = <&copy>;
+            bindings = <&copy_cut_td>;
             key-positions = <24 25>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
@@ -1130,13 +1137,6 @@
         combo_paste {
             bindings = <&paste>;
             key-positions = <25 26>;
-            require-prior-idle-ms = <150>;
-            timeout-ms = <18>;
-        };
-
-        combo_cut {
-            bindings = <&cut>;
-            key-positions = <24 25 26>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };

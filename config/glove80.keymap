@@ -1073,7 +1073,7 @@
             bindings =
                 <&macro_wait_time 500>,
                 <&macro_tap_time 50>,
-                <&kp LG(X) &kp U &kp G>;
+                <&kp LG(X) &kp U &kp U>;
 
             label = "WINDOWS_SHUTDOWN";
         };

@@ -495,6 +495,24 @@
             #binding-cells = <0>;
             bindings = <&copy>, <&cut>;
         };
+
+        sk_shift_caps_num_td: sk_shift_caps_num_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SK_SHIFT_CAPS_NUM_TD";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_SHIFT>, <&tog 14>;
+        };
+
+        lt_thumb_caps_num_sk: lt_thumb_caps_num_sk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_THUMB_CAPS_NUM_SK";
+            bindings = <&mo>, <&sk_shift_caps_num_td>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <300>;
+            flavor = "tap-preferred";
+        };
     };
 
     macros {
@@ -1430,12 +1448,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE   &kp C_MUTE             &kp C_VOL_DN           &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                                                                                          &kp LG(P)                                             &play_next_prev_td                            &kp LG(E)                                 &kp C_BRIGHTNESS_INC                      &kp C_BRIGHTNESS_DEC
-&kp LC(Z)    &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &kp NUMBER_4                  &mst_go_call_mute_go_back_mt 0 N5                                                                                                                                                 &mt C_VOLUME_DOWN NUMBER_6  &mt C_VOLUME_UP N7                                    &mt C_MUTE N8                                 &mt C_BRIGHTNESS_INC N9                   &hold_bt_0 0 N0                           &kp MINUS
-&lt 4 TAB    &kp Q                  &kp W                  &kp E                     &kp R                         &kp T                                                                                                                                                                             &kp Y                       &kp U                                                 &kp I                                         &kp O                                     &kp P                                     &kp GRAVE
-&kp EQUAL    &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S   &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                                             &kp H                       &hmr_shift_right RIGHT_SHIFT J                        &hrm_right RIGHT_CONTROL K                    &hrm_right RIGHT_ALT L                    &hrm_right RIGHT_GUI SEMI                 &kp SQT
-&tog 1       &kp Z                  &kp X                  &kp C                     &kp V                         &kp B                              &lt_thumbs_keys 8 ESCAPE  &better_backspace    &key_repeat      &key_repeat           &kp TAB                      &kp ENTER                   &kp N                       &kp M                                                 &kp COMMA                                     &kp DOT                                   &better_slash                             &go_temp_mst
-&magic 12 0  &kp LG(PERIOD)         &kp LC(PG_UP)          &kp LC(PG_DN)             &full_screen_window                                              &lt_thumb_backspace 3 0   &sk_mo 4 LEFT_SHIFT  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk_shift_caps_word_caps_td  &lt_thumb_better_space 6 0                              &better_delimiter LEFT_PARENTHESIS RIGHT_PARENTHESIS  &better_delimiter LEFT_BRACKET RIGHT_BRACKET  &better_delimiter LEFT_BRACE RIGHT_BRACE  &better_delimiter LESS_THAN GREATER_THAN  &magic 12 0
+&kp ESCAPE   &kp C_MUTE             &kp C_VOL_DN           &kp C_VOLUME_UP           &kp LC(LS(ESCAPE))                                                                                                                                                                                                                                &kp LG(P)                                             &play_next_prev_td                            &kp LG(E)                                 &kp C_BRIGHTNESS_INC                      &kp C_BRIGHTNESS_DEC
+&kp LC(Z)    &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &kp NUMBER_4                  &mst_go_call_mute_go_back_mt 0 N5                                                                                                                                                       &mt C_VOLUME_DOWN NUMBER_6  &mt C_VOLUME_UP N7                                    &mt C_MUTE N8                                 &mt C_BRIGHTNESS_INC N9                   &hold_bt_0 0 N0                           &kp MINUS
+&lt 4 TAB    &kp Q                  &kp W                  &kp E                     &kp R                         &kp T                                                                                                                                                                                   &kp Y                       &kp U                                                 &kp I                                         &kp O                                     &kp P                                     &kp GRAVE
+&kp EQUAL    &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S   &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                                                   &kp H                       &hmr_shift_right RIGHT_SHIFT J                        &hrm_right RIGHT_CONTROL K                    &hrm_right RIGHT_ALT L                    &hrm_right RIGHT_GUI SEMI                 &kp SQT
+&tog 1       &kp Z                  &kp X                  &kp C                     &kp V                         &kp B                              &lt_thumbs_keys 8 ESCAPE  &better_backspace          &key_repeat      &key_repeat           &kp TAB                      &kp ENTER                   &kp N                       &kp M                                                 &kp COMMA                                     &kp DOT                                   &better_slash                             &go_temp_mst
+&magic 12 0  &kp LG(PERIOD)         &kp LC(PG_UP)          &kp LC(PG_DN)             &full_screen_window                                              &lt_thumb_backspace 3 0   &lt_thumb_caps_num_sk 4 0  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT  &sk_shift_caps_word_caps_td  &lt_thumb_better_space 6 0                              &better_delimiter LEFT_PARENTHESIS RIGHT_PARENTHESIS  &better_delimiter LEFT_BRACKET RIGHT_BRACKET  &better_delimiter LEFT_BRACE RIGHT_BRACE  &better_delimiter LESS_THAN GREATER_THAN  &magic 12 0
             >;
         };
 

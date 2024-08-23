@@ -1099,7 +1099,7 @@
         caps_unlock: caps_unlock_layer {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&trans &macro_param_1to1 &tog MACRO_PLACEHOLDER>;
+            bindings = <&macro_param_1to1 &tog MACRO_PLACEHOLDER &trans>;
             label = "CAPS_UNLOCK_LAYER";
         };
     };

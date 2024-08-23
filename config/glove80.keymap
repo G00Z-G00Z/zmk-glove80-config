@@ -1077,6 +1077,13 @@
 
             label = "WINDOWS_SHUTDOWN";
         };
+
+        caps_unlock: caps_unlock_layer {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&trans &macro_param_1to1 &tog MACRO_PLACEHOLDER>;
+            label = "CAPS_UNLOCK_LAYER";
+        };
     };
 
     combos {
@@ -1572,6 +1579,17 @@
 &kp N3  &kp N9  &kp N5  &kp N1  &kp N7  &kp N2                                                  &kp N2  &kp N7  &kp N1  &kp N5  &kp N9  &kp N3
 &kp N4  &kp N0  &kp N6  &kp N2  &kp N8  &kp N3  &kp N4  &kp N5  &kp N6  &kp N6  &kp N5  &kp N4  &kp N3  &kp N8  &kp N2  &kp N6  &kp N0  &kp N4
 &kp N5  &kp N1  &kp N7  &kp N3  &kp N9          &kp N7  &kp N8  &kp N9  &kp N9  &kp N8  &kp N7          &kp N9  &kp N3  &kp N7  &kp N1  &kp N5
+            >;
+        };
+
+        caps_num_layer {
+            bindings = <
+&caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14                                                                                                                                          &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14
+&caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14                                                                                                        &caps_unlock 14  &kp LS(DOLLAR)   &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14
+&caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14                                                                                                        &kp PERCENT      &kp N7           &kp N8           &kp N9           &kp COLON        &caps_unlock 14
+&caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14                                                                                                        &caps_unlock 14  &kp N4           &kp N5           &kp N6           &kp MINUS        &caps_unlock 14
+&caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &kp N1           &kp N2           &kp N3           &kp FSLH         &caps_unlock 14
+&caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14                   &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &kp COMMA        &kp DOT          &caps_unlock 14                   &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &caps_unlock 14  &kp TILDE
             >;
         };
     };

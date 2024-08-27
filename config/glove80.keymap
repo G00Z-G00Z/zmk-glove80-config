@@ -156,9 +156,10 @@
             bindings =
                 <&mst_react_happy>,
                 <&mst_react_lol>,
-                <&mst_react_surprise>;
+                <&mst_react_surprise>,
+                <&mst_react_more>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
         };
 
         /* 
@@ -1068,6 +1069,13 @@
             #binding-cells = <0>;
             bindings = <&kp ENTER &kp RIGHT &kp RIGHT &kp RIGHT &kp ENTER &kp ESCAPE>;
             label = "MST_REACT_SURPRISE";
+        };
+
+        mst_react_more: mst_react_more {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp ENTER &tog 5>;
+            label = "MST_REACT_MORE";
         };
     };
 

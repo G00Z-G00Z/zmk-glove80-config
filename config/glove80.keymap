@@ -124,7 +124,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "Show screen and toggle video";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(E))>, <&kp LS(LC(O))>;
+            bindings = <&mst_show_screen>, <&kp LS(LC(O))>;
         };
 
         // 1t: go to call window, 2t: answer call from toast, 3t: Call someone from the chat
@@ -1076,6 +1076,16 @@
             #binding-cells = <0>;
             bindings = <&kp ENTER &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp ENTER &tog 5>;
             label = "MST_REACT_MORE";
+        };
+
+        mst_show_screen: mst_show_screen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_wait_time 50>,
+                <&kp LC(LS(E)) &kp TAB &kp TAB &kp TAB &tog 5>;
+
+            label = "MST_SHOW_SCREEN";
         };
     };
 

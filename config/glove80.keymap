@@ -452,7 +452,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
         };
 
         lt_thumb_backspace: lt_thumb_backspace {

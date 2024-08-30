@@ -1015,7 +1015,11 @@
         mute_and_lock: mute_and_lock {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp K_LOCK &kp LG(L) &kp C_MUTE>;
+            bindings =
+                <&kp K_LOCK>,
+                <&macro_wait_time 1000>,
+                <&kp LG(L) &kp C_MUTE>;
+
             label = "MUTE_AND_LOCK";
         };
 

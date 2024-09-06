@@ -1113,26 +1113,6 @@
 
             label = "MST_SHOW_SCREEN";
         };
-
-        mst_react_clip: mst_react_clip {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&kp ENTER &kp LEFT &kp ENTER &kp C &kp L &kp I>,
-                <&macro_wait_time 1000>,
-                <&kp P>,
-                <&macro_wait_time 50>,
-                <&kp LS(TAB) &kp LEFT &kp ENTER &kp ESCAPE>;
-
-            label = "MST_REACT_CLIP";
-        };
-
-        mst_react_heart: mst_react_heart {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp ENTER &kp RIGHT &kp ENTER &kp ESCAPE>;
-            label = "MST_REACT_HEART";
-        };
     };
 
     combos {
@@ -1534,12 +1514,12 @@
 
         teams_mst_layer {
             bindings = <
-&tog 5     &tog 5                       &go_call_unmute_mute_go_back     &tog 5                   &tog 5                                                                                                                                                                                                        &tog 5                  &tog 5                &tog 5             &tog 5                 &tog 5
-&kp ENTER  &kp LC(N1)                   &kp LC(N2)                       &kp LC(N3)               &kp LC(N4)               &kp LC(N5)                                                                                                                                                   &kp LG(N1)              &kp LA(LS(EQUAL))       &kp LA(LS(MINUS))     &kp LA(LS(N0))     &none                  &none
-&kp TAB    &kp LA(LS(N))                &mst_reply_current_msg           &mst_key_exit_mst LC(R)  &mst_react_td            &kp LC(LA(U))                                                                                                                                                &mst_react_clip         &mst_react_happy        &mst_react_heart      &mst_react_lol     &mst_react_surprise    &mst_react_more
-&kp ENTER  &kp LC(J)                    &mst_chatlist_go_unread_mute_td  &kp UP                   &kp DOWN                 &kp LC(M)                                                                                                                                                    &kp LS(LA(LEFT_ARROW))  &kp LS(LA(DOWN))        &kp LS(LA(UP_ARROW))  &kp LS(LA(RIGHT))  &none                  &kp ESCAPE
-&none      &mst_key_exit_mst LC(SLASH)  &mst_away                        &mst_brb                 &mst_available           &mst_offline   &mst_go_call_mute_go_back_mt 0 LC(LS(K))  &mst_show_screen_vid_td  &mst_call_cmds_td  &play_next_prev_td  &none              &tog 5           &kp LA(N5)              &kp LA(N4)              &kp LA(N3)            &kp LA(N2)         &kp LA(N1)             &none
-&trans     &mst_react_more              &full_screen_window              &mst_busy                &mst_key_exit_mst LC(F)                 &mt LC(SPACE) LS(LC(M))                   &kp LC(LS(H))            &mst_go_to_teams   &kp C_MUTE          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                          &win_move_screen_right  &none                 &none              &win_move_screen_left  &trans
+&tog 5     &tog 5                       &go_call_unmute_mute_go_back     &tog 5                   &tog 5                                                                                                                                                                                                        &tog 5                  &tog 5                &tog 5               &tog 5                 &tog 5
+&kp ENTER  &kp LC(N1)                   &kp LC(N2)                       &kp LC(N3)               &kp LC(N4)               &kp LC(N5)                                                                                                                                                   &kp LG(N1)              &kp LA(LS(EQUAL))       &kp LA(LS(MINUS))     &kp LA(LS(N0))       &none                  &none
+&kp TAB    &kp LA(LS(N))                &mst_reply_current_msg           &mst_key_exit_mst LC(R)  &mst_react_td            &kp LC(LA(U))                                                                                                                                                &mst_react_more         &mst_react_happy        &mst_react_lol        &mst_react_surprise  &none                  &kp TAB
+&kp ENTER  &kp LC(J)                    &mst_chatlist_go_unread_mute_td  &kp UP                   &kp DOWN                 &kp LC(M)                                                                                                                                                    &kp LS(LA(LEFT_ARROW))  &kp LS(LA(DOWN))        &kp LS(LA(UP_ARROW))  &kp LS(LA(RIGHT))    &none                  &kp ESCAPE
+&none      &mst_key_exit_mst LC(SLASH)  &mst_away                        &mst_brb                 &mst_available           &mst_offline   &mst_go_call_mute_go_back_mt 0 LC(LS(K))  &mst_show_screen_vid_td  &mst_call_cmds_td  &play_next_prev_td  &none              &tog 5           &kp LA(N5)              &kp LA(N4)              &kp LA(N3)            &kp LA(N2)           &kp LA(N1)             &none
+&trans     &mst_react_more              &full_screen_window              &mst_busy                &mst_key_exit_mst LC(F)                 &mt LC(SPACE) LS(LC(M))                   &kp LC(LS(H))            &mst_go_to_teams   &kp C_MUTE          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                          &win_move_screen_right  &none                 &none                &win_move_screen_left  &trans
             >;
         };
 

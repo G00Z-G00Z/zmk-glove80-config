@@ -1108,7 +1108,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_wait_time 50>,
+                <&macro_wait_time 1750>,
                 <&kp LC(LS(E)) &kp TAB &kp TAB &kp TAB &tog 5>;
 
             label = "MST_SHOW_SCREEN";

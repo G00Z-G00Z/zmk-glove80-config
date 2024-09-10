@@ -1109,7 +1109,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_wait_time 1750>,
-                <&kp LC(LS(E)) &kp TAB &kp TAB &kp TAB &tog 5>;
+                <&kp LC(LS(E))>,
+                <&macro_wait_time 200>,
+                <&kp TAB &kp TAB &kp TAB &tog 5>;
 
             label = "MST_SHOW_SCREEN";
         };

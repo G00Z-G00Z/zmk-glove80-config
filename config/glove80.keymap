@@ -108,16 +108,6 @@
 
         // dt the ' to screenshot (convinient)
         // Hold like shift key, and tap to toggle it
-
-        key_tog_hold: key_tog_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "KEY_TOG_HOLD";
-            bindings = <&kp>, <&kt>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
         // 1t: show screen, 2t: toggle camera
 
         mst_show_screen_vid_td: mst_show_screen_vid_td {
@@ -1501,12 +1491,12 @@
 
         cursor_layer {
             bindings = <
-&tog 3   &tog 3             &tog 3         &full_screen_window  &tog 3                                                                                                                                                   &tog 3        &full_screen_window  &tog 3         &tog 3              &tog 3
-&kp ESC  &kp RET            &kp K_APP      &kp LC(EQUAL)        &app_switcher_killer                 &kp INSERT                                                                                             &kp INSERT   &kp LC(PLUS)  &kp LC(MINUS)        &kp K_APP      &kp RET             &kp ESC
-&none    &layer_mo_tog 5 5  &redo          &undo                &app_switcher_td                     &cut                                                                                                   &kp LG(TAB)  &kp LA(TAB)   &undo                &redo          &paste_copy_cut_td  &kp LC(K)
-&none    &kp LGUI           &kp LALT       &kp LCTRL            &key_tog_hold LEFT_SHIFT LEFT_SHIFT  &copy                                                                                                  &kp LEFT     &kp DOWN      &kp UP               &kp RIGHT      &kp BACKSPACE       &kp LC(L)
-&none    &key_repeat        &kp SPACE      &kp ENTER            &kp BACKSPACE                        &kp LG(PERIOD)  &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none            &extend_line  &extend_word  &kp HOME     &kp PG_DN     &kp PG_UP            &kp END        &kp LC(F)           &kp LC(J)
-&trans   &win_desktop_left  &kp LC(PG_UP)  &kp LC(PG_DN)        &win_desktop_right                                   &tog 3       &kp LC(TAB)  &tog 3   &selec_all_copy_all_tp  &select_line  &select_word               &kp LC(F)     &kp LC(G)            &kp LC(LS(G))  &kp LC(H)           &kp LG(DOT)
+&tog 3   &tog 3             &tog 3         &full_screen_window  &tog 3                                                                                                                                    &tog 3        &full_screen_window  &tog 3         &tog 3              &tog 3
+&kp ESC  &kp RET            &kp K_APP      &kp LC(EQUAL)        &app_switcher_killer  &kp INSERT                                                                                             &kp INSERT   &kp LC(PLUS)  &kp LC(MINUS)        &kp K_APP      &kp RET             &kp ESC
+&none    &layer_mo_tog 5 5  &redo          &undo                &app_switcher_td      &cut                                                                                                   &kp LG(TAB)  &kp LA(TAB)   &undo                &redo          &paste_copy_cut_td  &kp LC(K)
+&none    &kp LGUI           &kp LALT       &kp LCTRL            &kp LEFT_SHIFT        &copy                                                                                                  &kp LEFT     &kp DOWN      &kp UP               &kp RIGHT      &kp BACKSPACE       &kp LC(L)
+&none    &key_repeat        &kp SPACE      &kp ENTER            &kp BACKSPACE         &kp LG(PERIOD)  &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none            &extend_line  &extend_word  &kp HOME     &kp PG_DN     &kp PG_UP            &kp END        &kp LC(F)           &kp LC(J)
+&trans   &win_desktop_left  &kp LC(PG_UP)  &kp LC(PG_DN)        &win_desktop_right                    &tog 3       &kp LC(TAB)  &tog 3   &selec_all_copy_all_tp  &select_line  &select_word               &kp LC(F)     &kp LC(G)            &kp LC(LS(G))  &kp LC(H)           &kp LG(DOT)
             >;
         };
 

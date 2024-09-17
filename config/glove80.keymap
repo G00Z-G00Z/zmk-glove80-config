@@ -1116,7 +1116,14 @@
         enie_numpad: enie_numpad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp NUMBER_1 &kp NUMBER_6 &kp NUMBER_4>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_1 &kp KP_NUMBER_6 &kp KP_NUMBER_4>,
+                <&macro_release>,
+                <&kp LALT>;
+
             label = "ENIE_NUMPAD";
         };
     };

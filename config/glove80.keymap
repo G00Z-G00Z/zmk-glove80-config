@@ -1112,6 +1112,13 @@
             bindings = <&kp ENTER &kp RIGHT &kp ENTER &kp ESCAPE>;
             label = "MST_REACT_HEART";
         };
+
+        enie_numpad: enie_numpad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp NUMBER_1 &kp NUMBER_6 &kp NUMBER_4>;
+            label = "ENIE_NUMPAD";
+        };
     };
 
     combos {
@@ -1442,6 +1449,14 @@
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <0 6>;
+        };
+
+        combo_enie {
+            bindings = <&enie_numpad>;
+            key-positions = <58 30>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <150>;
+            layers = <0>;
         };
     };
 

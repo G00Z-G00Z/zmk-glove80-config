@@ -1493,7 +1493,7 @@
 
         combo_star {
             bindings = <&kp LS(ASTERISK)>;
-            key-positions = <37 38>;
+            key-positions = <26 27>;
             timeout-ms = <18>;
             require-prior-idle-ms = <150>;
             layers = <0 6 5>;

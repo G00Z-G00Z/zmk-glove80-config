@@ -1397,7 +1397,7 @@
 
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <50 38>;
+            key-positions = <49 37>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <0 6 5>;
@@ -1453,7 +1453,7 @@
 
         combo_percent {
             bindings = <&kp PERCENT>;
-            key-positions = <49 37>;
+            key-positions = <50 38>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <0 6>;

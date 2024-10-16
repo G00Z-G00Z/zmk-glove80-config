@@ -1028,9 +1028,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp K_LOCK>,
-                <&macro_wait_time 1000>,
-                <&kp LG(L) &kp C_MUTE>;
+                <&kp K_LOCK &kp LG(L)>,
+                <&macro_wait_time 3000>,
+                <&kp C_MUTE>;
 
             label = "MUTE_AND_LOCK";
         };

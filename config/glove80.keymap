@@ -1127,6 +1127,20 @@
 
             label = "ENIE_NUMPAD";
         };
+
+        surround_block_quotes: surround_block_quotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp ENTER &kp ENTER &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp UP_ARROW>;
+            label = "SURROUND_BLOCK_QUOTES";
+        };
+
+        surround_block_grave: surround_block_back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp ENTER &kp ENTER &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW>;
+            label = "SURROUND_BLOCK_BACK";
+        };
     };
 
     combos {
@@ -1541,6 +1555,22 @@
             timeout-ms = <18>;
             require-prior-idle-ms = <150>;
             layers = <0>;
+        };
+
+        combo_block_quote {
+            bindings = <&surround_block_quotes>;
+            key-positions = <29 17>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 6 5>;
+        };
+
+        combo_block_back {
+            bindings = <&surround_block_grave>;
+            key-positions = <45 33>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 6>;
         };
     };
 

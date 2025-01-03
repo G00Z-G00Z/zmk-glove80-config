@@ -760,7 +760,7 @@
         mst_reply_current_msg: mst_reply_current_msg {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp ENTER &kp TAB &kp ENTER &tog 5>;
+            bindings = <&kp ENTER &kp LEFT &kp LEFT_ARROW &kp ENTER &tog 5>;
             label = "MST_REPLY_CURRENT_MSG";
         };
 

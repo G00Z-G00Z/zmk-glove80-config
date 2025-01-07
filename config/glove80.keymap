@@ -505,6 +505,20 @@
             quick-tap-ms = <300>;
             flavor = "tap-preferred";
         };
+
+        am_hrm_behaviour: am_hrm_behaviour {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AM_HRM_BEHAVIOUR";
+            bindings = <&kp>, <&hour_am>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <55 56 57 72 73 74 40 58 28 16 6 7 8 9 18 19 20 21 30 31 32 33 42 43 44 45 60 61 62 63 76 77 78 79 5 6 17 18 29 30 41 42 59 60 75 76 52 53 54 70 71 69>;
+            hold-trigger-on-release;
+        };
     };
 
     macros {
@@ -1137,6 +1151,13 @@
             bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp ENTER &kp ENTER &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW>;
             label = "SURROUND_BLOCK_BACK";
         };
+
+        hour_am: hour_am {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp M>;
+            label = "HOUR_AM";
+        };
     };
 
     combos {
@@ -1627,12 +1648,12 @@
 
         number_layer {
             bindings = <
-&tog 4          &tog 4                &tog 4        &tog 4            &tog 4                                                                                       &tog 4    &tog 4     &tog 4    &tog 4     &tog 4
-&kp ESC         &kp RET               &kp SPACE     &kp TAB           &kp DEL         &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
-&none           &kp P                 &redo         &undo             &kp X           &kp M                                                             &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp M
-&kp KP_NUMLOCK  &hrm_left LEFT_WIN A  &kp LEFT_ALT  &kp LEFT_CONTROL  &sk LEFT_SHIFT  &kp H                                                             &kp PLUS   &kp N4    &kp N5     &kp N6    &kp MINUS  &kp H
-&none           &kp LC(A)             &kp X         &kp TILDE         &kp UNDER       &kp MINUS   &kp D  &kp E   &kp F   &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp SLASH  &kp G
-&trans          &none                 &extend_line  &extend_word      &kp BACKSPACE               &none  &tog 4  &tog 4  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
+&tog 4          &tog 4                        &tog 4        &tog 4            &tog 4                                                                                       &tog 4    &tog 4     &tog 4    &tog 4     &tog 4
+&kp ESC         &kp RET                       &kp SPACE     &kp TAB           &kp DEL         &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
+&none           &two_kp P M                   &redo         &undo             &kp X           &kp M                                                             &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp M
+&kp KP_NUMLOCK  &am_hrm_behaviour LEFT_WIN A  &kp LEFT_ALT  &kp LEFT_CONTROL  &sk LEFT_SHIFT  &kp H                                                             &kp PLUS   &kp N4    &kp N5     &kp N6    &kp MINUS  &kp H
+&none           &kp LC(A)                     &kp X         &kp TILDE         &kp UNDER       &kp MINUS   &kp D  &kp E   &kp F   &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp SLASH  &kp G
+&trans          &none                         &extend_line  &extend_word      &kp BACKSPACE               &none  &tog 4  &tog 4  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
             >;
         };
 

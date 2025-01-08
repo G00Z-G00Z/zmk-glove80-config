@@ -1508,7 +1508,7 @@
 
         combo_plus {
             bindings = <&kp PLUS>;
-            key-positions = <48 36>;
+            key-positions = <35 47>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <0 6>;
@@ -1516,7 +1516,7 @@
 
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
-            key-positions = <35 47>;
+            key-positions = <48 36>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <0 6>;

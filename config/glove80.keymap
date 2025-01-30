@@ -999,9 +999,13 @@
             bindings =
                 <&mst_go_mst_meeting>,
                 <&macro_wait_time 30>,
-                <&kp LC(LS(M))>,
+                <&macro_press>,
+                <&kp LC(SPACE)>,
                 <&macro_pause_for_release>,
-                <&kp LC(LS(M)) &kp LA(TAB)>;
+                <&macro_release>,
+                <&kp LC(SPACE)>,
+                <&macro_tap>,
+                <&kp LA(TAB)>;
 
             label = "GO_CALL_UNMUTE_MUTE_GO_BACK";
         };

@@ -279,7 +279,7 @@
         better_slash: better_slash {
             compatible = "zmk,behavior-mod-morph";
             label = "BETTER_SLASH";
-            bindings = <&kp SLASH>, <&kp NON_US_BACKSLASH>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;

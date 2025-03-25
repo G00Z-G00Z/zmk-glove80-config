@@ -9,7 +9,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -1023,14 +1022,18 @@
         mst_tog_unread_chat: mst_tog_red_chat {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp K_APP &kp DOWN &kp ENTER>;
+            bindings = <&macro_wait_time 60>, <&kp K_APP &kp DOWN &kp ENTER>;
+
             label = "MST_TOG_RED_CHAT";
         };
 
         mst_tog_mute_chat: mst_tog_chat_mute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp K_APP &kp DOWN &kp DOWN &kp DOWN &kp ENTER>;
+            bindings =
+                <&macro_wait_time 60>,
+                <&kp K_APP &kp DOWN &kp DOWN &kp DOWN &kp ENTER>;
+
             label = "MST_TOG_CHAT_MUTE";
         };
 

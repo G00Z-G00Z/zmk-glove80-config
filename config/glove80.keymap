@@ -1745,12 +1745,12 @@
 
         gaming_layer {
             bindings = <
-&tog 10    &tog 10    &tog 10  &tog 10  &tog 10                                                                                            &tog 10  &tog 10  &tog 10  &tog 10  &tog 10
-&trans     &trans     &trans   &trans   &trans   &trans                                                                           &tog 10  &tog 10  &tog 10  &tog 10  &tog 10  &tog 10
-&kp MINUS  &kp GRAVE  &kp B    &kp N    &kp M    &kp SQT                                                                          &tog 10  &tog 10  &tog 10  &tog 10  &tog 10  &tog 10
-&kp T      &kp TAB    &kp Q    &kp W    &kp E    &kp R                                                                            &tog 10  &tog 10  &tog 10  &tog 10  &tog 10  &tog 10
-&kp G      &kp LSHFT  &kp A    &kp S    &kp D    &kp F    &kp ESC    &kp RET          &kp PAUSE_BREAK  &tog 10  &tog 10  &tog 10  &tog 10  &tog 10  &tog 10  &tog 10  &tog 10  &tog 10
-&kp V      &kp LCTRL  &kp Z    &kp X    &kp C             &kp SPACE  &lt 11 LEFT_ALT  &kp LGUI         &tog 10  &tog 10  &tog 10           &tog 10  &tog 10  &tog 10  &tog 10  &tog 10
+&tog 10    &tog 10    &tog 10  &tog 10  &tog 10                                                                                               &tog 10   &tog 10  &tog 10    &tog 10  &tog 10
+&trans     &trans     &trans   &trans   &trans   &trans                                                                             &tog 10   &tog 10   &tog 10  &tog 10    &tog 10  &tog 10
+&kp MINUS  &kp GRAVE  &kp B    &kp N    &kp M    &kp SQT                                                                            &kp J     &kp K     &kp I    &kp L      &tog 10  &tog 10
+&kp T      &kp TAB    &kp Q    &kp W    &kp E    &kp R                                                                              &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &tog 10  &tog 10
+&kp G      &kp LSHFT  &kp A    &kp S    &kp D    &kp F    &kp ESC    &kp RET          &kp PAUSE_BREAK  &tog 10  &tog 10  &tog 10    &tog 10   &tog 10   &tog 10  &tog 10    &tog 10  &tog 10
+&kp V      &kp LCTRL  &kp Z    &kp X    &kp C             &kp SPACE  &lt 11 LEFT_ALT  &kp LGUI         &tog 10  &tog 10  &kp SPACE            &tog 10   &tog 10  &tog 10    &tog 10  &tog 10
             >;
         };
 

@@ -1193,7 +1193,7 @@
         skedpal_inbox: skedpal_inbox {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LS(K)) &kp SLASH &kp I &kp ENTER>;
+            bindings = <&kp LC(LS(K)) &kp SLASH &kp I &kp N &kp B &kp O &kp X &kp ENTER>;
             label = "SKEDPAL_INBOX";
         };
     };

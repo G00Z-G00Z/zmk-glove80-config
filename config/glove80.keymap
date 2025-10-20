@@ -1189,6 +1189,13 @@
 
             label = "GO_CALL_UNMUTE";
         };
+
+        skedpal_inbox: skedpal_inbox {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(K)) &kp SLASH &kp I &kp ENTER>;
+            label = "SKEDPAL_INBOX";
+        };
     };
 
     combos {

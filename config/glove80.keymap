@@ -718,7 +718,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LC(E) &kp A &kp V &kp A &kp I &kp L &kp A &kp B &kp L>,
+                <&kp LC(E) &kp SLASH &kp A &kp V &kp A &kp I &kp L &kp A &kp B &kp L>,
                 <&macro_wait_time 200>,
                 <&kp E &kp ENTER>;
 
@@ -729,7 +729,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LC(E) &kp B &kp U &kp S>,
+                <&kp LC(E) &kp SLASH &kp B &kp U &kp S>,
                 <&macro_wait_time 200>,
                 <&kp Y &kp ENTER>;
 
@@ -740,7 +740,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LC(E) &kp B &kp R>,
+                <&kp LC(E) &kp SLASH &kp B &kp R>,
                 <&macro_wait_time 200>,
                 <&kp B &kp ENTER>;
 
@@ -751,7 +751,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LC(E) &kp O &kp F &kp F &kp L &kp I &kp N>,
+                <&kp LC(E) &kp SLASH &kp O &kp F &kp F &kp L &kp I &kp N>,
                 <&macro_wait_time 200>,
                 <&kp E &kp ENTER>;
 
@@ -762,7 +762,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LC(E) &kp A &kp W &kp A>,
+                <&kp LC(E) &kp SLASH &kp A &kp W &kp A>,
                 <&macro_wait_time 200>,
                 <&kp Y &kp ENTER>;
 

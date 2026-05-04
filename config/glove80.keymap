@@ -1009,10 +1009,10 @@
                 <&mst_go_mst_meeting>,
                 <&macro_wait_time 30>,
                 <&macro_press>,
-                <&kp LC(SPACE)>,
+                <&kp LC(LS(M))>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp LC(SPACE)>,
+                <&kp LC(LS(M))>,
                 <&macro_tap>,
                 <&kp LA(TAB)>;
 

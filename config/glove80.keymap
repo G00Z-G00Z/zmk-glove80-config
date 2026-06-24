@@ -237,7 +237,7 @@
         vim_norm_i: vim_norm_i {
             compatible = "zmk,behavior-mod-morph";
             label = "VIM_NORM_I";
-            bindings = <&tog 1>, <&vim_kp_exit_norm HOME>;
+            bindings = <&tog 0>, <&vim_kp_exit_norm HOME>;
 
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
@@ -783,7 +783,7 @@
         mst_reply_current_msg: mst_reply_current_msg {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp ENTER &kp LEFT &kp LEFT_ARROW &kp ENTER &tog 5>;
+            bindings = <&kp ENTER &kp LEFT &kp LEFT_ARROW &kp ENTER &tog 3>;
             label = "MST_REPLY_CURRENT_MSG";
         };
 
@@ -797,28 +797,28 @@
         mst_key_exit_mst: mst_key_exit_mst {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 5>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 3>;
             label = "MST_KEY_EXIT_MST";
         };
 
         vim_kp_exit_norm: vim_to_insert {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 0>;
             label = "VIM_TO_INSERT";
         };
 
         vim_exit_visual_kp: vim_tog_visual {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 2 &kp RIGHT &kp LEFT_ARROW>;
+            bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 0 &kp RIGHT &kp LEFT_ARROW>;
             label = "VIM_TOG_VISUAL";
         };
 
         vim_norm_v_kp: vim_enter_visual {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 2 &kt LEFT_SHIFT>;
+            bindings = <&tog 0 &kt LEFT_SHIFT>;
             label = "VIM_ENTER_VISUAL";
         };
 
@@ -880,7 +880,7 @@
         vim_exit_visual_and_norm: vim_exit_visual_norm {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 2 &tog 1 &kp RIGHT &kp LEFT_ARROW>;
+            bindings = <&kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &tog 0 &tog 0 &kp RIGHT &kp LEFT_ARROW>;
             label = "VIM_EXIT_VISUAL_NORM";
         };
 
@@ -894,14 +894,14 @@
         vim_o_kp: vim_o_kp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp END &kp ENTER &tog 1>;
+            bindings = <&kp END &kp ENTER &tog 0>;
             label = "VIM_O_KP";
         };
 
         vim_c_del_line: vim_c_del_line {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(DOWN) &kp LS(END) &kp DEL &tog 1>;
+            bindings = <&kp LS(DOWN) &kp LS(END) &kp DEL &tog 0>;
             label = "VIM_C_DEL_LINE";
         };
 
@@ -910,7 +910,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_wait_time 100>,
-                <&select_word_right &kp DELETE &tog 1>;
+                <&select_word_right &kp DELETE &tog 0>;
 
             label = "VIM_NORM_C_INNER_WORD";
         };
@@ -919,7 +919,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog 2>,
+                <&tog 0>,
                 <&macro_wait_time 100>,
                 <&kp HOME>,
                 <&macro_wait_time 30>,
@@ -983,7 +983,7 @@
         vim_exit_visual: vim_exit_visual {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt LEFT_SHIFT &tog 2>;
+            bindings = <&kt LEFT_SHIFT &tog 0>;
             label = "VIM_EXIT_VISUAL";
         };
 
@@ -1071,9 +1071,9 @@
             bindings =
                 <&mst_go_to_teams>,
                 <&macro_wait_time 30>,
-                <&to 5>,
+                <&to 3>,
                 <&macro_pause_for_release>,
-                <&tog 5 &kp LA(TAB)>;
+                <&tog 3 &kp LA(TAB)>;
 
             label = "GO_TEMP_MST";
         };
@@ -1113,7 +1113,7 @@
         mst_react_more: mst_react_more {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp ENTER &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp ENTER &tog 5>;
+            bindings = <&kp ENTER &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp ENTER &tog 3>;
             label = "MST_REACT_MORE";
         };
 
@@ -1124,7 +1124,7 @@
                 <&macro_wait_time 1750>,
                 <&kp LC(LS(E))>,
                 <&macro_wait_time 200>,
-                <&kp TAB &kp TAB &kp TAB &tog 5>;
+                <&kp TAB &kp TAB &kp TAB &tog 3>;
 
             label = "MST_SHOW_SCREEN";
         };
@@ -1238,20 +1238,20 @@
         // u+i This toggles temas layer. Available in base layer and teams layer for easy transitioning
 
         combo_toggle_teams {
-            bindings = <&layer_mo_tog 5 5>;
+            bindings = <&layer_mo_tog 3 3>;
             key-positions = <29 30 31>;
-            layers = <0 5>;
+            layers = <0 3>;
             require-prior-idle-ms = <200>;
         };
 
         enter_vim_mode {
-            bindings = <&tog 1>;
+            bindings = <&tog 0>;
             key-positions = <52 57>;
             layers = <0>;
         };
 
         gaming_mode {
-            bindings = <&tog 10>;
+            bindings = <&tog 6>;
             key-positions = <50 48 37 69>;
             layers = <0>;
             require-prior-idle-ms = <500>;
@@ -1274,21 +1274,21 @@
         combo_go_meeting {
             bindings = <&mst_go_mst_meeting>;
             key-positions = <37 36>;
-            layers = <5>;
+            layers = <3>;
             require-prior-idle-ms = <200>;
         };
 
         combo_go_teams {
             bindings = <&mst_go_to_teams>;
             key-positions = <38 37>;
-            layers = <5>;
+            layers = <3>;
             require-prior-idle-ms = <200>;
         };
 
         combo_tilde {
             bindings = <&kp TILDE>;
             key-positions = <39 40>;
-            layers = <0 6>;
+            layers = <0 4>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
@@ -1306,7 +1306,7 @@
         combo_backspace_num {
             bindings = <&kp BACKSPACE>;
             key-positions = <41 42>;
-            layers = <4>;
+            layers = <2>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
@@ -1314,7 +1314,7 @@
         combo_space_num {
             bindings = <&kp SPACE>;
             key-positions = <42 43>;
-            layers = <4>;
+            layers = <2>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
@@ -1336,7 +1336,7 @@
         combo_symbols_space {
             bindings = <&kp SPACE>;
             key-positions = <36 37>;
-            layers = <6>;
+            layers = <4>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
@@ -1344,7 +1344,7 @@
         combo_symbols_backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <38 37>;
-            layers = <6>;
+            layers = <4>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
@@ -1411,7 +1411,7 @@
         combo_lpar {
             bindings = <&hrm_right_lpar LS(LEFT_CONTROL) 0>;
             key-positions = <41 42>;
-            layers = <0 6>;
+            layers = <0 4>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
@@ -1419,7 +1419,7 @@
         combo_rpar {
             bindings = <&hrm_right_rpar LA(LEFT_CONTROL) 0>;
             key-positions = <42 43>;
-            layers = <0 6>;
+            layers = <0 4>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
@@ -1427,7 +1427,7 @@
         combo_lbra_cur {
             bindings = <&lbra_cur>;
             key-positions = <59 60>;
-            layers = <0 6>;
+            layers = <0 4>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
@@ -1435,7 +1435,7 @@
         combo_rbra_cur {
             bindings = <&rbra_cur>;
             key-positions = <60 61>;
-            layers = <0 6>;
+            layers = <0 4>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
         };
@@ -1445,7 +1445,7 @@
             key-positions = <36 35>;
             timeout-ms = <18>;
             require-prior-idle-ms = <150>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_esc {
@@ -1453,7 +1453,7 @@
             key-positions = <23 24>;
             timeout-ms = <18>;
             require-prior-idle-ms = <150>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_dash {
@@ -1461,7 +1461,7 @@
             key-positions = <37 38>;
             timeout-ms = <18>;
             require-prior-idle-ms = <150>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_underscore {
@@ -1469,7 +1469,7 @@
             key-positions = <49 37>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_dolar {
@@ -1477,7 +1477,7 @@
             key-positions = <38 26>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_hashtag {
@@ -1485,7 +1485,7 @@
             key-positions = <25 37>;
             timeout-ms = <18>;
             require-prior-idle-ms = <150>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_at {
@@ -1493,7 +1493,7 @@
             key-positions = <24 36>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_slash {
@@ -1501,7 +1501,7 @@
             key-positions = <61 43>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_pipe {
@@ -1509,13 +1509,13 @@
             key-positions = <62 44>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_tog_teams_left {
-            bindings = <&tog 5>;
+            bindings = <&tog 3>;
             key-positions = <69 25>;
-            layers = <5 0>;
+            layers = <3 0>;
             timeout-ms = <100>;
             require-prior-idle-ms = <15>;
         };
@@ -1525,7 +1525,7 @@
             key-positions = <50 38>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6>;
+            layers = <0 4>;
         };
 
         combo_enie {
@@ -1541,7 +1541,7 @@
             key-positions = <23 35>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_plus {
@@ -1549,7 +1549,7 @@
             key-positions = <35 47>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6>;
+            layers = <0 4>;
         };
 
         combo_ampersand {
@@ -1557,7 +1557,7 @@
             key-positions = <48 36>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6>;
+            layers = <0 4>;
         };
 
         combo_star {
@@ -1565,7 +1565,7 @@
             key-positions = <26 27>;
             timeout-ms = <18>;
             require-prior-idle-ms = <150>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_dquotes {
@@ -1573,7 +1573,7 @@
             key-positions = <29 41>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_question {
@@ -1581,7 +1581,7 @@
             key-positions = <42 30>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_exclamation {
@@ -1589,17 +1589,17 @@
             key-positions = <31 43>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_single_number {
-            bindings = <&sl 4>;
+            bindings = <&sl 2>;
             key-positions = <69 70>;
             layers = <0>;
         };
 
         combo_single_symbol {
-            bindings = <&sl 6>;
+            bindings = <&sl 4>;
             key-positions = <73 74>;
             layers = <0>;
         };
@@ -1617,7 +1617,7 @@
             key-positions = <29 17>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6 5>;
+            layers = <0 4 3>;
         };
 
         combo_block_back {
@@ -1625,7 +1625,7 @@
             key-positions = <45 33>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <0 6>;
+            layers = <0 4>;
         };
     };
 
@@ -1642,122 +1642,78 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp ESCAPE     &kp C_MUTE             &kp C_VOL_DN           &skedpal_inbox            &kp LC(LS(ESCAPE))                                                                                                                                                                                                                        &kp LG(P)                                             &play_next_prev_td                            &kp LG(E)                                 &kp C_BRIGHTNESS_INC                      &kp C_BRIGHTNESS_DEC
-&kp LC(Z)      &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &kp NUMBER_4                  &mst_goback_call_mt 0 N5                                                                                                                                                        &mt C_VOLUME_DOWN NUMBER_6  &mt C_VOLUME_UP N7                                    &mt C_MUTE N8                                 &mt C_BRIGHTNESS_INC N9                   &hold_bt_0 0 N0                           &enie_numpad
-&kp TAB        &kp Q                  &hrm_left RIGHT_ALT W  &kp E                     &kp R                         &kp T                                                                                                                                                                           &kp Y                       &kp U                                                 &kp I                                         &hrm_right RIGHT_ALT O                    &kp P                                     &kp GRAVE
-&kp EQUAL      &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S   &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                                           &kp H                       &hmr_shift_right RIGHT_SHIFT J                        &hrm_right RIGHT_CONTROL K                    &hrm_right LEFT_ALT L                     &hrm_right RIGHT_GUI SEMI                 &kp SQT
-&kp LG(SPACE)  &kp Z                  &kp X                  &kp C                     &kp V                         &kp B                     &lt_thumb_gresc 8 0      &kp BACKSLASH           &my_email        &mst_gocall_goback_mt 0 0  &go_temp_mst                 &kp ENTER                   &kp N                       &kp M                                                 &kp COMMA                                     &kp DOT                                   &better_slash                             &tmux_prefix
-&magic 12 0    &kp LG(PERIOD)         &kp LC(PG_UP)          &kp LC(PG_DN)             &full_screen_window                                     &lt_thumb_backspace 3 0  &lt_thumb_shift_td 4 0  &sk_mo 9 DELETE  &sk_mo 9 RIGHT_SHIFT       &sk_shift_caps_word_caps_td  &lt_thumb_better_space 6 0                              &better_delimiter LEFT_PARENTHESIS RIGHT_PARENTHESIS  &better_delimiter LEFT_BRACKET RIGHT_BRACKET  &better_delimiter LEFT_BRACE RIGHT_BRACE  &better_delimiter LESS_THAN GREATER_THAN  &magic 12 0
-            >;
-        };
-
-        vim_normal_layer {
-            bindings = <
-&none   &none        &none                     &none             &none                                                                                                                            &none                                   &none                              &none                       &none          &none
-&none   &none        &none                     &none             &none                             &none                                                                          &none           &none                                   &none                              &kp K_APP                   &none          &none
-&none   &none        &kp LC(RIGHT)             &kp LC(RIGHT)     &redo                             &none                                                                          &copy_line      &undo                                   &vim_norm_i                        &vim_o_kp                   &kp LC(V)      &none
-&none   &vim_norm_a  &vim_kp_exit_norm DELETE  &vim_norm_delete  &hmr_shift_left LEFT_SHIFT LC(F)  &none                                                                          &kp LEFT_ARROW  &hmr_shift_right LEFT_SHIFT DOWN_ARROW  &hrm_right RIGHT_CONTROL UP_ARROW  &hrm_right RIGHT_ALT RIGHT  &kp RIGHT_WIN  &none
-&none   &none        &kp DELETE                &vim_norm_c       &vim_norm_v                       &kp LC(LEFT)  &tog 1  &none  &none  &none  &none  &vim_kp_exit_norm ENTER      &none           &none                                   &none                              &key_repeat                 &none          &none
-&trans  &none        &none                     &none             &none                                           &mo 3   &none  &none  &none  &none  &lt_thumbs_keys 6 BACKSPACE                  &kp LC(G)                               &none                              &none                       &none          &trans
-            >;
-        };
-
-        vim_visual_layer {
-            bindings = <
-&none   &none  &none                             &none                            &none                                                                                                      &none   &none   &none   &none                      &none
-&none   &none  &none                             &none                            &none             &none                                                         &none                      &none   &none   &none   &none                      &none
-&none   &none  &trans                            &trans                           &trans            &none                                                         &vim_exit_visual_kp LC(C)  &trans  &tog 2  &none   &vim_exit_visual_kp LC(V)  &none
-&none   &none  &vim_exit_visual_and_norm DELETE  &vim_exit_visual_kp LC(X)        &none             &none                                                         &trans                     &trans  &trans  &trans  &none                      &none
-&none   &none  &none                             &vim_exit_visual_and_norm LC(X)  &vim_exit_visual  &trans  &vim_exit_visual  &none  &none  &none  &none  &none   &none                      &none   &none   &trans  &none                      &none
-&trans  &none  &none                             &none                            &none                     &none             &none  &none  &none  &none  &trans                             &none   &none   &none   &none                      &trans
+&kp ESCAPE     &kp C_MUTE             &kp C_VOL_DN           &skedpal_inbox            &kp LC(LS(ESCAPE))                                                                                                                                                                                                                   &kp LG(P)                                             &play_next_prev_td                            &kp LG(E)                                 &kp C_BRIGHTNESS_INC                      &kp C_BRIGHTNESS_DEC
+&kp LC(Z)      &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &kp NUMBER_4                  &mst_goback_call_mt 0 N5                                                                                                                                                   &mt C_VOLUME_DOWN NUMBER_6  &mt C_VOLUME_UP N7                                    &mt C_MUTE N8                                 &mt C_BRIGHTNESS_INC N9                   &hold_bt_0 0 N0                           &enie_numpad
+&kp TAB        &kp Q                  &hrm_left RIGHT_ALT W  &kp E                     &kp R                         &kp T                                                                                                                                                                      &kp Y                       &kp U                                                 &kp I                                         &hrm_right RIGHT_ALT O                    &kp P                                     &kp GRAVE
+&kp EQUAL      &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S   &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                                      &kp H                       &hmr_shift_right RIGHT_SHIFT J                        &hrm_right RIGHT_CONTROL K                    &hrm_right LEFT_ALT L                     &hrm_right RIGHT_GUI SEMI                 &kp SQT
+&kp LG(SPACE)  &kp Z                  &kp X                  &kp C                     &kp V                         &kp B                     &lt_thumb_gresc 5 0      &kp BACKSLASH           &my_email   &mst_gocall_goback_mt 0 0  &go_temp_mst                 &kp ENTER                   &kp N                       &kp M                                                 &kp COMMA                                     &kp DOT                                   &better_slash                             &tmux_prefix
+&magic 8 0     &kp LG(PERIOD)         &kp LC(PG_UP)          &kp LC(PG_DN)             &full_screen_window                                     &lt_thumb_backspace 1 0  &lt_thumb_shift_td 2 0  &kp DELETE  &kp RIGHT_SHIFT            &sk_shift_caps_word_caps_td  &lt_thumb_better_space 4 0                              &better_delimiter LEFT_PARENTHESIS RIGHT_PARENTHESIS  &better_delimiter LEFT_BRACKET RIGHT_BRACKET  &better_delimiter LEFT_BRACE RIGHT_BRACE  &better_delimiter LESS_THAN GREATER_THAN  &magic 8 0
             >;
         };
 
         cursor_layer {
             bindings = <
-&tog 3   &tog 3             &tog 3         &full_screen_window  &tog 3                                                                                                                                    &tog 3        &full_screen_window  &tog 3         &tog 3              &tog 3
+&tog 1   &tog 1             &tog 1         &full_screen_window  &tog 1                                                                                                                                    &tog 1        &full_screen_window  &tog 1         &tog 1              &tog 1
 &kp ESC  &kp RET            &kp K_APP      &kp LC(EQUAL)        &app_switcher_killer  &kp INSERT                                                                                             &kp INSERT   &kp LC(PLUS)  &kp LC(MINUS)        &kp K_APP      &kp RET             &kp ESC
-&none    &layer_mo_tog 5 5  &redo          &undo                &app_switcher_td      &cut                                                                                                   &kp LG(TAB)  &kp LA(TAB)   &undo                &redo          &paste_copy_cut_td  &kp LC(K)
+&none    &layer_mo_tog 3 3  &redo          &undo                &app_switcher_td      &cut                                                                                                   &kp LG(TAB)  &kp LA(TAB)   &undo                &redo          &paste_copy_cut_td  &kp LC(K)
 &none    &kp LGUI           &kp LALT       &kp LCTRL            &kp LEFT_SHIFT        &copy                                                                                                  &kp LEFT     &kp DOWN      &kp UP               &kp RIGHT      &kp BACKSPACE       &kp LC(L)
 &none    &key_repeat        &kp SPACE      &kp ENTER            &kp BACKSPACE         &kp LG(PERIOD)  &kp LA(TAB)  &kp LG(TAB)  &kp TAB  &select_none            &extend_line  &extend_word  &kp HOME     &kp PG_DN     &kp PG_UP            &kp END        &kp LC(F)           &kp LC(J)
-&trans   &win_desktop_left  &kp LC(PG_UP)  &kp LC(PG_DN)        &win_desktop_right                    &tog 3       &kp LC(TAB)  &tog 3   &selec_all_copy_all_tp  &select_line  &select_word               &kp LC(F)     &kp LC(G)            &kp LC(LS(G))  &kp LC(H)           &kp LG(DOT)
+&trans   &win_desktop_left  &kp LC(PG_UP)  &kp LC(PG_DN)        &win_desktop_right                    &tog 1       &kp LC(TAB)  &tog 1   &selec_all_copy_all_tp  &select_line  &select_word               &kp LC(F)     &kp LC(G)            &kp LC(LS(G))  &kp LC(H)           &kp LG(DOT)
             >;
         };
 
         number_layer {
             bindings = <
-&tog 4          &tog 4                        &tog 4        &tog 4            &tog 4                                                                                       &tog 4    &tog 4     &tog 4    &tog 4     &tog 4
+&tog 2          &tog 2                        &tog 2        &tog 2            &tog 2                                                                                       &tog 2    &tog 2     &tog 2    &tog 2     &tog 2
 &kp ESC         &kp RET                       &kp SPACE     &kp TAB           &kp DEL         &kp INSERT                                                        &kp CARET  &kp DLLR  &kp POUND  &kp AT    &kp EXCL   &kp PIPE
 &none           &two_kp P M                   &redo         &undo             &kp X           &kp M                                                             &kp PRCNT  &kp N7    &kp N8     &kp N9    &kp COLON  &kp M
 &kp KP_NUMLOCK  &am_hrm_behaviour LEFT_WIN A  &kp LEFT_ALT  &kp LEFT_CONTROL  &sk LEFT_SHIFT  &kp H                                                             &kp PLUS   &kp N4    &kp N5     &kp N6    &kp MINUS  &kp H
 &none           &kp LC(A)                     &kp X         &kp TILDE         &kp UNDER       &kp MINUS   &kp D  &kp E   &kp F   &kp LT     &kp GT   &kp EQUAL  &kp STAR   &kp N1    &kp N2     &kp N3    &kp SLASH  &kp G
-&trans          &none                         &extend_line  &extend_word      &kp BACKSPACE               &none  &tog 4  &tog 4  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
+&trans          &none                         &extend_line  &extend_word      &kp BACKSPACE               &none  &tog 2  &tog 2  &kp COMMA  &kp DOT  &kp N0                &kp LPAR  &kp LBKT   &kp RBKT  &kp RPAR   &kp TILDE
             >;
         };
 
         teams_mst_layer {
             bindings = <
-&tog 5     &tog 5                       &go_call_unmute_mute_go_back     &tog 5                   &tog 5                                                                                                                                                                                               &tog 5                  &tog 5                &tog 5             &tog 5                 &tog 5
-&kp ENTER  &kp LC(N1)                   &kp LC(N2)                       &kp LC(N3)               &kp LC(N4)               &kp LC(N5)                                                                                                                                          &kp LG(N1)              &kp LA(LS(EQUAL))       &kp LA(LS(MINUS))     &kp LA(LS(N0))     &none                  &none
-&kp TAB    &kp LA(LS(N))                &mst_reply_current_msg           &mst_key_exit_mst LC(R)  &mst_react_td            &kp LC(LA(U))                                                                                                                                       &mst_react_more         &mst_react_happy        &mst_react_heart      &mst_react_lol     &mst_react_surprise    &mst_react_more
-&kp ENTER  &kp LC(J)                    &mst_chatlist_go_unread_mute_td  &kp UP                   &kp DOWN                 &kp LC(M)                                                                                                                                           &kp LS(LA(LEFT_ARROW))  &kp LS(LA(DOWN))        &kp LS(LA(UP_ARROW))  &kp LS(LA(RIGHT))  &none                  &kp ESCAPE
-&none      &mst_key_exit_mst LC(E)  &mst_away                        &mst_brb                 &mst_available           &mst_offline   &mst_goback_call_mt 0 LC(LS(K))  &mst_show_screen_vid_td  &mst_call_cmds_td  &play_next_prev_td  &none              &tog 5           &kp LA(N5)              &kp LA(N4)              &kp LA(N3)            &kp LA(N2)         &kp LA(N1)             &none
-&trans     &mst_react_more              &full_screen_window              &mst_busy                &mst_key_exit_mst LC(F)                 &mt LC(SPACE) LS(LC(M))          &kp LC(LS(H))            &mst_go_to_teams   &kp C_MUTE          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                          &win_move_screen_right  &none                 &none              &win_move_screen_left  &trans
+&tog 3     &tog 3                   &go_call_unmute_mute_go_back     &tog 3                   &tog 3                                                                                                                                                                                               &tog 3                  &tog 3                &tog 3             &tog 3                 &tog 3
+&kp ENTER  &kp LC(N1)               &kp LC(N2)                       &kp LC(N3)               &kp LC(N4)               &kp LC(N5)                                                                                                                                          &kp LG(N1)              &kp LA(LS(EQUAL))       &kp LA(LS(MINUS))     &kp LA(LS(N0))     &none                  &none
+&kp TAB    &kp LA(LS(N))            &mst_reply_current_msg           &mst_key_exit_mst LC(R)  &mst_react_td            &kp LC(LA(U))                                                                                                                                       &mst_react_more         &mst_react_happy        &mst_react_heart      &mst_react_lol     &mst_react_surprise    &mst_react_more
+&kp ENTER  &kp LC(J)                &mst_chatlist_go_unread_mute_td  &kp UP                   &kp DOWN                 &kp LC(M)                                                                                                                                           &kp LS(LA(LEFT_ARROW))  &kp LS(LA(DOWN))        &kp LS(LA(UP_ARROW))  &kp LS(LA(RIGHT))  &none                  &kp ESCAPE
+&none      &mst_key_exit_mst LC(E)  &mst_away                        &mst_brb                 &mst_available           &mst_offline   &mst_goback_call_mt 0 LC(LS(K))  &mst_show_screen_vid_td  &mst_call_cmds_td  &play_next_prev_td  &none              &tog 3           &kp LA(N5)              &kp LA(N4)              &kp LA(N3)            &kp LA(N2)         &kp LA(N1)             &none
+&trans     &mst_react_more          &full_screen_window              &mst_busy                &mst_key_exit_mst LC(F)                 &mt LC(SPACE) LS(LC(M))          &kp LC(LS(H))            &mst_go_to_teams   &kp C_MUTE          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                          &win_move_screen_right  &none                 &none              &win_move_screen_left  &trans
             >;
         };
 
         symbols_layer {
             bindings = <
-&tog 6         &tog 6          &tog 6         &tog 6             &tog 6                                                                                                                   &tog 6                &tog 6            &tog 6             &tog 6                 &tog 6
+&tog 4         &tog 4          &tog 4         &tog 4             &tog 4                                                                                                                   &tog 4                &tog 4            &tog 4             &tog 4                 &tog 4
 &none          &kp GRAVE       &kp SQT        &kp DOUBLE_QUOTES  &kp TILDE        &kp SEMICOLON                                                                            &none          &key_repeat           &kp LC(Z)         &none              &none                  &none
 &kp LESS_THAN  &kp LEFT_BRACE  &lbra_cur      &rbra_cur          &kp RIGHT_BRACE  &kp GREATER_THAN                                                                         &kp SEMICOLON  &kp MINUS             &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp UNDERSCORE         &kp TILDE
 &kp HASH       &kp CARET       &lpar_lt       &rpar_gt           &kp DOLLAR       &kp ASTERISK                                                                             &kp DOT        &kp LEFT_SHIFT        &kp LEFT_CONTROL  &kp LEFT_ALT       &kp LEFT_WIN           &kp SQT
 &kp AT_SIGN    &kp PIPE        &kp EQUAL      &kp UNDERSCORE     &kp MINUS        &kp QUESTION      &kp NON_US_BACKSLASH  &kp TILDE  &key_repeat    &none   &none  &none   &kp COMMA      &kp SPACE             &kp BACKSPACE     &paste             &kp SLASH              &none
-&trans         &kp TILDE       &kp AMPERSAND  &kp PLUS           &kp EXCLAMATION                    &kp PERCENT           &kp COLON  &kp SEMICOLON  &tog 6  &none  &tog 6                 &kp LEFT_PARENTHESIS  &kp LBKT          &kp RBKT           &kp RIGHT_PARENTHESIS  &trans
-            >;
-        };
-
-        vim_symbols_layer {
-            bindings = <
-&trans  &trans            &trans  &trans  &trans                                                                                  &trans     &trans         &trans  &trans  &trans
-&trans  &trans            &trans  &trans  &trans            &trans                                                        &trans  &trans     &trans         &trans  &trans  &trans
-&trans  &trans            &trans  &trans  &trans            &kp LC(F)                                                     &trans  &trans     &trans         &trans  &trans  &trans
-&trans  &kp HOME          &trans  &trans  &kp END           &kp LC(F)                                                     &trans  &trans     &trans         &trans  &trans  &trans
-&trans  &two_kp HOME DEL  &trans  &trans  &two_kp HOME TAB  &kp LC(F)  &kp LC(F)  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans         &trans  &kp F   &trans
-&trans  &trans            &trans  &trans  &trans                       &trans     &trans  &trans  &trans  &trans  &trans          &kp LC(G)  &kp LC(LS(G))  &trans  &trans  &trans
+&trans         &kp TILDE       &kp AMPERSAND  &kp PLUS           &kp EXCLAMATION                    &kp PERCENT           &kp COLON  &kp SEMICOLON  &tog 4  &none  &tog 4                 &kp LEFT_PARENTHESIS  &kp LBKT          &kp RBKT           &kp RIGHT_PARENTHESIS  &trans
             >;
         };
 
         function_layer {
             bindings = <
-&tog 9           &tog 9          &tog 9        &tog 9             &tog 9                                                                                                                                                   &tog 9                    &tog 9                &tog 9                &tog 9                    &tog 9
+&tog 5           &tog 5          &tog 5        &tog 5             &tog 5                                                                                                                                                   &tog 5                    &tog 5                &tog 5                &tog 5                    &tog 5
 &none            &none           &none         &windows_shutdown  &none                         &none                                                                                        &none                         &kp LC(PLUS)              &kp LC(MINUS)         &kp LC(EQUAL)         &none                     &none
 &kp PAUSE_BREAK  &kp SCROLLLOCK  &redo         &undo              &kp LS(LA(LC(LEFT_CONTROL)))  &kp PRINTSCREEN                                                                              &none                         &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
 &kp CAPS         &kp LEFT_WIN    &kp LEFT_ALT  &kp LEFT_CONTROL   &kp LEFT_SHIFT                &rgb_ug RGB_TOG                                                                              &kt LS(LA(LC(LEFT_CONTROL)))  &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
-&none            &kp KP_NUMLOCK  &none         &none              &none                         &kp K_SCREENSAVER  &tog 9  &none  &none   &lock_td    &kp K_APPLICATION  &play_next_prev_td  &none                         &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
-&trans           &none           &none         &none              &none                                            &none   &none  &tog 9  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                                   &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
-            >;
-        };
-
-        lower_layer {
-            bindings = <
-&kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_NEXT        &kp C_PP                                                                             &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none            &kp PAUSE_BREAK
-&none         &none         &none         &my_email         &none           &kp HOME                                                  &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
-&none         &none         &none         &none             &none           &kp END                                                   &kp RPAR   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp SLCK
-&none         &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none                                                     &kp PRCNT  &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &none
-&none         &kp K_CMENU   &kp END       &kp PAGE_UP       &kp PAGE_DOWN   &kp HOME  &tog 8  &none   &none   &tog 10  &none  &none   &kp COMMA  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &none
-&magic 0 0    &kp CAPS      &kp INS       &kp F11           &kp F12                   &tog 3  &tog 4  &tog 9  &tog 9   &none  &tog 6             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &magic 0 0
+&none            &kp KP_NUMLOCK  &none         &none              &none                         &kp K_SCREENSAVER  &tog 5  &none  &none   &lock_td    &kp K_APPLICATION  &play_next_prev_td  &none                         &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
+&trans           &none           &none         &none              &none                                            &none   &none  &tog 5  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                                   &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
             >;
         };
 
         gaming_layer {
             bindings = <
-&tog 10    &tog 10    &tog 10  &tog 10  &tog 10                                                                                               &tog 10   &tog 10  &tog 10    &tog 10  &tog 10
-&trans     &trans     &trans   &trans   &trans   &trans                                                                             &tog 10   &tog 10   &tog 10  &tog 10    &tog 10  &tog 10
-&kp MINUS  &kp GRAVE  &kp B    &kp N    &kp M    &kp SQT                                                                            &kp J     &kp K     &kp I    &kp L      &tog 10  &tog 10
-&kp T      &kp TAB    &kp Q    &kp W    &kp E    &kp R                                                                              &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &tog 10  &tog 10
-&kp G      &kp LSHFT  &kp A    &kp S    &kp D    &kp F    &kp ESC    &kp RET          &kp PAUSE_BREAK  &tog 10  &tog 10  &tog 10    &tog 10   &tog 10   &tog 10  &tog 10    &tog 10  &tog 10
-&kp V      &kp LCTRL  &kp Z    &kp X    &kp C             &kp SPACE  &lt 11 LEFT_ALT  &kp LGUI         &tog 10  &tog 10  &kp SPACE            &tog 10   &tog 10  &tog 10    &tog 10  &tog 10
+&tog 6     &tog 6     &tog 6  &tog 6  &tog 6                                                                                            &tog 6    &tog 6  &tog 6     &tog 6  &tog 6
+&trans     &trans     &trans  &trans  &trans  &trans                                                                          &tog 6    &tog 6    &tog 6  &tog 6     &tog 6  &tog 6
+&kp MINUS  &kp GRAVE  &kp B   &kp N   &kp M   &kp SQT                                                                         &kp J     &kp K     &kp I   &kp L      &tog 6  &tog 6
+&kp T      &kp TAB    &kp Q   &kp W   &kp E   &kp R                                                                           &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &tog 6  &tog 6
+&kp G      &kp LSHFT  &kp A   &kp S   &kp D   &kp F    &kp ESC    &kp RET         &kp PAUSE_BREAK  &tog 6  &tog 6  &tog 6     &tog 6    &tog 6    &tog 6  &tog 6     &tog 6  &tog 6
+&kp V      &kp LCTRL  &kp Z   &kp X   &kp C            &kp SPACE  &lt 7 LEFT_ALT  &kp LGUI         &tog 6  &tog 6  &kp SPACE            &tog 6    &tog 6  &tog 6     &tog 6  &tog 6
             >;
         };
 
@@ -1776,21 +1732,10 @@
             bindings = <
 &bt BT_CLR   &none                            &none                              &none                                       &none                                                                                                        &none                                     &none                             &none                             &none  &bt BT_CLR_ALL
 &none        &none                            &none                              &none                                       &none            &none                                                                                &none  &none                                     &none                             &none                             &none  &none
-&none        &rgb_ug RGB_SPI                  &rgb_ug RGB_SAI                    &rgb_ug RGB_HUI                             &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                      &none  &mo_w_glow 3 RGB_COLOR_HSB_VAL(0,100,50)  &rgb_ug RGB_COLOR_HSB(130,72,64)  &rgb_ug RGB_COLOR_HSB(0,0,100)    &none  &none
+&none        &rgb_ug RGB_SPI                  &rgb_ug RGB_SAI                    &rgb_ug RGB_HUI                             &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                      &none  &mo_w_glow 1 RGB_COLOR_HSB_VAL(0,100,50)  &rgb_ug RGB_COLOR_HSB(130,72,64)  &rgb_ug RGB_COLOR_HSB(0,0,100)    &none  &none
 &bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                             &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)         &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none  &bootloader
-&sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(125,100,50)  &mo_w_glow 3 RGB_COLOR_HSB_VAL(250,100,50)  &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)         &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &none  &sys_reset
+&sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(125,100,50)  &mo_w_glow 1 RGB_COLOR_HSB_VAL(250,100,50)  &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)         &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &none  &sys_reset
 &none        &none                            &none                              &rgb_ug RGB_OFF                             &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                                     &none                             &none                             &none  &to 0
-            >;
-        };
-
-        factory_test_layer {
-            bindings = <
-&kp N0  &kp N6  &kp N2  &kp N8  &kp N4                                                                  &kp N4  &kp N8  &kp N2  &kp N6  &kp N0
-&kp N1  &kp N7  &kp N3  &kp N9  &kp N5  &kp N0                                                  &kp N0  &kp N5  &kp N9  &kp N3  &kp N7  &kp N1
-&kp N2  &kp N8  &kp N4  &kp N0  &kp N6  &kp N1                                                  &kp N1  &kp N6  &kp N0  &kp N4  &kp N8  &kp N2
-&kp N3  &kp N9  &kp N5  &kp N1  &kp N7  &kp N2                                                  &kp N2  &kp N7  &kp N1  &kp N5  &kp N9  &kp N3
-&kp N4  &kp N0  &kp N6  &kp N2  &kp N8  &kp N3  &kp N4  &kp N5  &kp N6  &kp N6  &kp N5  &kp N4  &kp N3  &kp N8  &kp N2  &kp N6  &kp N0  &kp N4
-&kp N5  &kp N1  &kp N7  &kp N3  &kp N9          &kp N7  &kp N8  &kp N9  &kp N9  &kp N8  &kp N7          &kp N9  &kp N3  &kp N7  &kp N1  &kp N5
             >;
         };
     };
@@ -1799,8 +1744,8 @@
         compatible = "zmk,conditional-layers";
 
         vim_symbols_mode {
-            if-layers = <1 6>;
-            then-layer = <7>;
+            if-layers = <1 4>;
+            then-layer = <5>;
         };
     };
 };

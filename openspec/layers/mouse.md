@@ -11,33 +11,48 @@ Full mouse control via keyboard. Layer index: **8**.
 
 ## Layout
 
-### Right Hand — Cursor Movement (IJKL)
+### Right Hand — Cursor Movement (HJKL vim-style)
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
-| J | 41 | `&mmv MOVE_LEFT` | Move cursor left |
-| K | 42 | `&mmv MOVE_DOWN` | Move cursor down |
-| I | 31 | `&mmv MOVE_UP` | Move cursor up |
+| H | 40 | `&mmv MOVE_LEFT` | Move cursor left |
+| J | 41 | `&mmv MOVE_DOWN` | Move cursor down |
+| K | 42 | `&mmv MOVE_UP` | Move cursor up |
 | L | 43 | `&mmv MOVE_RIGHT` | Move cursor right |
 
 ### Right Hand — Scroll
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
-| U | 29 | `&msc SCRL_UP` | Scroll up |
-| H | 40 | `&msc SCRL_LEFT` | Scroll left |
-| , | 53 | `&msc SCRL_DOWN` | Scroll down |
-| ; | 44 | `&msc SCRL_RIGHT` | Scroll right |
+| U | 29 | `&msc SCRL_DOWN` | Scroll down |
+| I | 31 | `&msc SCRL_UP` | Scroll up |
 | O | 32 | `&msc SCRL_UP` | Scroll up (alt) |
-| . | 54 | `&msc SCRL_DOWN` | Scroll down (alt) |
+| ; | 44 | `&msc SCRL_RIGHT` | Scroll right |
+| , | 53 | `&msc SCRL_DOWN` | Scroll down |
+| G (left of H) | 39 | `&msc SCRL_LEFT` | Scroll left |
 
-### Left Hand — Mouse Buttons
+### Left Hand — Modifiers (Home Row)
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
-| F | 38 | `&mkp LCLK` | Left click |
-| D | 37 | `&mkp RCLK` | Right click |
-| S | 36 | `&mkp MCLK` | Middle click |
+| A | 36 | `&kp LGUI` | GUI (Win/Cmd) |
+| S | 37 | `&kp LALT` | Alt |
+| D | 38 | `&kp LCTRL` | Control |
+| F | 39 | `&kp LSHIFT` | Shift |
+
+### Left Hand — Mouse Buttons (Bottom Row)
+
+| Key | Position | Binding | Action |
+|-----|----------|---------|--------|
+| X | 48 | `&mkp MCLK` | Middle click |
+| C | 49 | `&mkp RCLK` | Right click |
+| V | 50 | `&mkp LCLK` | Left click |
+
+### Left Hand — Precision Mode
+
+| Key | Position | Binding | Action |
+|-----|----------|---------|--------|
+| R | 27 | `&mo 9` | Hold for precision (1/3 speed) |
 
 ### Right Thumb — Mouse Buttons
 
@@ -51,17 +66,53 @@ Full mouse control via keyboard. Layer index: **8**.
 
 All other positions: `&none`.
 
+## Mouse Precision Layer
+
+Layer index: **9**. Transparent layer — activates input processor scaler.
+
+When layer 9 is active (hold R), mouse movement is scaled to 1/3 speed via `&zip_xy_scaler 1 3`.
+
+## Speed Configuration
+
+```c
+// Base velocity (default 600 is too fast for key-based control)
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 350
+
+// No acceleration — constant predictable speed
+&mmv {
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <0>;
+};
+
+// Precision scaler when layer 9 active
+&mmv_input_listener {
+    precision {
+        layers = <9>;
+        input-processors = <&zip_xy_scaler 1 3>;
+    };
+};
+```
+
+| Mode | Speed | Use Case |
+|------|-------|----------|
+| Normal | 350 | General navigation |
+| Precision (hold R) | ~117 | Fine positioning, small targets |
+
 ## Firmware Requirements
 
 - `config/glove80.conf`: `CONFIG_ZMK_POINTING=y`
-- `config/glove80.keymap`: `#include <dt-bindings/zmk/pointing.h>`
+- `config/glove80.keymap`:
+  - `#define ZMK_POINTING_DEFAULT_MOVE_VAL 350` (before pointing.h include)
+  - `#include <dt-bindings/zmk/pointing.h>`
+  - `#include <input/processors.dtsi>`
 
 ## Dependencies
 
 - ZMK pointing module (`&mmv`, `&msc`, `&mkp`) — enabled via `CONFIG_ZMK_POINTING=y`
+- ZMK input processors (`&zip_xy_scaler`) — via `<input/processors.dtsi>`
 
 ## Notes
 
-- Default movement speed: ZMK default (600). Tune with custom `mmv` instances if needed.
-- Speed gears (slow/fast macros) deferred — add if default speed proves unusable.
-- Scroll directions: Y/O are vertical (vim up/down), U/; are horizontal.
+- Mods on home row allow Ctrl+click, Shift+drag, etc.
+- Clicks moved to bottom row to free home row for mods.
+- Precision hold (R) is above shift finger — easy to hold while moving with right hand.

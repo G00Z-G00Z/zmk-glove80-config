@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 #define HYPER LC(LS(LG(LALT)))
@@ -1627,6 +1628,13 @@
             require-prior-idle-ms = <50>;
             layers = <0 4>;
         };
+
+        combo_toggle_mouse {
+            bindings = <&layer_mo_tog 9 9>;
+            key-positions = <47 48 49>;
+            layers = <0 9>;
+            require-prior-idle-ms = <300>;
+        };
     };
 
     keymap {
@@ -1736,6 +1744,20 @@
 &bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                             &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)         &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none  &bootloader
 &sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(125,100,50)  &mo_w_glow 1 RGB_COLOR_HSB_VAL(250,100,50)  &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)         &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &none  &sys_reset
 &none        &none                            &none                              &rgb_ug RGB_OFF                             &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                                     &none                             &none                             &none  &to 0
+            >;
+        };
+
+        mouse_layer {
+            // Y(28)=SCRL_UP  U(29)=SCRL_LEFT  O(31)=SCRL_DOWN
+            // S(36)=MCLK  D(37)=RCLK  F(38)=LCLK
+            // H(40)=MOVE_LEFT  J(41)=MOVE_DOWN  K(42)=MOVE_UP  L(43)=MOVE_RIGHT  ;(44)=SCRL_RIGHT
+            bindings = <
+&trans  &trans     &trans     &trans     &trans                                                                                                    &trans           &trans          &trans        &trans           &trans
+&trans  &trans     &trans     &trans     &trans          &trans                                                                           &trans   &trans           &trans          &trans        &trans           &trans
+&trans  &trans     &trans     &trans     &trans          &trans                                                                           &msc SCRL_UP  &msc SCRL_LEFT  &trans   &msc SCRL_DOWN  &trans           &trans
+&trans  &trans     &mkp MCLK  &mkp RCLK  &mkp LCLK       &trans                                                                           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  &trans
+&trans  &trans     &trans     &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };

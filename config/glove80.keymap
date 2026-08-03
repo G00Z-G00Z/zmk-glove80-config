@@ -491,7 +491,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <175>;
             quick-tap-ms = <300>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
         };
 
         lt_thumb_shift_td: lt_thumb_shift_td {
@@ -1245,7 +1245,7 @@
         };
 
         gaming_mode {
-            bindings = <&tog 5>;
+            bindings = <&tog 7>;
             key-positions = <50 48 37 69>;
             layers = <0>;
             require-prior-idle-ms = <500>;
@@ -1640,7 +1640,7 @@
 &kp LC(Z)      &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &kp NUMBER_4                  &mst_goback_call_mt 0 N5                                                                                                                                                   &mt C_VOLUME_DOWN NUMBER_6  &mt C_VOLUME_UP N7                                    &mt C_MUTE N8                                 &mt C_BRIGHTNESS_INC N9                   &hold_bt_0 0 N0                           &enie_numpad
 &kp TAB        &kp Q                  &hrm_left RIGHT_ALT W  &kp E                     &kp R                         &kp T                                                                                                                                                                      &kp Y                       &kp U                                                 &kp I                                         &hrm_right RIGHT_ALT O                    &kp P                                     &kp GRAVE
 &kp EQUAL      &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S   &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                                      &kp H                       &hmr_shift_right RIGHT_SHIFT J                        &hrm_right RIGHT_CONTROL K                    &hrm_right LEFT_ALT L                     &hrm_right RIGHT_GUI SEMI                 &kp SQT
-&kp LG(SPACE)  &kp Z                  &kp X                  &kp C                     &kp V                         &kp B                     &lt_thumb_gresc 2 0      &kp BACKSLASH           &my_email   &mst_gocall_goback_mt 0 0  &go_temp_mst                 &kp ENTER                   &kp N                       &kp M                                                 &kp COMMA                                     &kp DOT                                   &better_slash                             &tmux_prefix
+&kp LG(SPACE)  &kp Z                  &kp X                  &kp C                     &kp V                         &kp B                     &lt_thumb_gresc 5 0      &kp BACKSLASH           &my_email   &mst_gocall_goback_mt 0 0  &go_temp_mst                 &kp ENTER                   &kp N                       &kp M                                                 &kp COMMA                                     &kp DOT                                   &better_slash                             &tmux_prefix
 &magic 8 0     &kp LG(PERIOD)         &kp LC(PG_UP)          &kp LC(PG_DN)             &full_screen_window                                     &lt_thumb_backspace 1 0  &lt_thumb_shift_td 2 0  &kp DELETE  &kp RIGHT_SHIFT            &sk_shift_caps_word_caps_td  &lt_thumb_better_space 4 0                              &better_delimiter LEFT_PARENTHESIS RIGHT_PARENTHESIS  &better_delimiter LEFT_BRACKET RIGHT_BRACKET  &better_delimiter LEFT_BRACE RIGHT_BRACE  &better_delimiter LESS_THAN GREATER_THAN  &magic 8 0
             >;
         };
@@ -1689,25 +1689,25 @@
             >;
         };
 
-        gaming_layer {
+        function_layer {
             bindings = <
-&tog 5     &tog 5     &tog 5  &tog 5  &tog 5                                                                                            &tog 5    &tog 5  &tog 5     &tog 5  &tog 5
-&trans     &trans     &trans  &trans  &trans  &trans                                                                          &tog 5    &tog 5    &tog 5  &tog 5     &tog 5  &tog 5
-&kp MINUS  &kp GRAVE  &kp B   &kp N   &kp M   &kp SQT                                                                         &kp J     &kp K     &kp I   &kp L      &tog 5  &tog 5
-&kp T      &kp TAB    &kp Q   &kp W   &kp E   &kp R                                                                           &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &tog 5  &tog 5
-&kp G      &kp LSHFT  &kp A   &kp S   &kp D   &kp F    &kp ESC    &kp RET         &kp PAUSE_BREAK  &tog 5  &tog 5  &tog 5     &tog 5    &tog 5    &tog 5  &tog 5     &tog 5  &tog 5
-&kp V      &kp LCTRL  &kp Z   &kp X   &kp C            &kp SPACE  &lt 8 LEFT_ALT  &kp LGUI         &tog 5  &tog 5  &kp SPACE            &tog 5    &tog 5  &tog 5     &tog 5  &tog 5
+&tog 8           &tog 8          &tog 8        &tog 8             &tog 8                                                                                                                                                    &tog 8                    &tog 8                &tog 8                &tog 8                    &tog 8
+&none            &none           &none         &windows_shutdown  &none                         &none                                                                                         &none                         &kp LC(PLUS)              &kp LC(MINUS)         &kp LC(EQUAL)         &none                     &none
+&kp PAUSE_BREAK  &kp SCROLLLOCK  &redo         &undo              &kp LS(LA(LC(LEFT_CONTROL)))  &kp PRINTSCREEN                                                                               &none                         &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
+&kp CAPS         &kp LEFT_WIN    &kp LEFT_ALT  &kp LEFT_CONTROL   &kp LEFT_SHIFT                &rgb_ug RGB_TOG                                                                               &kt LS(LA(LC(LEFT_CONTROL)))  &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
+&none            &kp KP_NUMLOCK  &none         &none              &none                         &kp K_SCREENSAVER  &tog 8  &none   &none   &lock_td    &kp K_APPLICATION  &play_next_prev_td  &none                         &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
+&trans           &none           &none         &none              &none                                            &none   &tog 5  &tog 8  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                                   &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
             >;
         };
 
-        function_layer {
+        gaming_layer {
             bindings = <
-&tog 7           &tog 7          &tog 7        &tog 7             &tog 7                                                                                                                                                   &tog 7                    &tog 7                &tog 7                &tog 7                    &tog 7
-&none            &none           &none         &windows_shutdown  &none                         &none                                                                                        &none                         &kp LC(PLUS)              &kp LC(MINUS)         &kp LC(EQUAL)         &none                     &none
-&kp PAUSE_BREAK  &kp SCROLLLOCK  &redo         &undo              &kp LS(LA(LC(LEFT_CONTROL)))  &kp PRINTSCREEN                                                                              &none                         &kp F7                    &kp F8                &kp F9                &kp F10                   &kp F13
-&kp CAPS         &kp LEFT_WIN    &kp LEFT_ALT  &kp LEFT_CONTROL   &kp LEFT_SHIFT                &rgb_ug RGB_TOG                                                                              &kt LS(LA(LC(LEFT_CONTROL)))  &kp F4                    &kp F5                &kp F6                &kp F11                   &kp F14
-&none            &kp KP_NUMLOCK  &none         &none              &none                         &kp K_SCREENSAVER  &tog 7  &none  &none   &lock_td    &kp K_APPLICATION  &play_next_prev_td  &none                         &kp F1                    &kp F2                &kp F3                &kp F12                   &kp F15
-&trans           &none           &none         &none              &none                                            &none   &none  &tog 7  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                                   &kp C_BRIGHTNESS_MAXIMUM  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_AUTO
+&tog 7     &tog 7     &tog 7  &tog 7  &tog 7                                                                                            &tog 7    &tog 7  &tog 7     &tog 7  &tog 7
+&trans     &trans     &trans  &trans  &trans  &trans                                                                          &tog 7    &tog 7    &tog 7  &tog 7     &tog 7  &tog 7
+&kp MINUS  &kp GRAVE  &kp B   &kp N   &kp M   &kp SQT                                                                         &kp J     &kp K     &kp I   &kp L      &tog 7  &tog 7
+&kp T      &kp TAB    &kp Q   &kp W   &kp E   &kp R                                                                           &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &tog 7  &tog 7
+&kp G      &kp LSHFT  &kp A   &kp S   &kp D   &kp F    &kp ESC    &kp RET         &kp PAUSE_BREAK  &tog 7  &tog 7  &tog 7     &tog 7    &tog 7    &tog 7  &tog 7     &tog 7  &tog 7
+&kp V      &kp LCTRL  &kp Z   &kp X   &kp C            &kp SPACE  &lt 8 LEFT_ALT  &kp LGUI         &tog 7  &tog 7  &kp SPACE            &tog 7    &tog 7  &tog 7     &tog 7  &tog 7
             >;
         };
 
@@ -1739,7 +1739,7 @@
 
         vim_symbols_mode {
             if-layers = <1 4>;
-            then-layer = <7>;
+            then-layer = <8>;
         };
     };
 };

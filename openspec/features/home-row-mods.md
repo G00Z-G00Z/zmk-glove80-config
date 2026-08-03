@@ -26,7 +26,7 @@ hold-trigger-on-release
 |-----------|-------|-----------|
 | tapping-term-ms | 280 | Tiempo para distinguir tap vs hold |
 | quick-tap-ms | 200 | Doble-tap rápido siempre es tap |
-| require-prior-idle-ms | 150 | Ignora hold si estabas escribiendo |
+| require-prior-idle-ms | 175 | Ignora hold si estabas escribiendo |
 | hold-trigger-on-release | - | Decide tap/hold cuando soltás la siguiente tecla |
 
 ### Posiciones Opuestas

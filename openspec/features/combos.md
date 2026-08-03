@@ -5,9 +5,17 @@
 ## Configuración Global
 
 ```
-require-prior-idle-ms = <150>  // default, algunos usan 50-200
-timeout-ms = <18>              // default para la mayoría
+require-prior-idle-ms = <150-200>  // default 150, copy/paste usan 200
+timeout-ms = <18>                  // default para la mayoría
 ```
+
+### Valores por Combo
+
+| Combo | idle-ms | Razón |
+|-------|---------|-------|
+| copy/paste (X+C, C+V) | 200 | Evita misfires en palabras como "excel" |
+| Teams toggle (F+G+H) | 300 | 3 teclas adyacentes, necesita más protección |
+| otros | 150 | Default |
 
 El archivo `glove80.conf` tiene límites auto-calculados por `scripts/update-max-combo.py`.
 

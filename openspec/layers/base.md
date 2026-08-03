@@ -17,7 +17,7 @@ Layer default (0). Siempre activo como fallback.
 
 | Posición | Tap | Hold | Notas |
 |----------|-----|------|-------|
-| Inner izq | Grave/Esc | Layer 5 (function) | `lt_thumb_gresc` |
+| Inner izq | Grave/Esc | Layer 5 (function) | `lt_thumb_gresc`, flavor balanced |
 | Center izq | Backspace/Delete | Layer 1 (cursor) | Shift → Delete |
 | Outer izq | Sticky Shift / CapsWord / CapsLock | Layer 2 (number) | Tap-dance 3 niveles |
 | Inner der | Shift | - | Sticky |

@@ -5,9 +5,8 @@
  *  
  * Important notes, labels cannot be long
  */
-// Lower mouse speed for key-based control (default 600 is too fast)
-
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 350
+// Mouse speed (precision mode divides by 3 via scaler)
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>

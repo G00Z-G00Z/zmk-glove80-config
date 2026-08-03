@@ -27,8 +27,9 @@ Layer default (0). Siempre activo como fallback.
 ## Teclas Especiales
 
 - **Row 0 (F-row)**: Escape, volumen, skedpal inbox, task manager, display settings, play/next/prev, file explorer, brightness
+- **Backslash key**: Hold = mouse layer 8, tap = backslash
 - **Row 1**: Undo (Ctrl+Z), números con BT hold, ñ macro
-- **Magic keys**: Esquinas inferiores → layer 8 (magic)
+- **Magic keys**: Esquinas inferiores → layer 9 (magic)
 
 ## Combos Activos
 

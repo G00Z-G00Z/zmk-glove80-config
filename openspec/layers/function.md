@@ -5,7 +5,6 @@ F-keys, controles de sistema, y RGB.
 ## Activación
 
 - Hold thumb izquierdo inner (gresc) desde base
-- **Conditional layer**: Cursor (1) + Symbols (4) = Function (5)
 
 ## F-Keys
 

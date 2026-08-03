@@ -1,35 +1,35 @@
 # Mouse Layer
 
-Full mouse control via keyboard. Layer index: **9**.
+Full mouse control via keyboard. Layer index: **8**.
 
 ## Activation
 
-- **Combo ZXC** (positions 47+48+49): hold = momentary (layer 9 while held), tap = toggle on/off
-- Available from base layer (0) and mouse layer (9)
-- Uses existing `layer_mo_tog` hold-tap behavior
-- `require-prior-idle-ms = 300` to prevent accidental triggers
+- **Hold backslash key** in base layer: `&lt 8 BACKSLASH` — hold = mouse layer, tap = backslash
+- **Top corners** (positions 0 and 9) in mouse layer: `&tog 8` — exit mouse layer
 
 > ⚠️ **BLE Re-Pair Required**: Adding `CONFIG_ZMK_POINTING=y` changes the HID descriptor. After flashing, re-pair the keyboard with every BLE host.
 
 ## Layout
 
-### Right Hand — Cursor Movement (HJKL vim-style)
+### Right Hand — Cursor Movement (IJKL)
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
-| H | 40 | `&mmv MOVE_LEFT` | Move cursor left |
-| J | 41 | `&mmv MOVE_DOWN` | Move cursor down |
-| K | 42 | `&mmv MOVE_UP` | Move cursor up |
+| J | 41 | `&mmv MOVE_LEFT` | Move cursor left |
+| K | 42 | `&mmv MOVE_DOWN` | Move cursor down |
+| I | 31 | `&mmv MOVE_UP` | Move cursor up |
 | L | 43 | `&mmv MOVE_RIGHT` | Move cursor right |
 
 ### Right Hand — Scroll
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
-| Y | 28 | `&msc SCRL_UP` | Scroll up |
-| U | 29 | `&msc SCRL_LEFT` | Scroll left |
-| O | 31 | `&msc SCRL_DOWN` | Scroll down |
+| U | 29 | `&msc SCRL_UP` | Scroll up |
+| H | 40 | `&msc SCRL_LEFT` | Scroll left |
+| , | 53 | `&msc SCRL_DOWN` | Scroll down |
 | ; | 44 | `&msc SCRL_RIGHT` | Scroll right |
+| O | 32 | `&msc SCRL_UP` | Scroll up (alt) |
+| . | 54 | `&msc SCRL_DOWN` | Scroll down (alt) |
 
 ### Left Hand — Mouse Buttons
 
@@ -39,7 +39,17 @@ Full mouse control via keyboard. Layer index: **9**.
 | D | 37 | `&mkp RCLK` | Right click |
 | S | 36 | `&mkp MCLK` | Middle click |
 
-All other positions: `&trans` (pass through to lower layer).
+### Right Thumb — Mouse Buttons
+
+| Key | Position | Binding | Action |
+|-----|----------|---------|--------|
+| Thumb inner | 57 | `&mkp MB4` | Back |
+| Thumb center | 56 | `&mkp MB5` | Forward |
+| Thumb outer | 55 | `&mkp RCLK` | Right click |
+| Row above outer | 50 | `&mkp MCLK` | Middle click |
+| Row above center | 51 | `&mkp LCLK` | Left click |
+
+All other positions: `&none`.
 
 ## Firmware Requirements
 
@@ -48,7 +58,6 @@ All other positions: `&trans` (pass through to lower layer).
 
 ## Dependencies
 
-- `layer_mo_tog` — hold-tap behavior (already defined in `behaviors {}`)
 - ZMK pointing module (`&mmv`, `&msc`, `&mkp`) — enabled via `CONFIG_ZMK_POINTING=y`
 
 ## Notes

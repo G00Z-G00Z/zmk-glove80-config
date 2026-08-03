@@ -1,6 +1,15 @@
 # My Glove80 configuration
 
-This repo is based on the [template of Moergo](https://github.com/moergo-sc/glove80-zmk-config). This repo allows me to edit the configuration directly on the keymap files. The build process can be either the `build.sh` script or a GitHub action in this repository
+This repo is based on the [template of Moergo](https://github.com/moergo-sc/glove80-zmk-config). This repo allows me to edit the configuration directly on the keymap files. The build process can be either the `build.sh` script or a GitHub action in this repository.
+
+## Layout Documentation
+
+See `openspec/` for detailed specs:
+
+- **Layers**: `openspec/layers/` — base, cursor, number, teams, symbols, function, gaming, magic
+- **Features**: `openspec/features/` — home-row-mods, combos, tap-dance, selection-macros, vim-mode, smart-thumbs, bracket-pairing
+
+Each file documents purpose, activation, configuration, and dependencies.
   
 If you'd like a UI approach, you can use these editors: 
 

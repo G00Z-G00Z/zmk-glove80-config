@@ -52,7 +52,7 @@ Full mouse control via keyboard. Layer index: **8**.
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
-| R | 27 | `&mo 9` | Hold for precision (1/3 speed) |
+| R | 27 | `&mo 9` | Hold for precision (1/6 speed) |
 
 ### Right Thumb — Mouse Buttons
 
@@ -70,13 +70,13 @@ All other positions: `&none`.
 
 Layer index: **9**. Transparent layer — activates input processor scaler.
 
-When layer 9 is active (hold R), mouse movement is scaled to 1/3 speed via `&zip_xy_scaler 1 3`.
+When layer 9 is active (hold R), mouse movement is scaled to 1/6 speed via `&zip_xy_scaler 1 6`.
 
 ## Speed Configuration
 
 ```c
-// Base velocity (default 600 is too fast for key-based control)
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 350
+// Mouse speed (precision mode divides by 6 via scaler)
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 
 // No acceleration — constant predictable speed
 &mmv {
@@ -88,21 +88,21 @@ When layer 9 is active (hold R), mouse movement is scaled to 1/3 speed via `&zip
 &mmv_input_listener {
     precision {
         layers = <9>;
-        input-processors = <&zip_xy_scaler 1 3>;
+        input-processors = <&zip_xy_scaler 1 6>;
     };
 };
 ```
 
 | Mode | Speed | Use Case |
 |------|-------|----------|
-| Normal | 350 | General navigation |
-| Precision (hold R) | ~117 | Fine positioning, small targets |
+| Normal | 600 | General navigation |
+| Precision (hold R) | 100 | Fine positioning, small targets |
 
 ## Firmware Requirements
 
 - `config/glove80.conf`: `CONFIG_ZMK_POINTING=y`
 - `config/glove80.keymap`:
-  - `#define ZMK_POINTING_DEFAULT_MOVE_VAL 350` (before pointing.h include)
+  - `#define ZMK_POINTING_DEFAULT_MOVE_VAL 600` (before pointing.h include)
   - `#include <dt-bindings/zmk/pointing.h>`
   - `#include <input/processors.dtsi>`
 

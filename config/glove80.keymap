@@ -6,7 +6,7 @@
  * Important notes, labels cannot be long
  */
 // Mouse speed (precision mode divides by 3 via scaler)
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 350
 
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
@@ -1778,6 +1778,6 @@
 &mmv_input_listener {
     precision {
         layers = <9>;
-        input-processors = <&zip_xy_scaler 1 6>;
+        input-processors = <&zip_xy_scaler 1 3>;
     };
 };

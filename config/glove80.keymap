@@ -538,7 +538,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "MOUSE_LAYER_TD";
             #binding-cells = <0>;
-            bindings = <&lt 8 K_BACK>, <&tog 8>;
+            bindings = <&lt 8 BACKSLASH>, <&tog 8>;
         };
     };
 

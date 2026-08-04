@@ -4,14 +4,19 @@ Full mouse control via keyboard. Layer index: **8**.
 
 ## Activation
 
-- **Hold backslash key** in base layer: `&lt 8 BACKSLASH` — hold = mouse layer, tap = backslash
+- **Tap-dance on backslash key** in base layer: `&mouse_layer_td`
+  - **Tap**: backslash character
+  - **Hold**: momentary mouse layer
+  - **Double-tap**: toggle mouse layer ON/OFF
+  - Tapping term: 150ms (snappy)
 - **Top corners** (positions 0 and 9) in mouse layer: `&tog 8` — exit mouse layer
+- **Escape keys** on thumbs for quick exit
 
 > ⚠️ **BLE Re-Pair Required**: Adding `CONFIG_ZMK_POINTING=y` changes the HID descriptor. After flashing, re-pair the keyboard with every BLE host.
 
 ## Layout
 
-### Right Hand — Cursor Movement (HJKL vim-style)
+### Right Hand — Cursor Movement (HJKL vim-style, home row)
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
@@ -20,16 +25,14 @@ Full mouse control via keyboard. Layer index: **8**.
 | K | 42 | `&mmv MOVE_UP` | Move cursor up |
 | L | 43 | `&mmv MOVE_RIGHT` | Move cursor right |
 
-### Right Hand — Scroll
+### Right Hand — Scroll (row above home)
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
-| U | 29 | `&msc SCRL_DOWN` | Scroll down |
+| Y | 29 | `&msc SCRL_LEFT` | Scroll left |
+| U | 30 | `&msc SCRL_DOWN` | Scroll down |
 | I | 31 | `&msc SCRL_UP` | Scroll up |
-| O | 32 | `&msc SCRL_UP` | Scroll up (alt) |
-| ; | 44 | `&msc SCRL_RIGHT` | Scroll right |
-| , | 53 | `&msc SCRL_DOWN` | Scroll down |
-| G (left of H) | 39 | `&msc SCRL_LEFT` | Scroll left |
+| O | 32 | `&msc SCRL_RIGHT` | Scroll right |
 
 ### Left Hand — Modifiers (Home Row)
 
@@ -52,17 +55,32 @@ Full mouse control via keyboard. Layer index: **8**.
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
-| R | 27 | `&mo 9` | Hold for precision (1/6 speed) |
+| R | 27 | `&mo 9` | Hold for precision (1/3 speed) |
 
-### Right Thumb — Mouse Buttons
+### Thumb Clusters
 
-| Key | Position | Binding | Action |
-|-----|----------|---------|--------|
-| Thumb inner | 57 | `&mkp MB4` | Back |
-| Thumb center | 56 | `&mkp MB5` | Forward |
-| Thumb outer | 55 | `&mkp RCLK` | Right click |
-| Row above outer | 50 | `&mkp MCLK` | Middle click |
-| Row above center | 51 | `&mkp LCLK` | Left click |
+**Left Thumb:**
+| Position | Binding | Action |
+|----------|---------|--------|
+| 52 | `&mo 9` | Precision mode |
+| 53 | `&none` | — |
+| 54 | `&kp ESCAPE` | Exit |
+
+**Right Thumb:**
+| Position | Binding | Action |
+|----------|---------|--------|
+| 55 | `&mkp RCLK` | Right click |
+| 56 | `&kp ESCAPE` | Exit |
+| 57 | `&mkp MCLK` | Middle click |
+
+### Right Hand — Bottom Row (Mouse Buttons)
+
+| Position | Binding | Action |
+|----------|---------|--------|
+| 58 | `&mkp MB4` | Back |
+| 59 | `&mkp LCLK` | Left click |
+| 60 | `&mkp RCLK` | Right click |
+| 61 | `&mkp MB5` | Forward |
 
 All other positions: `&none`.
 
@@ -70,13 +88,13 @@ All other positions: `&none`.
 
 Layer index: **9**. Transparent layer — activates input processor scaler.
 
-When layer 9 is active (hold R), mouse movement is scaled to 1/6 speed via `&zip_xy_scaler 1 6`.
+When layer 9 is active (hold R or left thumb), mouse movement is scaled to 1/3 speed via `&zip_xy_scaler 1 3`.
 
 ## Speed Configuration
 
 ```c
-// Mouse speed (precision mode divides by 6 via scaler)
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+// Mouse speed (precision mode divides by 3 via scaler)
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 350
 
 // No acceleration — constant predictable speed
 &mmv {
@@ -88,21 +106,33 @@ When layer 9 is active (hold R), mouse movement is scaled to 1/6 speed via `&zip
 &mmv_input_listener {
     precision {
         layers = <9>;
-        input-processors = <&zip_xy_scaler 1 6>;
+        input-processors = <&zip_xy_scaler 1 3>;
     };
 };
 ```
 
 | Mode | Speed | Use Case |
 |------|-------|----------|
-| Normal | 600 | General navigation |
-| Precision (hold R) | 100 | Fine positioning, small targets |
+| Normal | 350 | General navigation, less overshoot |
+| Precision (hold R) | ~117 | Fine positioning, small targets |
+
+## Tap-Dance Behavior
+
+```dts
+mouse_layer_td: mouse_layer_td {
+    compatible = "zmk,behavior-tap-dance";
+    label = "MOUSE_LAYER_TD";
+    #binding-cells = <0>;
+    tapping-term-ms = <150>;
+    bindings = <&lt 8 BACKSLASH>, <&tog 8>;
+};
+```
 
 ## Firmware Requirements
 
 - `config/glove80.conf`: `CONFIG_ZMK_POINTING=y`
 - `config/glove80.keymap`:
-  - `#define ZMK_POINTING_DEFAULT_MOVE_VAL 600` (before pointing.h include)
+  - `#define ZMK_POINTING_DEFAULT_MOVE_VAL 350` (before pointing.h include)
   - `#include <dt-bindings/zmk/pointing.h>`
   - `#include <input/processors.dtsi>`
 
@@ -114,5 +144,7 @@ When layer 9 is active (hold R), mouse movement is scaled to 1/6 speed via `&zip
 ## Notes
 
 - Mods on home row allow Ctrl+click, Shift+drag, etc.
-- Clicks moved to bottom row to free home row for mods.
-- Precision hold (R) is above shift finger — easy to hold while moving with right hand.
+- Clicks on left bottom row and right thumb for easy access.
+- Precision available on R (index finger) and left thumb — hold while moving with right hand.
+- Escape on multiple thumb positions for quick layer exit.
+- Tap-dance allows backslash tap, hold for momentary, double-tap for toggle.

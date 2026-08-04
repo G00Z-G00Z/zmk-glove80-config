@@ -7,7 +7,7 @@
  */
 // Mouse speed (precision mode divides by 3 via scaler)
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 350
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 450
 
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>

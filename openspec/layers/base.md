@@ -17,9 +17,9 @@ Layer default (0). Siempre activo como fallback.
 
 | Posición | Tap | Hold | Notas |
 |----------|-----|------|-------|
-| Inner izq | Grave/Esc | Layer 5 (function) | `lt_thumb_gresc`, flavor balanced |
-| Center izq | Backspace/Delete | Layer 1 (cursor) | Shift → Delete |
-| Outer izq | Sticky Shift / CapsWord / CapsLock | Layer 2 (number) | Tap-dance 3 niveles |
+| Inner izq (69) | Grave/Esc | Layer 8 (mouse) | `mouse_gresc_td`: 2t = toggle mouse |
+| Center izq (70) | Backslash | Layer 5 (function) | `&lt 5 BACKSLASH` |
+| Outer izq | Backspace/Delete | Layer 1 (cursor) | Shift → Delete |
 | Inner der | Shift | - | Sticky |
 | Center der | Shift tap-dance | - | `sk_shift_caps_word_caps_td` |
 | Outer der | Space / auto-cap dot | Layer 4 (symbols) | Shift+Space → `. ` + sticky shift |
@@ -27,7 +27,6 @@ Layer default (0). Siempre activo como fallback.
 ## Teclas Especiales
 
 - **Row 0 (F-row)**: Escape, volumen, skedpal inbox, task manager, display settings, play/next/prev, file explorer, brightness
-- **Backslash key**: Hold = mouse layer 8, tap = backslash
 - **Row 1**: Undo (Ctrl+Z), números con BT hold, ñ macro
 - **Magic keys**: Esquinas inferiores → layer 9 (magic)
 

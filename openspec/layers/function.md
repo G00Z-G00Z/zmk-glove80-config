@@ -4,7 +4,8 @@ F-keys, controles de sistema, y RGB.
 
 ## Activación
 
-- Hold thumb izquierdo inner (gresc) desde base
+- Hold thumb izquierdo center (backslash, pos 70) desde base: `&lt 5 BACKSLASH`
+- **Exit**: Inner left thumb (pos 69) = `&to 0` — return to base (same area that activated)
 
 ## F-Keys
 

@@ -4,13 +4,13 @@ Full mouse control via keyboard. Layer index: **8**.
 
 ## Activation
 
-- **Tap-dance on backslash key** in base layer: `&mouse_layer_td`
-  - **Tap**: backslash character
+- **Tap-dance on inner left thumb (pos 69)** in base layer: `&mouse_gresc_td`
+  - **Tap**: gresc (Escape, Shift+tap = Grave)
   - **Hold**: momentary mouse layer
   - **Double-tap**: toggle mouse layer ON/OFF
   - Tapping term: 150ms (snappy)
 - **Top corners** (positions 0 and 9) in mouse layer: `&tog 8` — exit mouse layer
-- **Escape keys** on thumbs for quick exit
+- **Inner left thumb (pos 69)**: `&to 0` — return to base (same finger that activated)
 
 > ⚠️ **BLE Re-Pair Required**: Adding `CONFIG_ZMK_POINTING=y` changes the HID descriptor. After flashing, re-pair the keyboard with every BLE host.
 
@@ -62,9 +62,9 @@ Full mouse control via keyboard. Layer index: **8**.
 **Left Thumb:**
 | Position | Binding | Action |
 |----------|---------|--------|
+| 69 | `&to 0` | Return to base layer |
+| 70 | `&kp ESCAPE` | Escape |
 | 52 | `&mo 9` | Precision mode |
-| 53 | `&none` | — |
-| 54 | `&kp ESCAPE` | Exit |
 
 **Right Thumb:**
 | Position | Binding | Action |
@@ -119,14 +119,16 @@ When layer 9 is active (hold R or left thumb), mouse movement is scaled to 1/3 s
 ## Tap-Dance Behavior
 
 ```dts
-mouse_layer_td: mouse_layer_td {
+mouse_gresc_td: mouse_gresc_td {
     compatible = "zmk,behavior-tap-dance";
-    label = "MOUSE_LAYER_TD";
+    label = "MOUSE_GRESC_TD";
     #binding-cells = <0>;
     tapping-term-ms = <150>;
-    bindings = <&lt 8 BACKSLASH>, <&tog 8>;
+    bindings = <&lt_thumb_gresc 8 0>, <&tog 8>;
 };
 ```
+
+Uses `lt_thumb_gresc` hold-tap: hold = `&mo 8`, tap = `&gresc`.
 
 ## Firmware Requirements
 
@@ -146,5 +148,5 @@ mouse_layer_td: mouse_layer_td {
 - Mods on home row allow Ctrl+click, Shift+drag, etc.
 - Clicks on left bottom row and right thumb for easy access.
 - Precision available on R (index finger) and left thumb — hold while moving with right hand.
-- Escape on multiple thumb positions for quick layer exit.
-- Tap-dance allows backslash tap, hold for momentary, double-tap for toggle.
+- Inner left thumb (pos 69) exits to base — same finger that activated the layer.
+- Tap-dance allows gresc tap, hold for momentary, double-tap for toggle.

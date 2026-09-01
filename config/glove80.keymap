@@ -1817,12 +1817,12 @@
 
         musescore_layer {
             bindings = <
-&tog 11  &tog 11   &tog 11   &tog 11   &tog 11                                                                                      &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-&none    &kp S     &kp X     &kp J     &none      &none                                                                    &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-&none    &kp S     &kp Q     &kp W     &kp R      &kp T                                                                    &trans   &trans   &trans   &trans   &trans   &tog 11
-&kp DOT  &kp N3    &kp N4    &kp N5    &kp N6     &kp N7                                                                   &trans   &trans   &trans   &trans   &trans   &tog 11
-&ms_cut  &ms_undo  &ms_redo  &ms_copy  &ms_paste  &ms_triplet  &kp ESC  &kp DEL    &ms_add_bar  &tog 11  &tog 11  &tog 11  &tog 11  &trans   &trans   &trans   &trans   &tog 11
-&trans   &none     &none     &none     &none                   &kp N0   &kp SPACE  &kp N        &tog 11  &tog 11  &tog 11           &trans   &trans   &trans   &trans   &trans
+&tog 11  &tog 11    &tog 11    &tog 11    &tog 11                                                                                                    &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&none    &kp LC(S)  &kp X      &kp J      &kp LC(UP_ARROW)  &kp LC(DOWN_ARROW)                                                              &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&none    &kp S      &kp Q      &kp W      &kp R             &kp T                                                                           &trans   &trans   &trans   &trans   &trans   &tog 11
+&kp DOT  &kp N3     &kp N4     &kp N5     &kp N6            &kp N7                                                                          &trans   &trans   &trans   &trans   &trans   &tog 11
+&ms_cut  &ms_undo   &ms_redo   &ms_copy   &ms_paste         &ms_triplet         &kp ESC  &kp DEL    &ms_add_bar  &tog 11  &tog 11  &tog 11  &tog 11  &trans   &trans   &trans   &trans   &tog 11
+&trans   &kp SLASH  &kp LS(V)  &kp LS(S)  &none                                 &kp N0   &kp SPACE  &kp N        &tog 11  &tog 11  &tog 11           &trans   &trans   &trans   &trans   &trans
             >;
         };
     };

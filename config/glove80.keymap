@@ -1203,13 +1203,6 @@
             label = "GO_CALL_UNMUTE";
         };
 
-        skedpal_inbox: skedpal_inbox {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LS(K)) &kp SLASH &kp I &kp N &kp B &kp O &kp X &kp ENTER>;
-            label = "SKEDPAL_INBOX";
-        };
-
         // MuseScore (ms_) macros
 
         ms_undo: ms_undo {
@@ -1685,14 +1678,6 @@
             require-prior-idle-ms = <50>;
             layers = <0 4>;
         };
-
-        combo_tog_musescore {
-            bindings = <&tog 11>;
-            key-positions = <47 48 49>;
-            layers = <0 11>;
-            require-prior-idle-ms = <300>;
-            timeout-ms = <50>;
-        };
     };
 
     keymap {
@@ -1708,7 +1693,7 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&tog 8         &kp C_MUTE             &kp C_VOL_DN           &skedpal_inbox            &kp LC(LS(ESCAPE))                                                                                                                                                                                                                   &kp LG(P)                                             &play_next_prev_td                            &kp LG(E)                                 &kp C_BRIGHTNESS_INC                      &kp C_BRIGHTNESS_DEC
+&tog 8         &kp C_MUTE             &kp C_VOL_DN           &tog 11                   &kp LC(LS(ESCAPE))                                                                                                                                                                                                                   &kp LG(P)                                             &play_next_prev_td                            &kp LG(E)                                 &kp C_BRIGHTNESS_INC                      &kp C_BRIGHTNESS_DEC
 &kp LC(Z)      &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &kp NUMBER_4                  &mst_goback_call_mt 0 N5                                                                                                                                                   &mt C_VOLUME_DOWN NUMBER_6  &mt C_VOLUME_UP N7                                    &mt C_MUTE N8                                 &mt C_BRIGHTNESS_INC N9                   &hold_bt_0 0 N0                           &enie_numpad
 &kp TAB        &kp Q                  &hrm_left RIGHT_ALT W  &kp E                     &kp R                         &kp T                                                                                                                                                                      &kp Y                       &kp U                                                 &kp I                                         &hrm_right RIGHT_ALT O                    &kp P                                     &kp GRAVE
 &kp EQUAL      &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S   &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                                      &kp H                       &hmr_shift_right RIGHT_SHIFT J                        &hrm_right RIGHT_CONTROL K                    &hrm_right LEFT_ALT L                     &hrm_right RIGHT_GUI SEMI                 &kp SQT
@@ -1832,18 +1817,12 @@
 
         musescore_layer {
             bindings = <
-// Row 0 (F-row)
-&tog 11  &tog 11  &tog 11  &tog 11  &tog 11                                                                                  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-// Row 1 (number row) - left: slur, flip, enharmonic, spare, spare
-&none    &kp S    &kp X    &kp J    &none    &none                                                                   &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-// Row 2 (Q-row) - Q=halve, W=double, E=copy, R=repeat, T=tie
-&none    &kp Q    &kp W    &ms_copy &kp R    &kp T                                                                   &trans   &trans   &trans   &trans   &trans   &tog 11
-// Row 3 (home) - A=16th, S=8th, D=quarter, F=half, G=whole, 6th=dot
-&none    &kp N3   &kp N4   &kp N5   &kp N6   &kp N7                                                                  &trans   &trans   &trans   &trans   &trans   &tog 11
-// Row 4 (Z-row) - Z=undo, X=redo, C=play, V=paste, B=triplet, N=note-input
-&none    &ms_undo &ms_redo &kp SPACE &ms_paste &ms_triplet  &kp ESC  &kp DEL  &kp N0  &tog 11  &tog 11  &tog 11     &kp N    &trans   &trans   &trans   &trans   &tog 11
-// Row 5 (thumb) - Esc, Del, Rest(0), AddBar
-&trans   &none    &none    &none    &none                   &kp ESC  &kp DEL  &kp N0  &tog 11  &ms_add_bar  &tog 11          &trans   &trans   &trans   &trans   &trans
+&tog 11  &tog 11   &tog 11   &tog 11   &tog 11                                                                                      &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&none    &kp S     &kp X     &kp J     &none      &none                                                                    &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&none    &kp S     &kp Q     &kp W     &kp R      &kp T                                                                    &trans   &trans   &trans   &trans   &trans   &tog 11
+&kp DOT  &kp N3    &kp N4    &kp N5    &kp N6     &kp N7                                                                   &trans   &trans   &trans   &trans   &trans   &tog 11
+&ms_cut  &ms_undo  &ms_redo  &ms_copy  &ms_paste  &ms_triplet  &kp ESC  &kp DEL    &ms_add_bar  &tog 11  &tog 11  &tog 11  &tog 11  &trans   &trans   &trans   &trans   &tog 11
+&trans   &none     &none     &none     &none                   &kp N0   &kp SPACE  &kp N        &tog 11  &tog 11  &tog 11           &trans   &trans   &trans   &trans   &trans
             >;
         };
     };

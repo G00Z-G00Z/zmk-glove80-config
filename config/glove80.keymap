@@ -1209,6 +1209,57 @@
             bindings = <&kp LC(LS(K)) &kp SLASH &kp I &kp N &kp B &kp O &kp X &kp ENTER>;
             label = "SKEDPAL_INBOX";
         };
+
+        // MuseScore (ms_) macros
+
+        ms_undo: ms_undo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(Z)>;
+            label = "MS_UNDO";
+        };
+
+        ms_redo: ms_redo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(Z))>;
+            label = "MS_REDO";
+        };
+
+        ms_copy: ms_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>;
+            label = "MS_COPY";
+        };
+
+        ms_paste: ms_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>;
+            label = "MS_PASTE";
+        };
+
+        ms_cut: ms_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(X)>;
+            label = "MS_CUT";
+        };
+
+        ms_triplet: ms_triplet {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(N3)>;
+            label = "MS_TRIPLET";
+        };
+
+        ms_add_bar: ms_add_bar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B)>;
+            label = "MS_ADD_BAR";
+        };
     };
 
     combos {
@@ -1634,6 +1685,14 @@
             require-prior-idle-ms = <50>;
             layers = <0 4>;
         };
+
+        combo_tog_musescore {
+            bindings = <&tog 11>;
+            key-positions = <47 48 49>;
+            layers = <0 11>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <50>;
+        };
     };
 
     keymap {
@@ -1768,6 +1827,23 @@
 &bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                             &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)         &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none  &bootloader
 &sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(125,100,50)  &mo_w_glow 1 RGB_COLOR_HSB_VAL(250,100,50)  &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)         &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &none  &sys_reset
 &none        &none                            &none                              &rgb_ug RGB_OFF                             &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                                     &none                             &none                             &none  &to 0
+            >;
+        };
+
+        musescore_layer {
+            bindings = <
+// Row 0 (F-row)
+&tog 11  &tog 11  &tog 11  &tog 11  &tog 11                                                                                  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+// Row 1 (number row) - left: slur, flip, enharmonic, spare, spare
+&none    &kp S    &kp X    &kp J    &none    &none                                                                   &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+// Row 2 (Q-row) - Q=halve, W=double, E=copy, R=repeat, T=tie
+&none    &kp Q    &kp W    &ms_copy &kp R    &kp T                                                                   &trans   &trans   &trans   &trans   &trans   &tog 11
+// Row 3 (home) - A=16th, S=8th, D=quarter, F=half, G=whole, 6th=dot
+&none    &kp N3   &kp N4   &kp N5   &kp N6   &kp N7                                                                  &trans   &trans   &trans   &trans   &trans   &tog 11
+// Row 4 (Z-row) - Z=undo, X=redo, C=play, V=paste, B=triplet, N=note-input
+&none    &ms_undo &ms_redo &kp SPACE &ms_paste &ms_triplet  &kp ESC  &kp DEL  &kp N0  &tog 11  &tog 11  &tog 11     &kp N    &trans   &trans   &trans   &trans   &tog 11
+// Row 5 (thumb) - Esc, Del, Rest(0), AddBar
+&trans   &none    &none    &none    &none                   &kp ESC  &kp DEL  &kp N0  &tog 11  &ms_add_bar  &tog 11          &trans   &trans   &trans   &trans   &trans
             >;
         };
     };

@@ -24,29 +24,29 @@ Chain strategy: size-exception
 
 ## Phase 1: Macros
 
-- [ ] 1.1 In `config/glove80.keymap`, locate the `macros` node (where `mst_*` macros live) and add `ms_undo` with `bindings = <&kp LC(Z)>`
-- [ ] 1.2 Add `ms_redo` with `bindings = <&kp LC(LS(Z))>`
-- [ ] 1.3 Add `ms_copy` with `bindings = <&kp LC(C)>`
-- [ ] 1.4 Add `ms_paste` with `bindings = <&kp LC(V)>`
-- [ ] 1.5 Add `ms_cut` with `bindings = <&kp LC(X)>`
-- [ ] 1.6 Add `ms_triplet` with `bindings = <&kp LC(N3)>`
-- [ ] 1.7 Add `ms_add_bar` with `bindings = <&kp LC(B)>`
+- [x] 1.1 In `config/glove80.keymap`, locate the `macros` node (where `mst_*` macros live) and add `ms_undo` with `bindings = <&kp LC(Z)>`
+- [x] 1.2 Add `ms_redo` with `bindings = <&kp LC(LS(Z))>`
+- [x] 1.3 Add `ms_copy` with `bindings = <&kp LC(C)>`
+- [x] 1.4 Add `ms_paste` with `bindings = <&kp LC(V)>`
+- [x] 1.5 Add `ms_cut` with `bindings = <&kp LC(X)>`
+- [x] 1.6 Add `ms_triplet` with `bindings = <&kp LC(N3)>`
+- [x] 1.7 Add `ms_add_bar` with `bindings = <&kp LC(B)>`
 
 ## Phase 2: Layer 11
 
-- [ ] 2.1 In `config/glove80.keymap`, add `musescore_layer` block after `magic_layer` (layer 10)
-- [ ] 2.2 Bind home row: positions 35–39 → `&kp N3 N4 N5 N6 N7`; position 34 → `&kp DOT`
-- [ ] 2.3 Bind Q-row: 23=`&kp Q`, 24=`&kp W`, 25=`&ms_copy`, 26=`&kp R`, 27=`&kp T`
-- [ ] 2.4 Bind Z-row: 47=`&ms_undo`, 48=`&ms_redo`, 49=`&kp SPACE`, 50=`&ms_paste`, 51=`&ms_triplet`; 46=`&kp N`
-- [ ] 2.5 Bind number row: 23=slur `&kp S`, 24=flip `&kp X`, 25=enharmonic `&kp J`, rest `&none`
-- [ ] 2.6 Bind thumb cluster: Esc=`&kp ESC`, Del=`&kp DEL`, Rest=`&kp N0`, AddBar=`&ms_add_bar`; exit thumb=`&tog 11`
-- [ ] 2.7 Bind right hand: all `&trans` except corner keys → `&tog 11`
-- [ ] 2.8 Bind F-row: all left positions `&tog 11`
+- [x] 2.1 In `config/glove80.keymap`, add `musescore_layer` block after `magic_layer` (layer 10)
+- [x] 2.2 Bind home row: positions 35–39 → `&kp N3 N4 N5 N6 N7`; position 34 → `&kp DOT`
+- [x] 2.3 Bind Q-row: 23=`&kp Q`, 24=`&kp W`, 25=`&ms_copy`, 26=`&kp R`, 27=`&kp T`
+- [x] 2.4 Bind Z-row: 47=`&ms_undo`, 48=`&ms_redo`, 49=`&kp SPACE`, 50=`&ms_paste`, 51=`&ms_triplet`; 46=`&kp N`
+- [x] 2.5 Bind number row: 23=slur `&kp S`, 24=flip `&kp X`, 25=enharmonic `&kp J`, rest `&none`
+- [x] 2.6 Bind thumb cluster: Esc=`&kp ESC`, Del=`&kp DEL`, Rest=`&kp N0`, AddBar=`&ms_add_bar`; exit thumb=`&tog 11`
+- [x] 2.7 Bind right hand: all `&trans` except corner keys → `&tog 11`
+- [x] 2.8 Bind F-row: all left positions `&tog 11`
 
 ## Phase 3: Combo
 
-- [ ] 3.1 In `config/glove80.keymap`, locate the `combos` node and add `combo_tog_musescore`
-- [ ] 3.2 Set `key-positions = <47 48 49>` (Z X C positions), `layers = <0 11>`, `require-prior-idle-ms = <300>`, `timeout-ms = <50>`, `bindings = <&tog 11>`
+- [x] 3.1 In `config/glove80.keymap`, locate the `combos` node and add `combo_tog_musescore`
+- [x] 3.2 Set `key-positions = <47 48 49>` (Z X C positions), `layers = <0 11>`, `require-prior-idle-ms = <300>`, `timeout-ms = <50>`, `bindings = <&tog 11>`
 
 ## Phase 4: Build Verification
 

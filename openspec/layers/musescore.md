@@ -4,96 +4,104 @@ One-handed MuseScore 4 control while the right hand operates a MIDI keyboard for
 
 ## Activation
 
-- **Entry:** Combo from base layer — three keys, bottom-left cluster (Z+X+C equivalent positions), with `require-prior-idle-ms` to avoid accidental trigger
-- **Exit:** `tog 11` on right-hand corner keys, or same combo from base
+- **Entry:** `&tog 11` on F-row (position 3, where skedpal_inbox was)
+- **Exit:** Any key on right hand triggers `&tog 11`, or same F-row key
 
 ## Layout (Left Hand Only)
 
-### Home Row (A–G + 6th key)
+### Home Row (6th key + A–G)
 
-| Key | Function | MuseScore Shortcut |
-|-----|----------|--------------------|
-| A   | Semicorchea (16th) | `3` |
-| S   | Corchea (8th) | `4` |
-| D   | Negra (quarter) | `5` |
-| F   | Blanca (half) | `6` |
-| G   | Redonda (whole) | `7` |
-| 6th | Puntillo (dot) | `.` |
+| Position | Function | Macro/Key |
+|----------|----------|-----------|
+| 6th (leftmost) | Puntillo (dot) | `&kp DOT` |
+| A | Semicorchea (16th) | `&kp N3` |
+| S | Corchea (8th) | `&kp N4` |
+| D | Negra (quarter) | `&kp N5` |
+| F | Blanca (half) | `&kp N6` |
+| G | Redonda (whole) | `&kp N7` |
 
-### Row Above Home (Q–T)
+### Row Above Home (Q–T positions)
 
-| Key | Function | MuseScore Shortcut |
-|-----|----------|--------------------|
-| Q   | Halve duration | `Q` |
-| W   | Double duration | `W` |
-| E   | Copy | `Ctrl+C` (macro) |
-| R   | Repeat selection | `R` |
-| T   | Tie | `T` |
+| Position | Function | Macro |
+|----------|----------|-------|
+| Q | Slur | `&ms_slur` |
+| W | Halve duration | `&ms_halve` |
+| E | Double duration | `&ms_double` |
+| R | Repeat selection | `&ms_repeat` |
+| T | Tie | `&ms_tie` |
 
-### Row Below Home (Z–V)
+### Row Below Home (Z–B positions)
 
-| Key | Function | MuseScore Shortcut |
-|-----|----------|--------------------|
-| Z   | Undo | `Ctrl+Z` (macro) |
-| X   | Redo | `Ctrl+Shift+Z` (macro) |
-| C   | Play/Stop | `Space` |
-| V   | Paste | `Ctrl+V` (macro) |
+| Position | Function | Macro |
+|----------|----------|-------|
+| Z | Cut | `&ms_cut` |
+| X | Undo | `&ms_undo` |
+| C | Redo | `&ms_redo` |
+| V | Copy | `&ms_copy` |
+| B | Paste | `&ms_paste` |
+| (next) | Triplet | `&ms_triplet` |
 
-### Additional Left-Hand Keys
+### Number Row (non-premium)
 
-| Key | Function | MuseScore Shortcut |
-|-----|----------|--------------------|
-| B   | Triplet | `Ctrl+3` (macro) |
-| N   | Toggle note input | `N` |
-| Other | Cut | `Ctrl+X` (macro) |
-| Other | Slur | `S` |
-| Other | Enharmonic respell | `J` |
-| Other | Flip direction | `X` |
+| Position | Function | Macro |
+|----------|----------|-------|
+| 1 | Save | `&ms_save` |
+| 2 | Flip direction | `&ms_flip` |
+| 3 | Enharmonic respell | `&ms_enhar` |
+| 4 | Octave up | `&ms_oct_up` |
+| 5 | Octave down | `&ms_oct_dn` |
 
-### Thumbs (4 positions)
+### Bottom Row (non-premium)
 
-| Position | Function | MuseScore Shortcut |
-|----------|----------|--------------------|
-| Thumb 1  | Esc (exit note input mode) | `Esc` |
-| Thumb 2  | Delete → rest | `Del` |
-| Thumb 3  | Rest | `0` |
-| Thumb 4  | Add bar | `Ctrl+B` (macro) |
+| Position | Function | Macro |
+|----------|----------|-------|
+| 1 | Grace note | `&ms_grace` |
+| 2 | Accent | `&ms_accent` |
+| 3 | Staccato | `&ms_stacc` |
+
+### Thumbs
+
+| Position | Function | Key |
+|----------|----------|-----|
+| Thumb 1 | Esc | `&kp ESC` |
+| Thumb 2 | Delete | `&kp DEL` |
+| Thumb 3 | Add bar | `&ms_add_bar` |
+| Thumb 4 | Rest | `&kp N0` |
+| Thumb 5 | Play/Stop | `&kp SPACE` |
+| Thumb 6 | Toggle note input | `&kp N` |
 
 ### Right Hand
 
-- `&trans` on all keys (pass-through to base layer)
-- Right-hand corner keys: `tog 11` to exit layer
+- All keys: `&tog 11` (any keypress exits layer)
+- Exceptions: corner keys remain `&trans` (consistent with other layers)
 
-## Priority Reference
+## Macros
 
-| Priority | Keys |
-|----------|------|
-| 5 — always | Durations (A–G), dot, rest (Thumb 3), delete (Thumb 2), undo (Z), halve/double (Q/W) |
-| 4 — almost always | Redo (X), copy (E), paste (V) |
-| 3 — sometimes | Tie (T), play (C), add bar (Thumb 4), repeat (R), toggle note input (N), Esc (Thumb 1) |
-| 2 — rarely | Triplet (B) |
-| 1 — nice to have | Slur, enharmonic respell (J), flip direction (X) |
-
-## Macros Required
-
-| Macro | Keys Sent |
-|-------|-----------|
-| `ms_undo` | `Ctrl+Z` |
-| `ms_redo` | `Ctrl+Shift+Z` |
-| `ms_copy` | `Ctrl+C` |
-| `ms_paste` | `Ctrl+V` |
-| `ms_cut` | `Ctrl+X` |
-| `ms_triplet` | `Ctrl+3` |
-| `ms_add_bar` | `Ctrl+B` |
-
-## Dependencies
-
-- ZMK `behavior-macro` (simple, one key-combo per macro)
-- ZMK `combos` with layer filter on base layer + `require-prior-idle-ms`
-- `update-max-combo.py` — auto-updates combo count in `glove80.conf`
+| Macro | Keys Sent | Description |
+|-------|-----------|-------------|
+| `ms_undo` | `Ctrl+Z` | Undo |
+| `ms_redo` | `Ctrl+Shift+Z` | Redo |
+| `ms_copy` | `Ctrl+C` | Copy |
+| `ms_paste` | `Ctrl+V` | Paste |
+| `ms_cut` | `Ctrl+X` | Cut |
+| `ms_triplet` | `Ctrl+3` | Create triplet |
+| `ms_add_bar` | `Ctrl+B` | Add bar/measure |
+| `ms_save` | `Ctrl+S` | Save |
+| `ms_flip` | `X` | Flip stem/direction |
+| `ms_enhar` | `J` | Enharmonic respell |
+| `ms_oct_up` | `Ctrl+↑` | Octave up |
+| `ms_oct_dn` | `Ctrl+↓` | Octave down |
+| `ms_grace` | `/` | Grace note (acciaccatura) |
+| `ms_accent` | `Shift+V` | Accent articulation |
+| `ms_stacc` | `Shift+S` | Staccato articulation |
+| `ms_slur` | `S` | Slur |
+| `ms_tie` | `T` | Tie |
+| `ms_repeat` | `R` | Repeat selection |
+| `ms_halve` | `Q` | Halve duration |
+| `ms_double` | `W` | Double duration |
 
 ## Notes
 
 - Delete and Backspace are identical in MuseScore; only `Del` is needed
-- All shortcuts emit a single keypress from the user's perspective (macros handle multi-key combos internally)
-- Right-hand pass-through is intentional: base layer shortcuts remain available if needed
+- Right hand exits layer on any keypress (user's right hand is on MIDI keyboard)
+- Activation changed from combo (Z+X+C) to direct toggle on F-row for easier access

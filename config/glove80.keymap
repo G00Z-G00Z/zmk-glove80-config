@@ -1253,6 +1253,97 @@
             bindings = <&kp LC(B)>;
             label = "MS_ADD_BAR";
         };
+
+        ms_save: ms_save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S)>;
+            label = "MS_SAVE";
+        };
+
+        ms_flip: ms_flip {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp X>;
+            label = "MS_FLIP";
+        };
+
+        ms_enhar: ms_enhar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp J>;
+            label = "MS_ENHAR";
+        };
+
+        ms_oct_up: ms_oct_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(UP_ARROW)>;
+            label = "MS_OCT_UP";
+        };
+
+        ms_oct_dn: ms_oct_dn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(DOWN_ARROW)>;
+            label = "MS_OCT_DN";
+        };
+
+        ms_grace: ms_grace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>;
+            label = "MS_GRACE";
+        };
+
+        ms_accent: ms_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(V)>;
+            label = "MS_ACCENT";
+        };
+
+        ms_stacc: ms_stacc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(S)>;
+            label = "MS_STACC";
+        };
+
+        ms_slur: ms_slur {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S>;
+            label = "MS_SLUR";
+        };
+
+        ms_tie: ms_tie {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T>;
+            label = "MS_TIE";
+        };
+
+        ms_repeat: ms_repeat {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R>;
+            label = "MS_REPEAT";
+        };
+
+        ms_halve: ms_halve {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Q>;
+            label = "MS_HALVE";
+        };
+
+        ms_double: ms_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W>;
+            label = "MS_DOUBLE";
+        };
     };
 
     combos {
@@ -1817,12 +1908,12 @@
 
         musescore_layer {
             bindings = <
-&tog 11  &tog 11    &tog 11    &tog 11    &tog 11                                                                                                    &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-&none    &kp LC(S)  &kp X      &kp J      &kp LC(UP_ARROW)  &kp LC(DOWN_ARROW)                                                              &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-&none    &kp S      &kp Q      &kp W      &kp R             &kp T                                                                           &trans   &trans   &trans   &trans   &trans   &tog 11
-&kp DOT  &kp N3     &kp N4     &kp N5     &kp N6            &kp N7                                                                          &trans   &trans   &trans   &trans   &trans   &tog 11
-&ms_cut  &ms_undo   &ms_redo   &ms_copy   &ms_paste         &ms_triplet         &kp ESC  &kp DEL    &ms_add_bar  &tog 11  &tog 11  &tog 11  &tog 11  &trans   &trans   &trans   &trans   &tog 11
-&trans   &kp SLASH  &kp LS(V)  &kp LS(S)  &none                                 &kp N0   &kp SPACE  &kp N        &tog 11  &tog 11  &tog 11           &trans   &trans   &trans   &trans   &trans
+&tog 11  &tog 11    &tog 11     &tog 11    &tog 11                                                                                                       &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&none    &ms_save   &ms_flip    &ms_enhar  &ms_oct_up  &ms_oct_dn                                                                            &tog 11     &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&none    &ms_slur   &ms_halve   &ms_double &ms_repeat  &ms_tie                                                                               &tog 11     &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&kp DOT  &kp N3     &kp N4      &kp N5     &kp N6      &kp N7                                                                                &tog 11     &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&ms_cut  &ms_undo   &ms_redo    &ms_copy   &ms_paste   &ms_triplet  &kp ESC  &kp DEL    &ms_add_bar  &tog 11  &tog 11  &tog 11  &tog 11      &tog 11     &tog 11  &tog 11  &tog 11  &tog 11
+&trans   &ms_grace  &ms_accent  &ms_stacc  &none                    &kp N0   &kp SPACE  &kp N        &tog 11  &tog 11  &tog 11               &tog 11     &tog 11  &tog 11  &tog 11  &trans
             >;
         };
     };

@@ -88,13 +88,13 @@ All other positions: `&none`.
 
 Layer index: **9**. Transparent layer — activates input processor scaler.
 
-When layer 9 is active (hold R or left thumb), mouse movement is scaled to 1/3 speed via `&zip_xy_scaler 1 3`.
+When layer 9 is active (hold R or left thumb), mouse movement is scaled to 1/5 speed via `&zip_xy_scaler 1 5` (~160 effective speed).
 
 ## Speed Configuration
 
 ```c
-// Mouse speed (precision mode divides by 3 via scaler)
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 350
+// Mouse speed (precision mode divides by 5 via scaler)
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800
 
 // No acceleration — constant predictable speed
 &mmv {
@@ -106,15 +106,15 @@ When layer 9 is active (hold R or left thumb), mouse movement is scaled to 1/3 s
 &mmv_input_listener {
     precision {
         layers = <9>;
-        input-processors = <&zip_xy_scaler 1 3>;
+        input-processors = <&zip_xy_scaler 1 5>;
     };
 };
 ```
 
 | Mode | Speed | Use Case |
 |------|-------|----------|
-| Normal | 350 | General navigation, less overshoot |
-| Precision (hold R) | ~117 | Fine positioning, small targets |
+| Normal | 800 | General navigation, faster cursor |
+| Precision (hold R) | ~160 | Fine positioning, small targets |
 
 ## Tap-Dance Behavior
 
@@ -134,7 +134,7 @@ Uses `lt_thumb_gresc` hold-tap: hold = `&mo 8`, tap = `&gresc`.
 
 - `config/glove80.conf`: `CONFIG_ZMK_POINTING=y`
 - `config/glove80.keymap`:
-  - `#define ZMK_POINTING_DEFAULT_MOVE_VAL 350` (before pointing.h include)
+  - `#define ZMK_POINTING_DEFAULT_MOVE_VAL 800` (before pointing.h include)
   - `#include <dt-bindings/zmk/pointing.h>`
   - `#include <input/processors.dtsi>`
 

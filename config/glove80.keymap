@@ -23,9 +23,14 @@
 
 &key_repeat { usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>; };
 
-&sk { quick-release; };
+&sk {
+    quick-release;
+    release-after-ms = <2000>;
+};
 
 &lt { quick-tap-ms = <300>; };
+
+&soft_off { hold-time-ms = <2000>; };
 
 / {
     behaviors {
@@ -289,6 +294,8 @@
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
+        // Shift HRM: faster timing (175ms vs 200ms) because index fingers naturally move faster
+        // than other fingers. Lower require-prior-idle (150ms) for same reason.
         hmr_shift_left: hmr_shift_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR_SHIFT_LEFT";
@@ -1205,39 +1212,13 @@
 
         // MuseScore (ms_) macros
 
-        ms_undo: ms_undo {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(Z)>;
-            label = "MS_UNDO";
-        };
-
+        // MuseScore uses same shortcuts as generic: undo=LC(Z), redo=LC(LS(Z)), copy/paste/cut=LC(C/V/X)
+        // Using generic macros instead. ms_redo differs (LC(LS(Z)) vs LC(Y)) so keeping it.
         ms_redo: ms_redo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(Z))>;
             label = "MS_REDO";
-        };
-
-        ms_copy: ms_copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>;
-            label = "MS_COPY";
-        };
-
-        ms_paste: ms_paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(V)>;
-            label = "MS_PASTE";
-        };
-
-        ms_cut: ms_cut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(X)>;
-            label = "MS_CUT";
         };
 
         ms_triplet: ms_triplet {
@@ -1348,6 +1329,11 @@
 
     combos {
         // IMPORTANT NOTICE: This combos are based in QWERTY layout
+        //
+        // Combo timeout strategy:
+        // - 18ms: tight combos on adjacent keys (home row, same finger column)
+        // - 30ms: diagonal or cross-row combos where slight timing variance is expected
+        // - 100ms+: deliberate multi-key chords (e.g., layer toggles) that should not fire accidentally
 
         compatible = "zmk,combos";
 
@@ -1469,7 +1455,7 @@
         };
 
         combo_undo {
-            bindings = <&kp LC(Z)>;
+            bindings = <&undo>;
             key-positions = <48 49>;
             require-prior-idle-ms = <150>;
             timeout-ms = <18>;
@@ -1785,7 +1771,7 @@
 
             bindings = <
 &tog 8         &kp C_MUTE             &kp C_VOL_DN           &tog 11                   &kp LC(LS(ESCAPE))                                                                                                                                                                                                                   &kp LG(P)                                             &play_next_prev_td                            &kp LG(E)                                 &kp C_BRIGHTNESS_INC                      &kp C_BRIGHTNESS_DEC
-&kp LC(Z)      &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &kp NUMBER_4                  &mst_goback_call_mt 0 N5                                                                                                                                                   &mt C_VOLUME_DOWN NUMBER_6  &mt C_VOLUME_UP N7                                    &mt C_MUTE N8                                 &mt C_BRIGHTNESS_INC N9                   &hold_bt_0 0 N0                           &enie_numpad
+&undo          &hold_bt_1 0 NUMBER_1  &hold_bt_2 0 NUMBER_2  &mt PRINTSCREEN NUMBER_3  &kp NUMBER_4                  &mst_goback_call_mt 0 N5                                                                                                                                                   &mt C_VOLUME_DOWN NUMBER_6  &mt C_VOLUME_UP N7                                    &mt C_MUTE N8                                 &mt C_BRIGHTNESS_INC N9                   &hold_bt_0 0 N0                           &enie_numpad
 &kp TAB        &kp Q                  &hrm_left RIGHT_ALT W  &kp E                     &kp R                         &kp T                                                                                                                                                                      &kp Y                       &kp U                                                 &kp I                                         &hrm_right RIGHT_ALT O                    &kp P                                     &kp GRAVE
 &kp EQUAL      &hrm_left LEFT_GUI A   &hrm_left LEFT_ALT S   &hrm_left LEFT_CONTROL D  &hmr_shift_left LEFT_SHIFT F  &kp G                                                                                                                                                                      &kp H                       &hmr_shift_right RIGHT_SHIFT J                        &hrm_right RIGHT_CONTROL K                    &hrm_right LEFT_ALT L                     &hrm_right RIGHT_GUI SEMI                 &kp SQT
 &kp LG(SPACE)  &kp Z                  &kp X                  &kp C                     &kp V                         &kp B                     &mouse_gresc_td          &lt 5 BACKSLASH         &my_email   &mst_gocall_goback_mt 0 0  &go_temp_mst                 &kp ENTER                   &kp N                       &kp M                                                 &kp COMMA                                     &kp DOT                                   &better_slash                             &tmux_prefix
@@ -1829,7 +1815,7 @@
         symbols_layer {
             bindings = <
 &tog 4         &tog 4          &tog 4         &tog 4             &tog 4                                                                                                                   &tog 4                &tog 4            &tog 4             &tog 4                 &tog 4
-&none          &kp GRAVE       &kp SQT        &kp DOUBLE_QUOTES  &kp TILDE        &kp SEMICOLON                                                                            &none          &key_repeat           &kp LC(Z)         &none              &none                  &none
+&none          &kp GRAVE       &kp SQT        &kp DOUBLE_QUOTES  &kp TILDE        &kp SEMICOLON                                                                            &none          &key_repeat           &undo             &none              &none                  &none
 &kp LESS_THAN  &kp LEFT_BRACE  &lbra_cur      &rbra_cur          &kp RIGHT_BRACE  &kp GREATER_THAN                                                                         &kp SEMICOLON  &kp MINUS             &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp UNDERSCORE         &kp TILDE
 &kp HASH       &kp CARET       &lpar_lt       &rpar_gt           &kp DOLLAR       &kp ASTERISK                                                                             &kp DOT        &kp LEFT_SHIFT        &kp LEFT_CONTROL  &kp LEFT_ALT       &kp LEFT_WIN           &kp SQT
 &kp AT_SIGN    &kp PIPE        &kp EQUAL      &kp UNDERSCORE     &kp MINUS        &kp QUESTION      &kp NON_US_BACKSLASH  &kp TILDE  &key_repeat    &none   &none  &none   &kp COMMA      &kp SPACE             &kp BACKSPACE     &paste             &kp SLASH              &none
@@ -1848,6 +1834,8 @@
             >;
         };
 
+        // Gaming: right half unused during play. Every key there is &tog 7 for easy exit
+        // from any hand position. Left half has WASD layout with numbers on bottom row.
         gaming_layer {
             bindings = <
 &tog 7     &tog 7     &tog 7  &tog 7  &tog 7                                                                                             &tog 7    &tog 7  &tog 7     &tog 7  &tog 7
@@ -1901,7 +1889,7 @@
 &none        &none                            &none                              &none                                       &none            &none                                                                                &none  &none                                     &none                             &none                             &none  &none
 &none        &rgb_ug RGB_SPI                  &rgb_ug RGB_SAI                    &rgb_ug RGB_HUI                             &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                      &none  &mo_w_glow 1 RGB_COLOR_HSB_VAL(0,100,50)  &rgb_ug RGB_COLOR_HSB(130,72,64)  &rgb_ug RGB_COLOR_HSB(0,0,100)    &none  &none
 &bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                             &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)         &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none  &bootloader
-&sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(125,100,50)  &mo_w_glow 1 RGB_COLOR_HSB_VAL(250,100,50)  &none            &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)         &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &none  &sys_reset
+&sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(125,100,50)  &mo_w_glow 1 RGB_COLOR_HSB_VAL(250,100,50)  &soft_off        &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)         &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &soft_off  &sys_reset
 &none        &none                            &none                              &rgb_ug RGB_OFF                             &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                                     &none                             &none                             &none  &to 0
             >;
         };
@@ -1912,7 +1900,7 @@
 &none    &ms_save   &ms_flip    &ms_enhar  &ms_oct_up  &ms_oct_dn                                                                            &tog 11     &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
 &none    &ms_slur   &ms_halve   &ms_double &ms_repeat  &ms_tie                                                                               &tog 11     &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
 &kp DOT  &kp N3     &kp N4      &kp N5     &kp N6      &kp N7                                                                                &tog 11     &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-&ms_cut  &ms_undo   &ms_redo    &ms_copy   &ms_paste   &ms_triplet  &kp ESC  &kp DEL    &ms_add_bar  &tog 11  &tog 11  &tog 11  &tog 11      &tog 11     &tog 11  &tog 11  &tog 11  &tog 11
+&cut     &undo      &ms_redo    &copy      &paste      &ms_triplet  &kp ESC  &kp DEL    &ms_add_bar  &tog 11  &tog 11  &tog 11  &tog 11      &tog 11     &tog 11  &tog 11  &tog 11  &tog 11
 &trans   &ms_grace  &ms_accent  &ms_stacc  &none                    &kp N0   &kp SPACE  &kp N        &tog 11  &tog 11  &tog 11               &tog 11     &tog 11  &tog 11  &tog 11  &trans
             >;
         };

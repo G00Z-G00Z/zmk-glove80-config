@@ -26,7 +26,7 @@ EOF
 COPY --chmod=755 <<EOF /bin/entrypoint.sh
 #!/usr/bin/env bash
     set -euo pipefail
-    : "\${BRANCH:=main}"
+    : "\${BRANCH:=v0.9.10}"
 
     echo "Checking out \$BRANCH from moergo-sc/zmk" >&2
     cd /src

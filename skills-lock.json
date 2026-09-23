@@ -6,6 +6,11 @@
       "sourceType": "github",
       "skillPath": "skills/keymap-ai/SKILL.md",
       "computedHash": "a067fb02bd4baa7ceadc4f44b923affa24560b56897fa6b1bbd6d87097c6c136"
+    },
+    "skills/read-todoist-improvements": {
+      "source": "/home/z0258490/Documents/projects/personal/zmk-glove80-config/skills/read-todoist-improvements",
+      "sourceType": "local",
+      "computedHash": "3edb19b73e2a140a06a6cae0801bee528a9cd651a77546b12ae516943b911a71"
     }
   }
 }

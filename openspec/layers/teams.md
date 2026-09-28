@@ -28,6 +28,7 @@ Cada macro usa `/status` command en Teams search bar.
 | Tap-dance | 1t: ir a call, 2t: join desde toast, 3t: llamar desde chat |
 | Thumb izq | Hold: mute/unmute y volver a app anterior |
 | F2 | `go_call_unmute_mute_go_back` |
+| Thumb (dedicated) | Toggle cámara (`Ctrl+Shift+O`) |
 
 ## Reacciones
 
@@ -51,6 +52,14 @@ Tecla adicional para "more reactions" que abre el picker.
 
 - Tap-dance: 1t show screen, 2t toggle camera
 - Macro espera 1750ms antes de enviar shortcuts (Teams es lento)
+
+## Channel Shortcuts (mano derecha, home row)
+
+| Posición | Shortcut | Nota |
+|----------|----------|------|
+| Index → Pinky | Alt+1 → Alt+6 | Orden izq-a-der coincide con UI de Teams |
+
+Activás la capa con mano izquierda, ejecutás shortcuts con mano derecha.
 
 ## Zoom Controls
 

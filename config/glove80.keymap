@@ -296,6 +296,7 @@
 
         // Shift HRM: faster timing (175ms vs 200ms) because index fingers naturally move faster
         // than other fingers. Lower require-prior-idle (150ms) for same reason.
+
         hmr_shift_left: hmr_shift_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR_SHIFT_LEFT";
@@ -1211,9 +1212,9 @@
         };
 
         // MuseScore (ms_) macros
-
         // MuseScore uses same shortcuts as generic: undo=LC(Z), redo=LC(LS(Z)), copy/paste/cut=LC(C/V/X)
         // Using generic macros instead. ms_redo differs (LC(LS(Z)) vs LC(Y)) so keeping it.
+
         ms_redo: ms_redo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -1807,8 +1808,8 @@
 &kp ENTER  &kp LC(N1)               &kp LC(N2)                       &kp LC(N3)               &kp LC(N4)               &kp LC(N5)                                                                                                                                          &kp LG(N1)              &kp LA(LS(EQUAL))       &kp LA(LS(MINUS))     &kp LA(LS(N0))     &none                  &none
 &kp TAB    &kp LA(LS(N))            &mst_reply_current_msg           &mst_key_exit_mst LC(R)  &mst_react_td            &kp LC(LA(U))                                                                                                                                       &mst_react_more         &mst_react_happy        &mst_react_heart      &mst_react_lol     &mst_react_surprise    &mst_react_more
 &kp ENTER  &kp LC(J)                &mst_chatlist_go_unread_mute_td  &kp UP                   &kp DOWN                 &kp LC(M)                                                                                                                                           &kp LS(LA(LEFT_ARROW))  &kp LS(LA(DOWN))        &kp LS(LA(UP_ARROW))  &kp LS(LA(RIGHT))  &none                  &kp ESCAPE
-&none      &mst_key_exit_mst LC(E)  &mst_away                        &mst_brb                 &mst_available           &mst_offline   &mst_goback_call_mt 0 LC(LS(K))  &mst_show_screen_vid_td  &mst_call_cmds_td  &play_next_prev_td  &none              &tog 3           &kp LA(N5)              &kp LA(N4)              &kp LA(N3)            &kp LA(N2)         &kp LA(N1)             &none
-&trans     &mst_react_more          &full_screen_window              &mst_busy                &mst_key_exit_mst LC(F)                 &mt LC(SPACE) LS(LC(M))          &kp LC(LS(H))            &mst_go_to_teams   &kp C_MUTE          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                          &win_move_screen_right  &none                 &none              &win_move_screen_left  &trans
+&none      &mst_key_exit_mst LC(E)  &mst_away                        &mst_brb                 &mst_available           &mst_offline   &mst_goback_call_mt 0 LC(LS(K))  &mst_show_screen_vid_td  &mst_call_cmds_td  &play_next_prev_td  &none              &tog 3           &kp LA(N5)              &kp LA(N1)              &kp LA(NUMBER_2)      &kp LA(NUMBER_3)   &kp LA(NUMBER_4)       &kp LA(NUMBER_6)
+&trans     &mst_react_more          &full_screen_window              &mst_busy                &mst_key_exit_mst LC(F)                 &mt LC(SPACE) LS(LC(M))          &kp LC(LS(H))            &kp LS(LC(O))      &kp C_MUTE          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                          &win_move_screen_right  &none                 &none              &win_move_screen_left  &trans
             >;
         };
 
@@ -1836,6 +1837,7 @@
 
         // Gaming: right half unused during play. Every key there is &tog 7 for easy exit
         // from any hand position. Left half has WASD layout with numbers on bottom row.
+
         gaming_layer {
             bindings = <
 &tog 7     &tog 7     &tog 7  &tog 7  &tog 7                                                                                             &tog 7    &tog 7  &tog 7     &tog 7  &tog 7
@@ -1885,23 +1887,23 @@
 
         magic_layer {
             bindings = <
-&bt BT_CLR   &none                            &none                              &none                                       &none                                                                                                        &none                                     &none                             &none                             &none  &bt BT_CLR_ALL
-&none        &none                            &none                              &none                                       &none            &none                                                                                &none  &none                                     &none                             &none                             &none  &none
-&none        &rgb_ug RGB_SPI                  &rgb_ug RGB_SAI                    &rgb_ug RGB_HUI                             &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                      &none  &mo_w_glow 1 RGB_COLOR_HSB_VAL(0,100,50)  &rgb_ug RGB_COLOR_HSB(130,72,64)  &rgb_ug RGB_COLOR_HSB(0,0,100)    &none  &none
-&bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                             &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)         &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none  &bootloader
+&bt BT_CLR   &none                            &none                              &none                                       &none                                                                                                        &none                                     &none                             &none                             &none      &bt BT_CLR_ALL
+&none        &none                            &none                              &none                                       &none            &none                                                                                &none  &none                                     &none                             &none                             &none      &none
+&none        &rgb_ug RGB_SPI                  &rgb_ug RGB_SAI                    &rgb_ug RGB_HUI                             &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                      &none  &mo_w_glow 1 RGB_COLOR_HSB_VAL(0,100,50)  &rgb_ug RGB_COLOR_HSB(130,72,64)  &rgb_ug RGB_COLOR_HSB(0,0,100)    &none      &none
+&bootloader  &rgb_ug RGB_SPD                  &rgb_ug RGB_SAD                    &rgb_ug RGB_HUD                             &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                      &none  &rgb_ug RGB_COLOR_HSB(288,100,64)         &rgb_ug RGB_COLOR_HSB(60,87,55)   &rgb_ug RGB_COLOR_HSB(0,0,0)      &none      &bootloader
 &sys_reset   &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(125,100,50)  &mo_w_glow 1 RGB_COLOR_HSB_VAL(250,100,50)  &soft_off        &none            &bt_2  &bt_3  &none         &none  &none            &lock_td        &none  &rgb_ug RGB_COLOR_HSB(179,100,63)         &rgb_ug RGB_COLOR_HSB(29,100,53)  &rgb_ug RGB_COLOR_HSB(255,34,41)  &soft_off  &sys_reset
-&none        &none                            &none                              &rgb_ug RGB_OFF                             &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                                     &none                             &none                             &none  &to 0
+&none        &none                            &none                              &rgb_ug RGB_OFF                             &rgb_ug RGB_ON                    &bt_0  &bt_1  &out OUT_USB  &none  &rgb_ug RGB_OFF  &rgb_ug RGB_ON         &none                                     &none                             &none                             &none      &to 0
             >;
         };
 
         musescore_layer {
             bindings = <
-&tog 11  &tog 11    &tog 11     &tog 11    &tog 11                                                                                                       &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-&none    &ms_save   &ms_flip    &ms_enhar  &ms_oct_up  &ms_oct_dn                                                                            &tog 11     &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-&none    &ms_slur   &ms_halve   &ms_double &ms_repeat  &ms_tie                                                                               &tog 11     &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-&kp DOT  &kp N3     &kp N4      &kp N5     &kp N6      &kp N7                                                                                &tog 11     &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
-&cut     &undo      &ms_redo    &copy      &paste      &ms_triplet  &kp ESC  &kp DEL    &ms_add_bar  &tog 11  &tog 11  &tog 11  &tog 11      &tog 11     &tog 11  &tog 11  &tog 11  &tog 11
-&trans   &ms_grace  &ms_accent  &ms_stacc  &none                    &kp N0   &kp SPACE  &kp N        &tog 11  &tog 11  &tog 11               &tog 11     &tog 11  &tog 11  &tog 11  &trans
+&tog 11  &tog 11    &tog 11     &tog 11     &tog 11                                                                                       &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&none    &ms_save   &ms_flip    &ms_enhar   &ms_oct_up  &ms_oct_dn                                                               &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&none    &ms_slur   &ms_halve   &ms_double  &ms_repeat  &ms_tie                                                                  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&kp DOT  &kp N3     &kp N4      &kp N5      &kp N6      &kp N7                                                                   &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&cut     &undo      &ms_redo    &copy       &paste      &ms_triplet  &kp ESC  &kp DEL    &ms_add_bar  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11  &tog 11
+&trans   &ms_grace  &ms_accent  &ms_stacc   &none                    &kp N0   &kp SPACE  &kp N        &tog 11  &tog 11  &tog 11           &tog 11  &tog 11  &tog 11  &tog 11  &trans
             >;
         };
     };

@@ -51,11 +51,12 @@ Full mouse control via keyboard. Layer index: **8**.
 | C | 49 | `&mkp RCLK` | Right click |
 | V | 50 | `&mkp LCLK` | Left click |
 
-### Left Hand — Precision Mode
+### Left Hand — Speed Modes
 
 | Key | Position | Binding | Action |
 |-----|----------|---------|--------|
-| R | 27 | `&mo 9` | Hold for precision (1/3 speed) |
+| E | 26 | `&mo 10` | Hold for turbo (×1.6, ~800 speed) |
+| R | 27 | `&mo 9` | Hold for precision (1/3 speed, ~167) |
 
 ### Thumb Clusters
 
@@ -88,13 +89,19 @@ All other positions: `&none`.
 
 Layer index: **9**. Transparent layer — activates input processor scaler.
 
-When layer 9 is active (hold R or left thumb), mouse movement is scaled to 1/5 speed via `&zip_xy_scaler 1 5` (~160 effective speed).
+When layer 9 is active (hold R or left thumb), mouse movement is scaled to 1/3 speed via `&zip_xy_scaler 1 3` (~167 effective speed).
+
+## Mouse Turbo Layer
+
+Layer index: **10**. Transparent layer — activates input processor scaler.
+
+When layer 10 is active (hold E), mouse movement is scaled to 8/5 speed via `&zip_xy_scaler 8 5` (~800 effective speed).
 
 ## Speed Configuration
 
 ```c
-// Mouse speed (precision mode divides by 5 via scaler)
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 800
+// Mouse speed (precision mode divides by 3, turbo multiplies by 8/5)
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 500
 
 // No acceleration — constant predictable speed
 &mmv {
@@ -102,19 +109,24 @@ When layer 9 is active (hold R or left thumb), mouse movement is scaled to 1/5 s
     acceleration-exponent = <0>;
 };
 
-// Precision scaler when layer 9 active
+// Speed scalers: turbo first (layer 10), then precision (layer 9)
 &mmv_input_listener {
+    turbo {
+        layers = <10>;
+        input-processors = <&zip_xy_scaler 8 5>;
+    };
     precision {
         layers = <9>;
-        input-processors = <&zip_xy_scaler 1 5>;
+        input-processors = <&zip_xy_scaler 1 3>;
     };
 };
 ```
 
 | Mode | Speed | Use Case |
 |------|-------|----------|
-| Normal | 800 | General navigation, faster cursor |
-| Precision (hold R) | ~160 | Fine positioning, small targets |
+| Normal | 500 | General navigation |
+| Turbo (hold E) | ~800 | Cross-screen, long distances |
+| Precision (hold R) | ~167 | Fine positioning, small targets |
 
 ## Tap-Dance Behavior
 
@@ -134,7 +146,7 @@ Uses `lt_thumb_gresc` hold-tap: hold = `&mo 8`, tap = `&gresc`.
 
 - `config/glove80.conf`: `CONFIG_ZMK_POINTING=y`
 - `config/glove80.keymap`:
-  - `#define ZMK_POINTING_DEFAULT_MOVE_VAL 800` (before pointing.h include)
+  - `#define ZMK_POINTING_DEFAULT_MOVE_VAL 500` (before pointing.h include)
   - `#include <dt-bindings/zmk/pointing.h>`
   - `#include <input/processors.dtsi>`
 
@@ -147,6 +159,6 @@ Uses `lt_thumb_gresc` hold-tap: hold = `&mo 8`, tap = `&gresc`.
 
 - Mods on home row allow Ctrl+click, Shift+drag, etc.
 - Clicks on left bottom row and right thumb for easy access.
-- Precision available on R (index finger) and left thumb — hold while moving with right hand.
+- Speed modes: E = turbo (fast, cross-screen), R = precision (slow, pixel-hunt), both on left hand while HJKL moves with right.
 - Inner left thumb (pos 69) exits to base — same finger that activated the layer.
 - Tap-dance allows gresc tap, hold for momentary, double-tap for toggle.
